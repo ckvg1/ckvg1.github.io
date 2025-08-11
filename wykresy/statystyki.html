@@ -195,16 +195,35 @@
                 all_OFF_l3: `${godzina}`,
                 all_OFF_l2: `${godzina}`,
               };
-              await axios.put(
-                `${window.config.apiBaseUrl}/harmonogram/add`,
-                harmonogram
-              );
+              try {
+                await axios.put(
+                  `${window.config.apiBaseUrl}/harmonogram/add`,
+                  harmonogram
+                );
+                document.getElementById("alertBox").style.display = "flex";
+                document.getElementById("alertBox").innerHTML =
+                  "Zapisano harmonogram.";
+              } catch (err) {
+                console.log("Blad");
+                document.getElementById("alertBox").style.display = "flex";
+                document.getElementById("alertBox").innerHTML =
+                  "Błąd podczas próby zapisu harmonogramu. " + err;
+              }
             } else {
-              await axios.put(
-                `${window.config.apiBaseUrl}/harmonogram/add`,
+              try {
+                await axios.put(
+                  `${window.config.apiBaseUrl}/harmonogram/add`,
 
-                harmonogram
-              );
+                  harmonogram
+                );
+                document.getElementById("alertBox").style.display = "flex";
+                document.getElementById("alertBox").innerHTML =
+                  "Zapisano harmonogram.";
+              } catch (err) {
+                document.getElementById("alertBox").style.display = "flex";
+                document.getElementById("alertBox").innerHTML =
+                  "Błąd podczas próby zapisu harmonogramu. " + err;
+              }
             }
           }
           async function wyslijTrue(swiatlo) {

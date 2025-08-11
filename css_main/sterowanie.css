@@ -52,7 +52,7 @@ a {
 .temperatura,
 .nazwaBiura {
   position: absolute;
-  font-size: 14pt;
+  font-size: 13pt;
   text-align: center;
 }
 
@@ -370,6 +370,7 @@ a {
     border-top: 1px solid #000;
     border-left: 1px solid #000;
     border-right: 1px solid #000;
+    font-size: 12pt;
   }
   .temperatura {
     border-bottom: 1px solid #000;
@@ -743,19 +744,13 @@ a {
   }
 }
 
-@media only screen and (max-width: 500px) {
-  #all_l0_1,
-  #all_l1_1,
-  #all_l2_1,
-  #all_l3_1 {
-    left: 65%;
+@media only screen and (max-width: 500px){
+
+  .nazwaBiura{
+    font-size: 10pt;
   }
-  #all_l0_2,
-  #all_l1_2,
-  #all_l2_2,
-  #all_l3_2 {
-    left: 83%;
-  }
+  #all_l0_1,#all_l1_1,#all_l2_1,#all_l3_1 {left: 65%;}
+  #all_l0_2,#all_l1_2,#all_l2_2,#all_l3_2 {left: 83%;}
 
   #blokZarowki0_3 {
     top: 210%;
