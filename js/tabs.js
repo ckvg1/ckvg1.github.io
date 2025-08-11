@@ -49,7 +49,15 @@ async function hamburger(x) {
     tabsList.style.right = "0px";
   }
 }
-
+function pojawianie() {
+  tabsList = document.querySelector(".tabs-list");
+  if(window.innerWidth <= 810){
+    tabsList.style.display = "block";
+  }
+  else{
+    tabsList.style.display = "flex";
+  }
+}
 async function znikanie() {
   tabsList = document.querySelector(".tabs-list");
   burger = document.querySelector(".hamburger");
@@ -61,15 +69,9 @@ async function znikanie() {
   } else {
     tabsList.style.display = "block";
   }
+  pojawianie()
 }
 
-function pojawianie() {
-  tabsList = document.querySelector(".tabs-list");
-  if (window.innerWidth > 810) {
-    tabsList.style.display = "flex";
-  } else {
-    tabsList.style.display = "block";
-  }
-}
+
 
 window.addEventListener("resize", pojawianie);
