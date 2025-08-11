@@ -1,26 +1,146 @@
 <!DOCTYPE html>
 <html lang="pl">
   <head>
-    <script src="axios.min.js"></script>
-    <script src="../js/translations.js"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sterowanie</title>
+    <script src="axios.min.js"></script>
+    <script src="../config.js"></script>
     <link rel="stylesheet" href="../css_main/glowny.css" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+      content="user-scalable=no"
+    />
     <link rel="stylesheet" href="../css_main/sterowanie.css" />
     <link rel="stylesheet" href="../css_main/czcionka.css" />
-    <link rel="icon" type="image/x-icon" href="../img_main/icon.pngg" />
+    <link rel="icon" type="image/x-icon" href="../img_main/icon.png" />
+    <script src="axios.min.js"></script>
+    <script src="../js/translations.js"></script>
   </head>
   <body>
     <h1 style="font-size: 18pt">Sterowanie urządzeniami - parter</h1>
+    <div id="alertBox" class="oaerror danger" style="display: none"></div>
+
+    <div
+      style="display: flex; flex-direction: row; gap: 15px; align-items: center"
+    ></div>
+    <div id="myDiv" class="main_image">
+      <img src="../img_main/mapy/rzut_parter.PNG" id="main_image" />
+      <a onmousedown="wyslijTrue('all_OFF_l0')" style="cursor: pointer">
+        <img
+          id="all_l0_1"
+          class="wszystkieSwiatla"
+          src="../img_main/icony/btn_of.png"
+        />
+
+        <!-- Przycisk do wszystkich świateł -->
+      </a>
+      <a onmousedown="wyslijTrue('all_ON_l0')" style="cursor: pointer">
+        <img
+          id="all_l0_2"
+          class="wszystkieSwiatla"
+          src="../img_main/icony/btn_on.png"
+        />
+
+        <!-- Przycisk do wszystkich świateł -->
+      </a>
+      <div class="blokZarowki" id="blokZarowki0_1">
+        <a onmousedown="wyslijTrue('l0_1_1')" style="cursor: pointer">
+          <img
+            id="wyj_l0_1_1"
+            class="zarowka"
+            src="../img_main/icony/bulb_on.png "
+          />
+        </a>
+        <a onmousedown="wyslijTrue('l0_1_2')" style="cursor: pointer">
+          <img
+            id="wyj_l0_1_2"
+            class="zarowka"
+            src="../img_main/icony/bulb_on.png "
+          />
+        </a>
+      </div>
+      <div class="temperatura" id="t0_1">Błąd </div>
+      <div class="nazwaBiura" id="nazwa0_1">sd fsd fs dfs df sdf sd fsd fsd fsd fsd</div>
+      <div class="nazwaBiura" id="nazwa0_1_2"></div>
+      <div class="blokZarowki" id="blokZarowki0_2">
+        <a onmousedown="wyslijTrue('l0_2_1')" style="cursor: pointer">
+          <img
+            id="wyj_l0_2_1"
+            class="zarowka"
+            src="../img_main/icony/bulb_on.png "
+          />
+        </a>
+
+        <a onmousedown="wyslijTrue('l0_2_2')" style="cursor: pointer">
+          <img
+            id="wyj_l0_2_2"
+            class="zarowka"
+            src="../img_main/icony/bulb_on.png "
+          />
+        </a>
+      </div>
+      <div class="blokRolety" id="blokRolety0_2">
+        <img
+          id="b0_r2_1"
+          class="strzalka"
+          src="../img_main/icony/arrow.png"
+          onmousedown="roletaWlacz('b0_r2_1')"
+        />
+        <img
+          id="b0_r2_2"
+          class="strzalka odwrot"
+          src="../img_main/icony/arrow.png"
+          onmousedown="roletaWlacz('b0_r2_2')"
+        />
+      </div>
+      <div class="temperatura" id="t0_2">Błąd odczytu</div>
+      <div class="nazwaBiura" id="nazwa0_2">sdf sdf sdf sdf sdf sdfsd fsd fsdf sdf</div>
+      <div class="nazwaBiura" id="nazwa0_2_2"></div>
+
+      <div class="blokZarowki" id="blokZarowki0_3">
+        <a onmousedown="wyslijTrue('l0_3_1')" style="cursor: pointer">
+          <img
+            id="wyj_l0_3_1"
+            class="zarowka"
+            src="../img_main/icony/bulb_on.png "
+          />
+        </a>
+        <a onmousedown="wyslijTrue('l0_3_2')" style="cursor: pointer">
+          <img
+            id="wyj_l0_3_2"
+            class="zarowka"
+            src="../img_main/icony/bulb_on.png "
+          />
+        </a>
+      </div>
+      <div class="blokRolety" id="blokRolety0_3">
+        <img
+          id="b0_r3_1"
+          class="strzalka"
+          src="../img_main/icony/arrow.png"
+          onmousedown="roletaWlacz('b0_r3_1')"
+        />
+        <img
+          id="b0_r3_2"
+          class="strzalka odwrot"
+          src="../img_main/icony/arrow.png"
+          onmousedown="roletaWlacz('b0_r3_2')"
+        />
+      </div>
+      <div class="temperatura" id="t0_3">Błąd odczytu</div>
+      <div class="nazwaBiura" id="nazwa0_3">sd fsd fsdfs dfsdf sdf sdf sdf sd fsd</div>
+      <div class="nazwaBiura" id="nazwa0_3_2"></div>
+    </div>
+
     <script src="../js/dark_mode.js"></script>
     <script>
-      main_image = document.getElementById("main_image");
-      no_internet = document.getElementById("no-internet");
-      if (document.body.classList.contains("ciemny")) {
-        main_image.src = "swiatla-bg-dark2.png";
-        no_internet.src = "no-internet-dark.png";
-      }
+      // main_image = document.getElementById("main_image");
+      // if (document.body.classList.contains("ciemny")) {
+      //   main_image.src = "../img_main/mapy/sterowanie-bg-dark.png";
+      // }
     </script>
+    <script src="sterowanie.js"></script>
   </body>
 </html>
