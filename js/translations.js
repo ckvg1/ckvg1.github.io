@@ -45,6 +45,7 @@ const dictionary = {
     Zapisz: "Speichern",
     dni: "tagen",
     uwaga: "Achtung",
+    Parter: "Erdgeschoss",
   },
   uk: {
     "Wyłącz automatycznie wszystkie światła o:":
@@ -88,6 +89,7 @@ const dictionary = {
     Zapisz: "Save",
     dni: "days",
     uwaga: "Warning",
+    Parter: "Ground Floor",
   },
   si: {
     "Wyłącz automatycznie wszystkie światła o:":
