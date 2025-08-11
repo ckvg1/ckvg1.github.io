@@ -211,11 +211,11 @@
         maxOpacity: 0.7,
         minOpacity: 0,
         gradient: {
-          0: "#f7fbff",
-          0.25: "#c6dbef",
-          0.5: "#6baed6",
-          0.75: "#2171b5",
-          1: "#08306b",
+          0: "#ffffff",
+          0.25: "#78bcff",
+          0.5: "#6fa0ff",
+          0.75: "#3f85fe",
+          1: "#0020ff",
         },
       });
 
@@ -224,6 +224,7 @@
         fetch(endpoint)
           .then((res) => res.json())
           .then((dane) => {
+            console.log(endpoint, dane);
             let points = [];
             const cords =
               pietro == 0
