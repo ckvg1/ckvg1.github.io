@@ -17,7 +17,7 @@ $tabela = isset($_GET["tabela"]) && in_array($_GET["tabela"], $dozwoloneTabele)
 $pietro = isset($_GET["pietro"]) ? intval($_GET["pietro"]) : 1;
 
 // Sprawdzenie, czy piętro jest poprawne
-if ($pietro < 1 || $pietro > 4) {
+if ($pietro < 0 || $pietro > 4) {
     die("Nieprawidłowe piętro");
 }
 
@@ -53,6 +53,13 @@ $sql = "SELECT * FROM $tabela
 
 // Modyfikacja zapytania SQL w zależności od piętra
 switch ($pietro) {
+    case 0:
+        if($tabela === "temperatura"){
+            $sql = str_replace("SELECT *", "SELECT t0_1, t0_2, t0_3, t_zewn, czas_dodania", $sql);
+        }else{
+            $sql = str_replace("SELECT *", "SELECT l0_1_1, l0_1_2, l0_2_1, l0_2_2, l0_3_1, l0_3_2");
+        }
+        break;
     case 1:
         if ($tabela === "temperatura") {
             $sql = str_replace("SELECT *", "SELECT t1_1, t1_2, t1_3, t1_4, t1_5, t1_6, t1_7, t_zewn, czas_dodania", $sql);

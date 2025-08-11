@@ -207,7 +207,7 @@ error_reporting(E_ALL); // Pokazuj wszystkie typy błędów
     $srednia = znajdzSredniaTemperature($pomieszczenia[$pietro]);
     $sredniaTempZewn = obliczSredniaTemperatureZewnetrzna($temp_zewn);
 
-    $bledneCzujniki = sprawdzBledneDane($pomieszczenia[$pietro], $nazwy_czujnikow[$pietro-1]);
+    $bledneCzujniki = sprawdzBledneDane($pomieszczenia[$pietro], $nazwy_czujnikow[$pietro]);
 
     // Odpowiedź JSON
     $response = [
