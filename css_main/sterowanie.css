@@ -18,6 +18,10 @@ a {
   margin: auto;
 }
 
+.drugaNazwa{
+  display: none;
+}
+
 .zarowka{
   height: 40px;
 }
@@ -125,6 +129,7 @@ a {
   .temperatura, .nazwaBiura{
     font-size: 16pt;
   }
+  
   .nazwaBiura{
     border-top: 1px solid #000;
     border-left: 1px solid #000;
@@ -145,7 +150,11 @@ a {
     border-left: 1px solid #fff;
     border-right: 1px solid #fff;
   }
-
+  .drugaNazwa{
+    display: block;
+    border: none !important;
+    background-color: #fff;
+  }
   /* .temperatura, .blokRolety,.blokZarowki,.nazwaBiura{
     background-color: #fff;
   } */
@@ -186,6 +195,17 @@ a {
   #nazwa1_5,#nazwa2_5,#nazwa3_5{top: 226%;}
   #nazwa1_6,#nazwa2_6,#nazwa3_6{top: 226%;}
   #nazwa1_7,#nazwa2_7,#nazwa3_7{top: 279%;}
+
+  #nazwa0_1_2{top: 21%;left: 5%;width: 25%;}
+  #nazwa0_2_2{top: 65%;left: 5%;width: 25%;}
+  #nazwa0_3_2{top: 22%;left: 55%;width: 38%;}
+  #nazwa1_1_2,#nazwa2_1_2,#nazwa3_1_2{top: 21%;left: 5%;width: 25%;}
+  #nazwa1_2_2,#nazwa2_2_2,#nazwa3_2_2{top: 22%;left: 53%;width: 20%;}
+  #nazwa1_3_2,#nazwa2_3_2,#nazwa3_3_2{top: 22%;left: 76%;width: 20%;}
+  #nazwa1_4_2,#nazwa2_4_2,#nazwa3_4_2{top: 69%;left: 5%;width: 25%;}
+  #nazwa1_5_2,#nazwa2_5_2,#nazwa3_5_2{top: 69%;left: 35%;width: 16%;}
+  #nazwa1_6_2,#nazwa2_6_2,#nazwa3_6_2{top: 69%;left: 54%;width: 19%;}
+  #nazwa1_7_2,#nazwa2_7_2,#nazwa3_7_2{top: 69%;left: 76%;width: 19%;}
 
   #blokRolety0_2{top: 158%;}
   #blokRolety0_3{top: 217%;}
@@ -239,7 +259,6 @@ a {
   #nazwa1_5,#nazwa2_5,#nazwa3_5{top: 248%;}
   #nazwa1_6,#nazwa2_6,#nazwa3_6{top: 248%;}
   #nazwa1_7,#nazwa2_7,#nazwa3_7{top: 316%;}
-
 
   #blokRolety0_2{top: 166%;}
   #blokRolety0_3{top: 232%;}
