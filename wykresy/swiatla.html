@@ -138,7 +138,10 @@
       }
 
       function sprawdzCzySaDane(dane) {
-        return dane.some((wartosc) => wartosc != 0 && wartosc != null);
+        return dane.some(
+          (wartosc) =>
+            wartosc != 0 && wartosc != null && typeof wartosc === "number"
+        );
       }
 
       const alertBox = document.getElementById("alertBox");
