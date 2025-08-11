@@ -257,7 +257,7 @@
       document.querySelectorAll(".nazwaBiura").forEach((div) => {
         const id = div.id.replace("nazwa", "");
 
-        if (id.endsWith("_2")) {
+        if (id.endsWith("_2") && id.length > 4) {
           // To jest "drugi" div — kopiujemy nazwę z poprzednika
           const mainId = id.replace("_2", "");
           div.innerText = parsedCookie["r" + mainId] || "Brak nazwy";
