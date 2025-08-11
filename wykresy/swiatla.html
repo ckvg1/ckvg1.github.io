@@ -20,6 +20,7 @@
       -
       <input type="datetime-local" id="data2" />
       <select onchange="ustaw_pietro()" id="pietroSelect">
+        <option value="0">Piętro 0</option>
         <option value="1">Piętro 1</option>
         <option value="2">Piętro 2</option>
         <option value="3" selected>Piętro 3</option>
@@ -38,6 +39,7 @@
       "use strict";
       let pietro = 3;
 
+      // Bazowe czujniki dla pięter 1+
       const bazoweCzujniki = [
         "1_1",
         "1_2",
@@ -54,13 +56,21 @@
         "7_1",
         "7_2",
       ];
+      // Bazowe biura dla pięter 1+
       const bazoweBiura = ["1", "2", "3", "4", "5", "6", "7"];
 
+      // Bazowe czujniki dla parteru
+      const bazoweCzujnikiParter = ["1_1", "1_2", "2_1", "2_2", "3_1", "3_2"];
+      // Bazowe biura dla parteru
+      const bazoweBiuraParter = ["1", "2", "3"];
+
       function generujNazwyCzujnikow(pietro) {
-        return bazoweCzujniki.map((id) => `l${pietro}_${id}`);
+        const lista = pietro == 0 ? bazoweCzujnikiParter : bazoweCzujniki;
+        return lista.map((id) => `l${pietro}_${id}`);
       }
       function generujNazwyBiur(pietro) {
-        return bazoweBiura.map((id) => `r${pietro}_${id}`);
+        const lista = pietro == 0 ? bazoweBiuraParter : bazoweBiura;
+        return lista.map((id) => `r${pietro}_${id}`);
       }
 
       function ustaw_pietro() {
@@ -137,7 +147,6 @@
         fetch(endpoint)
           .then((res) => res.json())
           .then((dane) => {
-            console.log(Object.values(dane));
             if (!sprawdzCzySaDane(Object.values(dane))) {
               alertBox.style.display = "block";
               document.querySelector(".oaerror").innerHTML =
@@ -153,8 +162,9 @@
             document.getElementById("myDiv2").innerHTML = "";
             let values = [];
 
-            for (let i = 1; i <= 7; i++) {
-              values.push(dane[`l${pietro}_${i}_1`]);
+            const czujniki = generujNazwyCzujnikow(pietro);
+            for (let i = 0; i < czujniki.length; i += 2) {
+              values.push(dane[czujniki[i]]);
             }
 
             const labelsNames = biura.map((key) => parsedCookie[key] || key);
@@ -212,15 +222,22 @@
           .then((res) => res.json())
           .then((dane) => {
             let points = [];
-            const cords = [
-              [142, 198],
-              [550, 217],
-              [758, 216],
-              [144, 535],
-              [377, 537],
-              [557, 537],
-              [760, 537],
-            ];
+            const cords =
+              pietro == 0
+                ? [
+                    [142, 198],
+                    [550, 217],
+                    [758, 216],
+                  ]
+                : [
+                    [142, 198],
+                    [550, 217],
+                    [758, 216],
+                    [144, 535],
+                    [377, 537],
+                    [557, 537],
+                    [760, 537],
+                  ];
             let j = 0,
               max = 0;
 
