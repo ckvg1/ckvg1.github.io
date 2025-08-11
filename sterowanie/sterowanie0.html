@@ -61,8 +61,8 @@
           />
         </a>
       </div>
-      <div class="temperatura" id="t0_1">Błąd </div>
-      <div class="nazwaBiura" id="nazwa0_1">sd fsd fs dfs df sdf sd fsd fsd fsd fsd</div>
+      <div class="temperatura" id="t0_1">Błąd</div>
+      <div class="nazwaBiura" id="nazwa0_1"></div>
       <div class="nazwaBiura" id="nazwa0_1_2"></div>
       <div class="blokZarowki" id="blokZarowki0_2">
         <a onmousedown="wyslijTrue('l0_2_1')" style="cursor: pointer">
@@ -96,7 +96,7 @@
         />
       </div>
       <div class="temperatura" id="t0_2">Błąd odczytu</div>
-      <div class="nazwaBiura" id="nazwa0_2">sdf sdf sdf sdf sdf sdfsd fsd fsdf sdf</div>
+      <div class="nazwaBiura" id="nazwa0_2"></div>
       <div class="nazwaBiura" id="nazwa0_2_2"></div>
 
       <div class="blokZarowki" id="blokZarowki0_3">
@@ -130,7 +130,7 @@
         />
       </div>
       <div class="temperatura" id="t0_3">Błąd odczytu</div>
-      <div class="nazwaBiura" id="nazwa0_3">sd fsd fsdfs dfsdf sdf sdf sdf sd fsd</div>
+      <div class="nazwaBiura" id="nazwa0_3"></div>
       <div class="nazwaBiura" id="nazwa0_3_2"></div>
     </div>
 
@@ -142,5 +142,29 @@
       // }
     </script>
     <script src="sterowanie.js"></script>
+    <script>
+      // Pobranie i parsowanie ciasteczka
+      const cookie = getCookie("pietro0");
+      let parsedCookie = {};
+      if (cookie) {
+        parsedCookie = JSON.parse(cookie);
+      } else {
+        console.log("Ciasteczko nie istnieje!");
+      }
+
+      // Ustawianie nazw w divach
+      document.querySelectorAll(".nazwaBiura").forEach((div) => {
+        const id = div.id.replace("nazwa", "");
+
+        if (id.endsWith("_2")) {
+          // To jest "drugi" div — kopiujemy nazwę z poprzednika
+          const mainId = id.replace("_2", "");
+          div.innerText = parsedCookie["r" + mainId] || "Brak nazwy";
+        } else {
+          // To jest główny div — ustawiamy z cookies
+          div.innerText = parsedCookie["r" + id] || "Brak nazwy";
+        }
+      });
+    </script>
   </body>
 </html>

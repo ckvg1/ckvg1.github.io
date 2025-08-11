@@ -241,22 +241,26 @@
       <div class="nazwaBiura" id="nazwa2_7_2"></div>
     </div>
     <script>
-      //Skrypt do ustawiania nazw z cookies
-      const nazwyDivy = document.querySelectorAll(".nazwaBiura");
+      // Pobranie i parsowanie ciasteczka
+      const cookie = getCookie("pietro2");
+      let parsedCookie = {};
+      if (cookie) {
+        parsedCookie = JSON.parse(cookie);
+      } else {
+        console.log("Ciasteczko nie istnieje!");
+      }
 
-      nazwyDivy.forEach((div) => {
+      // Ustawianie nazw w divach
+      document.querySelectorAll(".nazwaBiura").forEach((div) => {
         const id = div.id.replace("nazwa", "");
-        const cookie = getCookie("pietro2");
-        if (!cookie) {
-          console.log("Ciasteczko nie istnieje!");
-        }
-        const parsedCookie = JSON.parse(cookie);
-        // console.log("Parsed cookie:", parsedCookie);
-        //console.log("ID: ", id);
-        if (cookie) {
-          div.innerText = parsedCookie["r" + id];
+
+        if (id.endsWith("_2")) {
+          // To jest "drugi" div — kopiujemy nazwę z poprzednika
+          const mainId = id.replace("_2", "");
+          div.innerText = parsedCookie["r" + mainId] || "Brak nazwy";
         } else {
-          div.innerText = "Brak nazwy";
+          // To jest główny div — ustawiamy z cookies
+          div.innerText = parsedCookie["r" + id] || "Brak nazwy";
         }
       });
     </script>
