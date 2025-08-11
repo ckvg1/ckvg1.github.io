@@ -39,8 +39,9 @@
         </h1>
         <div>
           <select id="temperaturaPietroSelect">
+            <option disabled value="0">Parter</option>
             <option disabled value="1">Piętro 1</option>
-            <option value="2">Piętro 2</option>
+            <option selected value="2">Piętro 2</option>
             <option value="3">Piętro 3</option>
           </select>
         </div>
@@ -103,6 +104,7 @@
 
         <div>
           <select id="swiatloPietroSelect">
+            <option disabled value="0">Parter</option>
             <option disabled value="1">Piętro 1</option>
             <option value="2">Piętro 2</option>
             <option value="3">Piętro 3</option>
@@ -234,7 +236,8 @@
       <section id="raporty">
         <h1>Raporty</h1>
         <select id="raportySelect" style="margin: 10px">
-          <option value="1">1 piętro</option>
+          <option disabled value="0">Parter</option>
+          <option disabled value="1">1 piętro</option>
           <option value="2">2 piętro</option>
           <option value="3">3 piętro</option>
           <option selected value="4">Wszystkie piętra</option>
@@ -259,11 +262,20 @@
               { id: "pobierzRaportSwiatlaButton", label: "światła" },
             ];
 
-            buttons.forEach(({ id, label }) => {
-              document.getElementById(
-                id
-              ).innerText = `Pobierz miesięczny raport ${label}${postfix}`;
-            });
+            if (pietro == 0) {
+              buttons.forEach(({ id, label }) => {
+                document.getElementById(
+                  id
+                ).innerText = `Pobierz miesięczny raport - Parter`;
+              });
+            } else {
+              buttons.forEach(({ id, label }) => {
+                document.getElementById(
+                  id
+                ).innerText = `Pobierz miesięczny raport ${label}${postfix}`;
+              });
+            }
+
             translatePage(getCookie("lang") || "pl");
           });
 

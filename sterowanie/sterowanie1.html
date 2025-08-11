@@ -63,7 +63,7 @@
       </div>
       <div class="temperatura" id="t1_1">Błąd odczytu</div>
       <div class="nazwaBiura" id="nazwa1_1"></div>
-      <div class="nazwaBiura" id="nazwa1_1_2"></div>
+      <div class="nazwaBiura drugaNazwa" id="nazwa1_1_2"></div>
 
       <div class="blokZarowki" id="blokZarowki1_2">
         <a onmousedown="wyslijTrue('l1_2_1')" style="cursor: pointer">
@@ -84,7 +84,7 @@
       </div>
       <div class="temperatura" id="t1_2">Błąd odczytu</div>
       <div class="nazwaBiura" id="nazwa1_2"></div>
-      <div class="nazwaBiura" id="nazwa1_2_2"></div>
+      <div class="nazwaBiura drugaNazwa" id="nazwa1_2_2"></div>
 
       <div class="blokZarowki" id="blokZarowki1_3">
         <a onmousedown="wyslijTrue('l1_3_1')" style="cursor: pointer">
@@ -104,7 +104,7 @@
       </div>
       <div class="temperatura" id="t1_3">Błąd odczytu</div>
       <div class="nazwaBiura" id="nazwa1_3"></div>
-      <div class="nazwaBiura" id="nazwa1_3_2"></div>
+      <div class="nazwaBiura drugaNazwa" id="nazwa1_3_2"></div>
 
       <div class="blokZarowki" id="blokZarowki1_4">
         <a onmousedown="wyslijTrue('l1_4_1')" style="cursor: pointer">
@@ -138,7 +138,7 @@
       </div>
       <div class="temperatura" id="t1_4">Błąd odczytu</div>
       <div class="nazwaBiura" id="nazwa1_4"></div>
-      <div class="nazwaBiura" id="nazwa1_4_2"></div>
+      <div class="nazwaBiura drugaNazwa" id="nazwa1_4_2"></div>
 
       <div class="blokZarowki" id="blokZarowki1_5">
         <a onmousedown="wyslijTrue('l1_5_1')" style="cursor: pointer">
@@ -172,7 +172,7 @@
       </div>
       <div class="temperatura" id="t1_5">Błąd odczytu</div>
       <div class="nazwaBiura" id="nazwa1_5"></div>
-      <div class="nazwaBiura" id="nazwa1_5_2"></div>
+      <div class="nazwaBiura drugaNazwa" id="nazwa1_5_2"></div>
 
       <div class="blokZarowki" id="blokZarowki1_6">
         <a onmousedown="wyslijTrue('l1_6_1')" style="cursor: pointer">
@@ -206,7 +206,7 @@
       </div>
       <div class="temperatura" id="t1_6">Błąd odczytu</div>
       <div class="nazwaBiura" id="nazwa1_6"></div>
-      <div class="nazwaBiura" id="nazwa1_6_2"></div>
+      <div class="nazwaBiura drugaNazwa" id="nazwa1_6_2"></div>
       <div class="blokZarowki" id="blokZarowki1_7">
         <a onmousedown="wyslijTrue('l1_7_1')" style="cursor: pointer">
           <img
@@ -239,7 +239,7 @@
       </div>
       <div class="temperatura" id="t1_7">Błąd odczytu</div>
       <div class="nazwaBiura" id="nazwa1_7"></div>
-      <div class="nazwaBiura" id="nazwa1_7_2"></div>
+      <div class="nazwaBiura drugaNazwa" id="nazwa1_7_2"></div>
     </div>
     <script src="../js/dark_mode.js"></script>
     <script>
@@ -250,22 +250,26 @@
     </script>
     <script src="sterowanie.js"></script>
     <script>
-      //Skrypt do ustawiania nazw z cookies
-      const nazwyDivy = document.querySelectorAll(".nazwaBiura");
+      // Pobranie i parsowanie ciasteczka
+      const cookie = getCookie("pietro1");
+      let parsedCookie = {};
+      if (cookie) {
+        parsedCookie = JSON.parse(cookie);
+      } else {
+        console.log("Ciasteczko nie istnieje!");
+      }
 
-      nazwyDivy.forEach((div) => {
+      // Ustawianie nazw w divach
+      document.querySelectorAll(".nazwaBiura").forEach((div) => {
         const id = div.id.replace("nazwa", "");
-        const cookie = getCookie("pietro1");
-        if (!cookie) {
-          console.log("Ciasteczko nie istnieje!");
-        }
-        const parsedCookie = JSON.parse(cookie);
-        // console.log("Parsed cookie:", parsedCookie);
-        //console.log("ID: ", id);
-        if (cookie) {
-          div.innerText = parsedCookie["r" + id];
+
+        if (id.endsWith("_2")) {
+          // To jest "drugi" div — kopiujemy nazwę z poprzednika
+          const mainId = id.replace("_2", "");
+          div.innerText = parsedCookie["r" + mainId] || "Brak nazwy";
         } else {
-          div.innerText = "Brak nazwy";
+          // To jest główny div — ustawiamy z cookies
+          div.innerText = parsedCookie["r" + id] || "Brak nazwy";
         }
       });
     </script>
