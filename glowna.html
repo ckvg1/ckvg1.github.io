@@ -676,13 +676,20 @@
             </div>
           </form>
         </div>
-        <button
-          id="reset"
-          title="Naciśnij dwukrotnie aby zresetowac nazwy"
-          onclick="resetujNazwy()"
-        >
-          Reset
-        </button>
+        <div style="display: flex; justify-content: space-between">
+          <button
+            id="reset"
+            title="Naciśnij aby zresetowac nazwy."
+            onclick="resetujNazwy()"
+          >
+            Reset
+          </button>
+          <img
+            src="./img_main/icony/location-pin.png"
+            style="width: 50px"
+            alt="Location Pin image"
+          />
+        </div>
         <script>
           let pietro = 3;
 
@@ -903,9 +910,9 @@
             t0_1: "t0_1",
             t0_2: "t0_2",
             t0_3: "t0_3",
-            r1_1: "r1_1",
-            r1_2: "r1_2",
-            r1_3: "r1_3",
+            r0_1: "r0_1",
+            r0_2: "r0_2",
+            r0_3: "r0_3",
           };
           const default1 = {
             l1_1_1: "1_1_1",
@@ -1022,16 +1029,16 @@
           }
 
           // Sprawdzenie ciasteczek i ustawienie domyślnych wartości
-          if (getCookie("pietro0" === "")) {
+          if (!getCookie("pietro0")) {
             setCookie("pietro0", JSON.stringify(default0));
           }
-          if (getCookie("pietro1") === "") {
+          if (!getCookie("pietro1")) {
             setCookie("pietro1", JSON.stringify(default1));
           }
-          if (getCookie("pietro2") === "") {
+          if (!getCookie("pietro2")) {
             setCookie("pietro2", JSON.stringify(default2));
           }
-          if (getCookie("pietro3") === "") {
+          if (!getCookie("pietro3")) {
             setCookie("pietro3", JSON.stringify(default3));
           }
 
