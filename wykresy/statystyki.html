@@ -332,7 +332,7 @@
       addEventListener("DOMContentLoaded", fetchStartData);
 
       function fetchStartData() {
-        //fetchHarmonogramData();
+        fetchHarmonogramData();
         fetchTemperaturaData();
         fetchSwiatloData();
       }
@@ -344,8 +344,10 @@
             const godzinaInput = document.getElementById(
               "harmonogramGodzinaInput"
             );
-            if (!harmonogram.godzinaOFF.isNaN()) {
-              godzinaInput.value = harmonogram.godzinaOFF;
+            if (harmonogram.all_OFF_l2) {
+              if (harmonogram.all_OFF_l2 == harmonogram.all_OFF_l3) {
+                godzinaInput.value = harmonogram.all_OFF_l2;
+              }
             }
           });
       }

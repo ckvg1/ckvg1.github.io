@@ -351,7 +351,7 @@ function connectedWrite(err) {
       const data = cache.get("swiatlaData"); // Pobieramy wyjścia świateł z cache
       if (data) res.write(`data: ${JSON.stringify(data)}\n\n`);
     };
-    s;
+
     const interval = setInterval(sendLights, lights_timeout);
     req.on("close", () => clearInterval(interval)); //po zamknięciu połączenia, zatrzymujemy wysyłanie danych
   });
