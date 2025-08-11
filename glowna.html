@@ -95,16 +95,18 @@
               Temperatura
             </button>
           </li>
-
           <li>
             <button
-              style="
-                color: grey;
-                border: none;
-                cursor: not-allowed;
-                padding: 0p;
-              "
-              title="Pierwsze piętro jeszcze nie jest zrobione."
+              onclick="znikanie()"
+              class="tab-button"
+              data-tab="pietro0"
+              data-src="sterowanie/sterowanie0.html"
+            >
+              Parter
+            </button>
+          </li>
+          <li>
+            <button
               onclick="znikanie()"
               class="tab-button"
               data-tab="pietro1"
@@ -982,12 +984,16 @@
       </section>
       <section id="swiatla" class="tab-content"></section>
       <section id="temperatura" class="tab-content"></section>
+      <section id="pietro0" class="tab-content">
+        <h1>strona 0</h1>
+        <p>zakladka</p>
+      </section>
       <section id="pietro1" class="tab-content">
-        <h1>strona 2</h1>
+        <h1>strona 1</h1>
         <p>zakladka</p>
       </section>
       <section id="pietro2" class="tab-content">
-        <h1>strona 3</h1>
+        <h1>strona 2</h1>
         <p>zakladka</p>
       </section>
       <section id="pietro3" class="tab-content">
