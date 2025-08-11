@@ -95,7 +95,7 @@ addEventListener("DOMContentLoaded", () => {
     clearTimeout(connectionTimeout);
     const dane = JSON.parse(event.data);
     Object.entries(dane).forEach(([id, wartosc]) => { 
-      console.log('Rolety id:', id, 'wartosc:', wartosc);
+      //console.log('Rolety id:', id, 'wartosc:', wartosc);
       const el = document.getElementById(
         id.split("_")[1] + "_" + id.split("_")[2] + "_" + id.split("_")[3]
       );
