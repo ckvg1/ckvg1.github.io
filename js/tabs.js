@@ -65,9 +65,9 @@ async function znikanie() {
     tabsList.style.right = "-300px";
     burger.classList.toggle("change");
     await sleep(500);
-    tabsList.style.display = "none";
+    tabslist.style.display = "none";
   } else {
-    tabsList.style.display = "block";
+    tabslist.style.display = "block";
   }
   pojawianie()
 }

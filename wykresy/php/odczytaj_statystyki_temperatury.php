@@ -1,78 +1,79 @@
 <?php
-    // Połączenie z bazą danych
+    ini_set('display_errors', 1); // Włącz wyświetlanie błędów
+ini_set('display_startup_errors', 1); // Błędy przy starcie
+error_reporting(E_ALL); // Pokazuj wszystkie typy błędów
+
     $conn = mysqli_connect("localhost", "root", "", "plc_database");
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
     }
-    //ini_set('display_errors', 1);
-    //ini_set('display_startup_errors', 1);
-    //error_reporting(E_ALL);
 
-    // Parametr GET
-    $pietro = isset($_GET["pietro"]) ? intval($_GET["pietro"]) : 1;
-    $czas = isset($_GET["czas"]) ? intval($_GET["czas"]) : 1; // Domyślnie 1 to 24h
+    // Parametry GET
+    $pietro = isset($_GET["pietro"]) ? intval($_GET["pietro"]) : 2;
+    $czas = isset($_GET["czas"]) ? intval($_GET["czas"]) : 1;
 
-    // Sprawdzenie, czy piętro jest poprawne
-    if ($pietro < 1 || $pietro > 3) {
+    // Walidacja pietra (0 = parter, 1-3 = piętra)
+    if ($pietro < 0 || $pietro > 3) {
         die("Nieprawidłowe piętro");
     }
 
-    // Sprawdzenie, czy czas jest poprawny
+    // Walidacja czasu
     if ($czas < 1 || $czas > 3) {
         die("Nieprawidłowy czas");
     }
 
-    // Ustawienie interwału w zależności od wybranego czasu
-    // 1 - 24h, 2 - 7 dni, 3 - 30 dni
-
-
-    $interval;
+    // Ustawienie interwału
     switch($czas) {
-        case 1: // 24h
-            $interval = "1";
-            break;
-        case 2: // 7 dni
-            $interval = "7";
-            break;
-        case 3: // 30 dni
-            $interval = "30";
-            break;
-        default:
-            die("Nieprawidłowy czas");
+        case 1: $interval = "1"; break;
+        case 2: $interval = "7"; break;
+        case 3: $interval = "30"; break;
     }
-    // Zapytanie SQL w zależności od piętra
-    $sql_temp = "SELECT t{$pietro}_1, t{$pietro}_2, t{$pietro}_3, t{$pietro}_4, t{$pietro}_5, t{$pietro}_6, t{$pietro}_7, t_zewn, czas_dodania FROM temperatura WHERE czas_dodania > NOW() - INTERVAL $interval DAY ORDER BY czas_dodania DESC";
-    
+
+    // SQL w zależności od pietra
+    if ($pietro == 0) {
+        $sql_temp = "SELECT t0_1, t0_2, t0_3, t_zewn, czas_dodania 
+                     FROM temperatura 
+                     WHERE czas_dodania > NOW() - INTERVAL $interval DAY 
+                     ORDER BY czas_dodania DESC";
+    } else {
+        $sql_temp = "SELECT t{$pietro}_1, t{$pietro}_2, t{$pietro}_3, t{$pietro}_4, t{$pietro}_5, t{$pietro}_6, t{$pietro}_7, t_zewn, czas_dodania 
+                     FROM temperatura 
+                     WHERE czas_dodania > NOW() - INTERVAL $interval DAY 
+                     ORDER BY czas_dodania DESC";
+    }
 
     // Inicjalizacja tablic
-    $czas = [];
+    $czas_arr = [];
+    $t0_1 = $t0_2 = $t0_3 = [];
     $t1_1 = $t1_2 = $t1_3 = $t1_4 = $t1_5 = $t1_6 = $t1_7 = [];
     $t2_1 = $t2_2 = $t2_3 = $t2_4 = $t2_5 = $t2_6 = $t2_7 = [];
     $t3_1 = $t3_2 = $t3_3 = $t3_4 = $t3_5 = $t3_6 = $t3_7 = [];
     $temp_zewn = [];
 
-    // Pobieranie danych z bazy
+    // Pobieranie danych
     $result = mysqli_query($conn, $sql_temp);
-        if (!$result || mysqli_num_rows($result) === 0) {
-        // Brak danych w tabeli
-        $null_response_text = "brak danych";
-        // Czujniki pusta odpowiedz zeby nie pisac 2 razy tego samego na stronie
-        $response = [
-            'najmniejszaTemperatura' => $null_response_text,
-            'najwyzszaTemperatura' => $null_response_text,
-            'sredniaTemperatura' => $null_response_text,
+    if (!$result || mysqli_num_rows($result) === 0) {
+        echo json_encode([
+            'najmniejszaTemperatura' => "brak danych",
+            'najwyzszaTemperatura' => "brak danych",
+            'sredniaTemperatura' => "brak danych",
             'najnizszaTemperaturaCzujnik' => "",
             'najwyzszaTemperaturaCzujnik' => "",
-            'sredniaZewnetrzna' => $null_response_text
-        ];
-        echo json_encode($response);
+            'sredniaZewnetrzna' => "brak danych"
+        ]);
         mysqli_close($conn);
         exit;
     }
 
     while ($row = mysqli_fetch_assoc($result)) {
-        $czas[] = $row['czas_dodania'];
-        switch($pietro){
+        $czas_arr[] = $row['czas_dodania'];
+
+        switch($pietro) {
+            case 0:
+                if (!is_null($row['t0_1'])) $t0_1[] = round($row['t0_1'], 1);
+                if (!is_null($row['t0_2'])) $t0_2[] = round($row['t0_2'], 1);
+                if (!is_null($row['t0_3'])) $t0_3[] = round($row['t0_3'], 1);
+                break;
             case 1:
                 if (!is_null($row['t1_1'])) $t1_1[] = round($row['t1_1'], 1);
                 if (!is_null($row['t1_2'])) $t1_2[] = round($row['t1_2'], 1);
@@ -81,8 +82,8 @@
                 if (!is_null($row['t1_5'])) $t1_5[] = round($row['t1_5'], 1);
                 if (!is_null($row['t1_6'])) $t1_6[] = round($row['t1_6'], 1);
                 if (!is_null($row['t1_7'])) $t1_7[] = round($row['t1_7'], 1);
-                break; 
-            case 2: 
+                break;
+            case 2:
                 if (!is_null($row['t2_1'])) $t2_1[] = round($row['t2_1'], 1);
                 if (!is_null($row['t2_2'])) $t2_2[] = round($row['t2_2'], 1);
                 if (!is_null($row['t2_3'])) $t2_3[] = round($row['t2_3'], 1);
@@ -90,8 +91,8 @@
                 if (!is_null($row['t2_5'])) $t2_5[] = round($row['t2_5'], 1);
                 if (!is_null($row['t2_6'])) $t2_6[] = round($row['t2_6'], 1);
                 if (!is_null($row['t2_7'])) $t2_7[] = round($row['t2_7'], 1);
-                break; 
-            case 3: 
+                break;
+            case 3:
                 if (!is_null($row['t3_1'])) $t3_1[] = round($row['t3_1'], 1);
                 if (!is_null($row['t3_2'])) $t3_2[] = round($row['t3_2'], 1);
                 if (!is_null($row['t3_3'])) $t3_3[] = round($row['t3_3'], 1);
@@ -101,28 +102,29 @@
                 if (!is_null($row['t3_7'])) $t3_7[] = round($row['t3_7'], 1);
                 break;
         }
-        if (!is_null($row['t_zewn'])) $temp_zewn[] = round($row['t_zewn'],1);
-    }
-    
-    
-    
-    
 
-    // Grupowanie pomieszczeń w piętra (pomiesczczenia[][] dla temperatury
+        if (!is_null($row['t_zewn'])) $temp_zewn[] = round($row['t_zewn'], 1);
+    }
+
+    // Grupowanie
     $pomieszczenia = [
+        [$t0_1, $t0_2, $t0_3], // parter
         [$t1_1, $t1_2, $t1_3, $t1_4, $t1_5, $t1_6, $t1_7],
         [$t2_1, $t2_2, $t2_3, $t2_4, $t2_5, $t2_6, $t2_7],
         [$t3_1, $t3_2, $t3_3, $t3_4, $t3_5, $t3_6, $t3_7]
     ];
-   
+
+    // Cookies nazwy
+    $pietro0 = isset($_COOKIE["pietro0"]) ? json_decode($_COOKIE["pietro0"], true) : [];
     $pietro1 = isset($_COOKIE["pietro1"]) ? json_decode($_COOKIE["pietro1"], true) : [];
     $pietro2 = isset($_COOKIE["pietro2"]) ? json_decode($_COOKIE["pietro2"], true) : [];
     $pietro3 = isset($_COOKIE["pietro3"]) ? json_decode($_COOKIE["pietro3"], true) : [];
-   
+
     $nazwy_czujnikow = [
-        [$pietro1["t1_1"],$pietro1["t1_2"], $pietro1["t1_3"], $pietro1["t1_4"], $pietro1["t1_5"], $pietro1["t1_6"], $pietro1["t1_7"]],
-        [$pietro2["t2_1"],$pietro2["t2_2"], $pietro2["t2_3"], $pietro2["t2_4"], $pietro2["t2_5"], $pietro2["t2_6"], $pietro2["t2_7"]],
-        [$pietro3["t3_1"],$pietro3["t3_2"], $pietro3["t3_3"], $pietro3["t3_4"], $pietro3["t3_5"], $pietro3["t3_6"], $pietro3["t3_7"]]
+        [$pietro0["t0_1"], $pietro0["t0_2"], $pietro0["t0_3"]],
+        [$pietro1["t1_1"], $pietro1["t1_2"], $pietro1["t1_3"], $pietro1["t1_4"], $pietro1["t1_5"], $pietro1["t1_6"], $pietro1["t1_7"]],
+        [$pietro2["t2_1"], $pietro2["t2_2"], $pietro2["t2_3"], $pietro2["t2_4"], $pietro2["t2_5"], $pietro2["t2_6"], $pietro2["t2_7"]],
+        [$pietro3["t3_1"], $pietro3["t3_2"], $pietro3["t3_3"], $pietro3["t3_4"], $pietro3["t3_5"], $pietro3["t3_6"], $pietro3["t3_7"]]
     ];
         
 
@@ -200,20 +202,20 @@
     }
     
     // Obliczenia
-    $najnizsza = znajdzNajmniejszaTemperature($pomieszczenia[$pietro-1]);
-    $najwyzsza = znajdzNajwyzszaTemperature($pomieszczenia[$pietro-1]);
-    $srednia = znajdzSredniaTemperature($pomieszczenia[$pietro-1]);
+    $najnizsza = znajdzNajmniejszaTemperature($pomieszczenia[$pietro]);
+    $najwyzsza = znajdzNajwyzszaTemperature($pomieszczenia[$pietro]);
+    $srednia = znajdzSredniaTemperature($pomieszczenia[$pietro]);
     $sredniaTempZewn = obliczSredniaTemperatureZewnetrzna($temp_zewn);
 
-    $bledneCzujniki = sprawdzBledneDane($pomieszczenia[$pietro-1], $nazwy_czujnikow[$pietro-1]);
+    $bledneCzujniki = sprawdzBledneDane($pomieszczenia[$pietro], $nazwy_czujnikow[$pietro-1]);
 
     // Odpowiedź JSON
     $response = [
         'najmniejszaTemperatura' => $najnizsza['temp'] ?? "Brak danych",
         'najwyzszaTemperatura' => $najwyzsza['temp'] ?? "Brak danych",
         'sredniaTemperatura' => $srednia ?? "Brak danych",
-        'najnizszaTemperaturaCzujnik' => $nazwy_czujnikow[$pietro-1][$najnizsza['czujnik']] ?? "",
-        'najwyzszaTemperaturaCzujnik' => $nazwy_czujnikow[$pietro-1][$najwyzsza['czujnik']] ?? "",
+        'najnizszaTemperaturaCzujnik' => $nazwy_czujnikow[$pietro][$najnizsza['czujnik']] ?? "",
+        'najwyzszaTemperaturaCzujnik' => $nazwy_czujnikow[$pietro][$najwyzsza['czujnik']] ?? "",
         'sredniaZewnetrzna' => $sredniaTempZewn ?? "Brak danych",
         'bledneDane' => !empty($bledneCzujniki),
         'czujnikBledneDane' => $bledneCzujniki

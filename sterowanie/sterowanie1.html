@@ -249,5 +249,25 @@
       }
     </script>
     <script src="sterowanie.js"></script>
+    <script>
+      //Skrypt do ustawiania nazw z cookies
+      const nazwyDivy = document.querySelectorAll(".nazwaBiura");
+
+      nazwyDivy.forEach((div) => {
+        const id = div.id.replace("nazwa", "");
+        const cookie = getCookie("pietro1");
+        if (!cookie) {
+          console.log("Ciasteczko nie istnieje!");
+        }
+        const parsedCookie = JSON.parse(cookie);
+        // console.log("Parsed cookie:", parsedCookie);
+        //console.log("ID: ", id);
+        if (cookie) {
+          div.innerText = parsedCookie["r" + id];
+        } else {
+          div.innerText = "Brak nazwy";
+        }
+      });
+    </script>
   </body>
 </html>
