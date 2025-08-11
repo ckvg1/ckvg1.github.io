@@ -30,6 +30,7 @@
         -
         <input type="datetime-local" id="data2" />
         <select onchange="ustaw_pietro()" id="pietroSelect">
+          <option value="0">Piętro 0</option>
           <option disabled value="1">Piętro 1</option>
           <option value="2">Piętro 2</option>
           <option value="3" selected>Piętro 3</option>
@@ -52,17 +53,15 @@
 
       let currentMode = "markers"; // tryb wykresu: markers / lines
       let pietro = "3"; // domyślne piętro
-      // Funkcja do ustawienia piętra na podstawie wyboru użytkownika
+
       function ustaw_pietro() {
         const select = document.getElementById("pietroSelect");
         pietro = select.value;
-        //console.log("Wybrane piętro:", pietro);
       }
 
       const zakresDat = document.getElementById("zakresDat");
       const filtrujBtn = document.getElementById("filtrujBtn");
 
-      // Formatowanie daty do czytelnej postaci
       function formatDate(dateString) {
         const date = new Date(dateString);
         const year = date.getFullYear();
@@ -72,6 +71,7 @@
         const minutes = String(date.getMinutes()).padStart(2, "0");
         return `${day}-${month}-${year} ${hours}:${minutes}`;
       }
+
       function getCookie(name) {
         let cname = name + "=";
         let decodedCookie = decodeURIComponent(document.cookie);
@@ -87,11 +87,15 @@
 
       let cookie = getCookie("pietro" + pietro);
       let parsedCookie = JSON.parse(cookie);
+
       const bazoweBiura = ["1", "2", "3", "4", "5", "6", "7"];
+      const bazoweBiuraParter = ["1", "2", "3"];
+
       function generujNazwyBiur(pietro) {
-        return bazoweBiura.map((id) => `r${pietro}_${id}`);
+        const lista = pietro === "0" ? bazoweBiuraParter : bazoweBiura;
+        return lista.map((id) => `r${pietro}_${id}`);
       }
-      // Pobieranie danych i rysowanie wykresu
+
       function fetchAndPlot(url, layoutOverrides = {}) {
         const nazwyBiur = generujNazwyBiur(pietro);
 
@@ -103,44 +107,37 @@
             return response.json();
           })
           .then((dane) => {
-            //console.log("Dane do wykresu:", dane);
             const seriesData = [];
-            //console.log("Parsed cookie:", parsedCookie);
             const nazwy = nazwyBiur.map((key) => parsedCookie[key] || key);
-            //console.log("Nazwy biur:", nazwyBiur);
-            //console.log("Nazwy biur pobrane z cookie:", nazwy);
-            for (let i = 1; i <= 8; i++) {
-              //lecimy do 7 bo tyle czujnikow
 
+            const liczbaCzujnikow = pietro === "0" ? 3 : 7;
+
+            for (let i = 1; i <= liczbaCzujnikow; i++) {
               const key = `Temp. ${pietro}_${i}`;
               if (dane[key]) {
                 seriesData.push({
                   x: dane.Data,
                   y: dane[key],
                   mode: currentMode,
-                  name: nazwy[i - 1] || key, // używamy nazwy z cookie lub domyślnej
-                  line: { shape: "spline" }, //vh - schodkowe
-                });
-              }
-              if (i == 8) {
-                seriesData.push({
-                  x: dane.Data,
-                  y: dane["Temp. zewn"],
-                  mode: currentMode,
-                  name: `Temp. zewn`,
-                  line: { shape: "spline" }, //vh
+                  name: nazwy[i - 1] || key,
+                  line: { shape: "spline" },
                 });
               }
             }
 
-            // Przekształć na wykres schodkowy jeśli tryb to "lines"
-            if (currentMode === "lines") {
-              //zrobWykresSchodkowy(seriesData[0]);
+            // Dodaj temperatura zewnętrzną
+            if (dane["Temp. zewn"]) {
+              seriesData.push({
+                x: dane.Data,
+                y: dane["Temp. zewn"],
+                mode: currentMode,
+                name: `Temp. zewn`,
+                line: { shape: "spline" },
+              });
             }
 
             const defaultLayout = {
-              bgcolor: "rgb(211, 226, 236)", // tło całego wykresu
-              bgcolor: "rgb(211, 226, 236)", // tło obszaru wykresu
+              bgcolor: "rgb(211, 226, 236)",
               height: 650,
               title: "Temperatura",
               xaxis: {
@@ -156,7 +153,11 @@
             const layout = Object.assign({}, defaultLayout, layoutOverrides);
 
             let alertBox = document.getElementById("alertBox");
-            if (dane[`Temp. ${pietro}_1`].length == 0) {
+            if (
+              seriesData.length === 0 ||
+              (dane[`Temp. ${pietro}_1`] &&
+                dane[`Temp. ${pietro}_1`].length === 0)
+            ) {
               alertBox.style.display = "block";
               alertBox.innerHTML =
                 "<strong>Uwaga</strong> - Brak danych do wyświetlenia wykresu. Proszę podać daty pomiaru.";
@@ -167,24 +168,21 @@
 
             Plotly.newPlot("myPlot", seriesData, layout, {
               scrollZoom: true,
-
               responsive: true,
             });
           })
           .catch((error) => console.error("Error fetching data:", error));
       }
+
       function toLocalISOString(date = new Date()) {
         const pad = (num) => String(num).padStart(2, "0");
-
-        const year = date.getFullYear();
-        const month = pad(date.getMonth() + 1);
-        const day = pad(date.getDate());
-        const hour = pad(date.getHours());
-        const minute = pad(date.getMinutes());
-        const second = pad(date.getSeconds());
-        return `${year}-${month}-${day}T${hour}:${minute}:${second}`;
+        return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(
+          date.getDate()
+        )}T${pad(date.getHours())}:${pad(date.getMinutes())}:${pad(
+          date.getSeconds()
+        )}`;
       }
-      // Obsługa przycisku "Filtruj"
+
       function filtruj() {
         const dateInput1 = document.getElementById("data1").value;
         const dateInput2 = document.getElementById("data2").value;
@@ -195,11 +193,9 @@
           zakresDat.innerHTML = `Używam danych z: ${formatDate(
             data1
           )} - ${formatDate(data2)}`;
-          console.log(data1, data2);
           const url = `odczytaj_dane.php?data_od=${toLocalISOString(
             new Date(data1)
           )}&data_do=${toLocalISOString(new Date(data2))}&pietro=${pietro}`;
-          //console.log(url);
           fetchAndPlot(url);
         } else if (!dateInput1 && !dateInput2) {
           zakresDat.innerHTML = "Używam danych z: Ostatnie 24 godziny";
@@ -210,14 +206,13 @@
         translatePage(getCookie("lang") || "pl");
       }
 
-      // Zdarzenia
       filtrujBtn.addEventListener("click", filtruj);
       document.getElementById("switch").addEventListener("change", (e) => {
         currentMode = e.target.checked ? "lines" : "markers";
-        filtruj(); // Przeładuj wykres po zmianie trybu
+        filtruj();
       });
 
-      // Załaduj wykres domyślny
+      // Startowy wykres
       fetchAndPlot(`odczytaj_dane.php?pietro=${pietro}`);
     </script>
     <script src="../js/tabs.js"></script>

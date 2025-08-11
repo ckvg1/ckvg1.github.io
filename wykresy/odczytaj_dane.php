@@ -1,17 +1,6 @@
 <?php
 $conn = mysqli_connect("localhost", "root", "", "plc_database");
-
-$sql = "SELECT 
-
-t1_1, t1_2, t1_3, t1_4, t1_5, t1_6, t1_7, 
-t2_1, t2_2, t2_3, t2_4, t2_5, t2_6, t2_7,
-t3_1, t3_2, t3_3, t3_4, t3_5, t3_6, t3_7,
-t_zewn, czas_dodania 
-FROM temperatura 
-WHERE czas_dodania > NOW() - INTERVAL 1 DAY 
-ORDER BY czas_dodania DESC";
-/*
-Potrzebne do parteru: 
+ 
 $sql = "SELECT 
 t0_1, t0_2, t0_3,
 t1_1, t1_2, t1_3, t1_4, t1_5, t1_6, t1_7, 
@@ -21,10 +10,10 @@ t_zewn, czas_dodania
 FROM temperatura 
 WHERE czas_dodania > NOW() - INTERVAL 1 DAY 
 ORDER BY czas_dodania DESC";
-*/
+
 
 $czas = [];
-// $t0_1 = $t0_2 = $t0_3 = []; ODKOMENTUJ JAK BEDZIE POTRZEBNE DO PARTERU
+ $t0_1 = $t0_2 = $t0_3 = []; 
 $t1_1 = $t1_2 = $t1_3 = $t1_4 = $t1_5 = $t1_6 = $t1_7 = [];
 $t2_1 = $t2_2 = $t2_3 = $t2_4 = $t2_5 = $t2_6 = $t2_7 = [];
 $t3_1 = $t3_2 = $t3_3 = $t3_4 = $t3_5 = $t3_6 = $t3_7 = [];
@@ -34,17 +23,10 @@ if (isset($_GET["data_od"]) && isset($_GET["data_do"])) {
     $data_od = $_GET["data_od"];
     $data_do = $_GET["data_do"];
 
-    $sql = "SELECT 
-    t1_1, t1_2, t1_3, t1_4, t1_5, t1_6, t1_7, 
-    t2_1, t2_2, t2_3, t2_4, t2_5, t2_6, t2_7,
-    t3_1, t3_2, t3_3, t3_4, t3_5, t3_6, t3_7,
-    t_zewn, czas_dodania 
-    FROM temperatura 
-    WHERE czas_dodania BETWEEN '$data_od' AND '$data_do' 
-    ORDER BY czas_dodania DESC";
 
-    /*
-    Zamien na to, jak bedzie potrzebne do parteru: 
+
+    
+
 
     $sql = "SELECT 
     t0_1, t0_2, t0_3,
@@ -55,7 +37,7 @@ if (isset($_GET["data_od"]) && isset($_GET["data_do"])) {
     FROM temperatura 
     WHERE czas_dodania BETWEEN '$data_od' AND '$data_do' 
     ORDER BY czas_dodania DESC";
-    */
+    
 }
 
 $result = mysqli_query($conn, $sql);
@@ -64,10 +46,10 @@ while ($row = mysqli_fetch_assoc($result)) {
     $czas[] = $row['czas_dodania'];
 
 
-    //Odkomentowac jak bedzie potrzebne do parteru
-    //$t0_1[] = round($row['t0_1'], 1);
-    //$t0_2[] = round($row['t0_2'], 1);
-    //$t0_3[] = round($row['t0_3'], 1);
+    
+    $t0_1[] = round($row['t0_1'], 1);
+    $t0_2[] = round($row['t0_2'], 1);
+    $t0_3[] = round($row['t0_3'], 1);
 
     $t1_1[] = round($row['t1_1'],1);
     $t1_2[] = round($row['t1_2'],1);
@@ -100,19 +82,15 @@ $response = [];
 
 if (isset($_GET["pietro"])) {
     $pietro = $_GET["pietro"];
-    /*
-    Odkomentowac jak bedzie potrzebne do parteru
-    if($pietro == 0) {
+
+    if ($pietro == 0) {
         $response = [
             'Temp. 0_1' => $t0_1,
             'Temp. 0_2' => $t0_2,
             'Temp. 0_3' => $t0_3,
         ];
     } 
-    elseif */
-
-    */
-    if ($pietro == 1) {
+    elseif ($pietro == 1) {
         $response = [
             'Temp. 1_1' => $t1_1,
             'Temp. 1_2' => $t1_2,
