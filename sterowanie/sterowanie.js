@@ -1,4 +1,4 @@
-//sterowanie.js - sktrypt do obsługi sterowania w aplikacji 
+//sterowanie.js - sktrypt do obsługi sterowania w aplikacji
 
 /* 
   Funkcja moze sie przydac przy wysyłaniu żądań do serwera
@@ -15,7 +15,7 @@ const alertBox = document.getElementById("alertBox"); // element do wyświetlani
   flaga do sprawdzania, czy uzytkownik wyslal juz jakies zadanie do serwera (zeby uniknąć wielokrotnego wysyłania tego samego żądania)
   np. przy wielokrotnym kliknięciu na przycisk włączania
  */
-let isFetchingLight = false; 
+let isFetchingLight = false;
 let isFetchingBlinds = false;
 
 // funkcja do ponownego nawiązania połączenia z serwerem
@@ -34,7 +34,8 @@ function showAlert(
     no_internet +
     "' style='width: 20px; height: 20px; vertical-align: middle;' /> <a onclick='window.location.reload()' style='cursor: pointer; margin-left: 20px'> <strong> spróbuj ponownie </strong> </a>"
 ) {
-  if (document.body.classList.contains("ciemny")) { // sprawdzenie, czy strona jest w trybie ciemnym
+  if (document.body.classList.contains("ciemny")) {
+    // sprawdzenie, czy strona jest w trybie ciemnym
     no_internet = "../img_main/icony/no-internet-dark.png";
   } else {
     no_internet = "../img_main/icony/no-internet.png";
@@ -46,6 +47,7 @@ function showAlert(
 
 function hideAlert() {
   alertBox.style.display = "none"; // ukrycie alertu
+  document.getElementsByClassName("main_image")[0].style.opacity = "1"; // przywrócenie pełnej widoczności obrazu
 }
 
 // Po zaladowaniu strony, nawiązanie połączenia z serwerem i rozpoczęcie nasłuchiwania na zdarzenia
@@ -67,7 +69,8 @@ addEventListener("DOMContentLoaded", () => {
     Object.entries(dane).forEach(([id, wartosc]) => {
       const el = document.getElementById(id);
       if (el) {
-        if (el.id.slice(0,5) == "wyj_l") { // sprawdzenie, czy element jest wyjściem światła
+        if (el.id.slice(0, 5) == "wyj_l") {
+          // sprawdzenie, czy element jest wyjściem światła
           el.src = wartosc // w zalezonosci od wartosci, ustawiamy odpowiedni obrazek
             ? "../img_main/icony/bulb_on.png"
             : "../img_main/icony/bulb_of.png";
@@ -94,8 +97,8 @@ addEventListener("DOMContentLoaded", () => {
   roletyStream.onmessage = (event) => {
     clearTimeout(connectionTimeout);
     const dane = JSON.parse(event.data);
-    Object.entries(dane).forEach(([id, wartosc]) => { 
-      console.log('Rolety id:', id, 'wartosc:', wartosc);
+    Object.entries(dane).forEach(([id, wartosc]) => {
+      console.log("Rolety id:", id, "wartosc:", wartosc);
       const el = document.getElementById(
         id.split("_")[1] + "_" + id.split("_")[2] + "_" + id.split("_")[3]
       );
