@@ -194,10 +194,79 @@
         <h2>Ustawienia</h2>
         <p>Zmieniaj nazwy czujników i pomieszczeń.</p>
         <select id="pietro_settings_select" onchange="zmienPietroUstawienia()">
+          <option value="pietro0">Parter</option>
           <option value="pietro1">Piętro 1</option>
           <option value="pietro2">Piętro 2</option>
           <option selected="selected" value="pietro3">Piętro 3</option>
         </select>
+        <div id="pietro0_urzadzenia">
+          <form id="settingsForm0" class="settings_forms">
+            <div id="tabelka0">
+              <div class="swiatla_div" id="swiatla_div_0">
+                <div class="settingsInput">
+                  <label for="l0_1_1">Światło 1_1:</label>
+                  <input type="text" id="l0_1_1" name="l0_1_1" value="0_1_1" />
+                  <input type="time" id="l0_1_1_time" />
+                </div>
+                <div class="settingsInput">
+                  <label for="l0_1_2">Światło 1_2:</label>
+                  <input type="text" id="l0_1_2" name="l0_1_2" value="0_1_2" />
+                  <input type="time" id="l0_1_2_time" />
+                </div>
+                <div class="settingsInput">
+                  <label for="l0_2_1">Światło 2_1:</label>
+                  <input type="text" id="l0_2_1" name="l0_2_1" value="0_2_1" />
+                  <input type="time" id="l0_2_1_time" />
+                </div>
+                <div class="settingsInput">
+                  <label for="l0_2_2">Światło 2_2:</label>
+                  <input type="text" id="l0_2_2" name="l0_2_2" value="0_2_2" />
+                  <input type="time" id="l0_2_2_time" />
+                </div>
+                <div class="settingsInput">
+                  <label for="l0_3_1">Światło 3_1:</label>
+                  <input type="text" id="l0_3_1" name="l0_3_1" value="0_3_1" />
+                  <input type="time" id="l0_3_1_time" />
+                </div>
+                <div class="settingsInput">
+                  <label for="l0_3_2">Światło 3_2:</label>
+                  <input type="text" id="l0_3_2" name="l0_3_2" value="0_3_2" />
+                  <input type="time" id="l0_3_2_time" />
+                </div>
+              </div>
+              <div class="czujniki_div" id="czujniki_div_0">
+                <label for="t0_1">t0_1:</label>
+                <input type="text" id="t0_1" name="t0_1" value="t0_1" />
+                <br />
+                <label for="t0_2">t0_2:</label>
+                <input type="text" id="t0_2" name="t0_2" value="t0_2" />
+                <br />
+                <label for="t0_3">t0_3:</label>
+                <input type="text" id="t0_3" name="t0_3" value="t0_3" />
+              </div>
+              <div class="pokoje_div" id="pokoje_div_0">
+                <label for="r0_1">Biuro 1:</label>
+                <input type="text" id="r0_1" name="r0_1" value="Biuro 1" />
+                <br />
+                <label for="r0_2">Biuro 2:</label>
+                <input type="text" id="r0_2" name="r0_2" value="Biuro 2" />
+                <br />
+                <label for="r0_3">Biuro 3:</label>
+                <input type="text" id="r0_3" name="r0_3" value="Biuro 3" />
+                <br />
+              </div>
+            </div>
+            <div id="divZapisz">
+              <button
+                type="button"
+                class="przycisk"
+                onclick="zapiszUstawienia()"
+              >
+                Zapisz
+              </button>
+            </div>
+          </form>
+        </div>
         <div id="pietro1_urzadzenia">
           <form id="settingsForm1" class="settings_forms">
             <div id="tabelka1">
@@ -618,6 +687,8 @@
           let pietro = 3;
 
           function zmienPietroUstawienia() {
+            document.getElementById("pietro0_urzadzenia").style.display =
+              "none";
             document.getElementById("pietro1_urzadzenia").style.display =
               "none";
             document.getElementById("pietro2_urzadzenia").style.display =
@@ -628,8 +699,11 @@
             let wybranePietroElement = document.getElementById(
               "pietro_settings_select"
             ).value;
-
-            if (wybranePietroElement === "pietro1") {
+            if (wybranePietroElement === "pietro0") {
+              document.getElementById("pietro0_urzadzenia").style.display =
+                "block";
+              pietro = 0;
+            } else if (wybranePietroElement === "pietro1") {
               document.getElementById("pietro1_urzadzenia").style.display =
                 "block";
               pietro = 1;
@@ -722,14 +796,20 @@
             ];
             document.cookie = `lang=${language}; path=/; max-age=31536000`; // ustawienie ciasteczka z jezykiem na rok
 
+            const pietro0 = document.getElementById("pietro0_urzadzenia");
             const pietro1 = document.getElementById("pietro1_urzadzenia");
             const pietro2 = document.getElementById("pietro2_urzadzenia");
             const pietro3 = document.getElementById("pietro3_urzadzenia");
+            const form0 = document.getElementById("settingsForm0");
             const form1 = document.getElementById("settingsForm1");
             const form2 = document.getElementById("settingsForm2");
             const form3 = document.getElementById("settingsForm3");
 
             const modal = document.getElementById("settingsModal");
+            if (pietro == 0) {
+              const data0 = new FormData(form0);
+              setCookie("pietro0", JSON.stringify(Object.fromEntries(data0)));
+            }
             if (pietro == 1) {
               const data1 = new FormData(form1);
               //console.log(
@@ -813,6 +893,20 @@
           }
 
           //deafulowe wartosci zeby utworzyc ciasteczka
+          const default0 = {
+            l0_1_1: "0_1_1",
+            l0_1_2: "0_1_2",
+            l0_2_1: "0_2_1",
+            l0_2_2: "0_2_2",
+            l0_3_1: "0_3_1",
+            l0_3_2: "0_3_2",
+            t0_1: "t0_1",
+            t0_2: "t0_2",
+            t0_3: "t0_3",
+            r1_1: "r1_1",
+            r1_2: "r1_2",
+            r1_3: "r1_3",
+          };
           const default1 = {
             l1_1_1: "1_1_1",
             l1_1_2: "1_1_2",
@@ -919,6 +1013,7 @@
 
           function resetujNazwy() {
             // Resetowanie ciasteczek do domyślnych wartości
+            setCookie("pietro0", JSON.stringify(default0));
             setCookie("pietro1", JSON.stringify(default1));
             setCookie("pietro2", JSON.stringify(default2));
             setCookie("pietro3", JSON.stringify(default3));
@@ -927,6 +1022,9 @@
           }
 
           // Sprawdzenie ciasteczek i ustawienie domyślnych wartości
+          if (getCookie("pietro0" === "")) {
+            setCookie("pietro0", JSON.stringify(default0));
+          }
           if (getCookie("pietro1") === "") {
             setCookie("pietro1", JSON.stringify(default1));
           }
@@ -936,9 +1034,10 @@
           if (getCookie("pietro3") === "") {
             setCookie("pietro3", JSON.stringify(default3));
           }
+
           // Odczyt ciasteczek i ustawienie wartości w formularzach
           document.addEventListener("DOMContentLoaded", () => {
-            ["pietro1", "pietro2", "pietro3"].forEach((p) => {
+            ["pietro0", "pietro1", "pietro2", "pietro3"].forEach((p) => {
               const cookieData = getCookie(p);
               if (cookieData) {
                 try {

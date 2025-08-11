@@ -8,14 +8,6 @@ $l0_2_1 = [];
 $l0_2_2 = [];
 $l0_3_1 = [];
 $l0_3_2 = [];
-$l0_4_1 = [];
-$l0_4_2 = [];
-$l0_5_1 = [];
-$l0_5_2 = [];
-$l0_6_1 = [];
-$l0_6_2 = [];
-$l0_7_1 = [];
-$l0_7_2 = [];
 
 $l1_1_1 = []; 
 $l1_1_2 = [];
@@ -88,14 +80,6 @@ while ($row=mysqli_fetch_assoc($result)) {
     $l0_2_2[] = $row['l0_2_2'];
     $l0_3_1[] = $row['l0_3_1'];
     $l0_3_2[] = $row['l0_3_2'];
-    $l0_4_1[] = $row['l0_4_1'];
-    $l0_4_2[] = $row['l0_4_2'];
-    $l0_5_1[] = $row['l0_5_1'];
-    $l0_5_2[] = $row['l0_5_2'];
-    $l0_6_1[] = $row['l0_6_1'];
-    $l0_6_2[] = $row['l0_6_2'];
-    $l0_7_1[] = $row['l0_7_1'];
-    $l0_7_2[] = $row['l0_7_2'];
 
     $l1_1_1[] = $row['l1_1_1']; 
     $l1_1_2[] = $row['l1_1_2'];
@@ -155,15 +139,7 @@ if(!isset($_GET['wszystko']) || $wyswietl_wszystkie_dane != 'true') {
         'l0_2_1'=>policzProcentDlaParyCzujnikow($l0_2_1, $l0_2_2),
         'l0_2_2'=>policzProcentDlaParyCzujnikow($l0_2_1, $l0_2_2),
         'l0_3_1'=>policzProcentDlaParyCzujnikow($l0_3_1, $l0_3_2),
-        'l0_3_2'=>policzProcentDlaParyCzujnikow($l0_3_1, $l0_3_2),
-        'l0_4_1'=>policzProcentDlaParyCzujnikow($l0_4_1, $l0_4_2),
-        'l0_4_2'=>policzProcentDlaParyCzujnikow($l0_4_1, $l0_4_2),
-        'l0_5_1'=>policzProcentDlaParyCzujnikow($l0_5_1, $l0_5_2),
-        'l0_5_2'=>policzProcentDlaParyCzujnikow($l0_5_1, $l0_5_2),
-        'l0_6_1'=>policzProcentDlaParyCzujnikow($l0_6_1, $l0_6_2),   
-        'l0_6_2'=>policzProcentDlaParyCzujnikow($l0_6_1, $l0_6_2),
-        'l0_7_1'=>policzProcentDlaParyCzujnikow($l0_7_1, $l0_7_2),
-        'l0_7_2'=>policzProcentDlaParyCzujnikow($l0_7_1, $l0_7_2)
+        'l0_3_2'=>policzProcentDlaParyCzujnikow($l0_3_1, $l0_3_2), 
         ];
     }
 
@@ -234,14 +210,6 @@ if(!isset($_GET['wszystko']) || $wyswietl_wszystkie_dane != 'true') {
             'l0_2_2' => $l0_2_2,
             'l0_3_1' => $l0_3_1,
             'l0_3_2' => $l0_3_2,
-            'l0_4_1' => $l0_4_1,
-            'l0_4_2' => $l0_4_2,
-            'l0_5_1' => $l0_5_1,
-            'l0_5_2' => $l0_5_2,
-            'l0_6_1' => $l0_6_1,
-            'l0_6_2' => $l0_6_2,
-            'l0_7_1' => $l0_7_1,
-            'l0_7_2' => $l0_7_2
         ];
     }
     elseif ($pietro == 1) {
@@ -300,30 +268,18 @@ if(!isset($_GET['wszystko']) || $wyswietl_wszystkie_dane != 'true') {
     $response['data'] = $data;
     echo json_encode($response);
 }
-
 mysqli_close($conn);
+
+/*
+    Funkcja liczy procent, w ktorym swiatlo było włączone (dla jednego pokoju)
+    Przykladowo: Jezeli w ciagu 10 godzin, swiatlo w (tym samym pokoju) czujniku 1 bylo wlaczone przez 10 godzin, 
+    a czujnik 2 przez 5 godzin, to funkcja zwroci 75% (15 godzin swiatla włączonego / 20 godzin wszystkich odczytow)
+ */
 function policzProcentDlaParyCzujnikow($czujnik1, $czujnik2) {
-    $aktywnych = 0;
-    $iloscOdczytow = count($czujnik1); // zakładamy, że oba mają tę samą liczbę elementów
-    
-    // Iterujemy przez każdy odczyt
-    for ($i = 0; $i < $iloscOdczytow; $i++) {
-        // Jeśli któregokolwiek z czujników jest włączony (1), uznajemy, że światło było włączone
-        if ($czujnik1[$i] == 1 ) {
-            $aktywnych++;
-        }
-        if($czujnik2[$i] == 1 ) {
-            $aktywnych++;
-        }
-    }
-    
-    if ($iloscOdczytow > 0) {
-        $procent = round(($aktywnych / $iloscOdczytow) * 100);
-    } else {
-        $procent = 0;
-    }
-    
-    return $procent;
+    $aktywnych = array_sum($czujnik1) + array_sum($czujnik2);
+    $iloscOdczytow = count($czujnik1) + count($czujnik2);
+
+    return $iloscOdczytow > 0 ? round(($aktywnych / $iloscOdczytow) * 100) : 0;
 }
 
 ?>
