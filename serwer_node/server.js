@@ -397,7 +397,9 @@ function connectedWrite(err) {
     Object.entries(noweWartosci).forEach(([key, value]) => {
       harmonogram[key] = value;
     });
-
+    // Zapisz harmonogram do pliku harmonogram.json
+    // Jeśli plik nie istnieje, zostanie utworzony
+    // Jeśli istnieje, zostanie nadpisany
     fs.writeFile(
       "harmonogram.json",
       JSON.stringify(harmonogram, null, 2),
@@ -471,5 +473,6 @@ function connectedWrite(err) {
         }
       });
     });
-  }, 60000);
+  }, 60000); // Sprawdzamy harmonogram co 60 sekund (60000 ms)
+  // Można zmienić ten czas, jeśli potrzebujesz częstszych lub rzadszych sprawdzeń
 }
