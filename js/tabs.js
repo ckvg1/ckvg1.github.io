@@ -57,19 +57,18 @@ async function znikanie() {
     tabsList.style.right = "-300px";
     burger.classList.toggle("change");
     await sleep(500);
-    tabs_list.style.display = "none";
+    tabsList.style.display = "none";
   } else {
-    tabs_list.style.display = "block";
+    tabsList.style.display = "block";
   }
 }
 
-function pojawianie(){
+function pojawianie() {
   tabsList = document.querySelector(".tabs-list");
-  if(window.innerWidth > 810){
-    tabsList.style.display= "flex"
-  }
-  else{
-    tabsList.style.display= "block"
+  if (window.innerWidth > 810) {
+    tabsList.style.display = "flex";
+  } else {
+    tabsList.style.display = "block";
   }
 }
 

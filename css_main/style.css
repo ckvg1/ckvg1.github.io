@@ -150,7 +150,7 @@ main {
   font-size: 50px;
   cursor: pointer;
 }
-
+#tabelka0,
 #tabelka1,
 #tabelka2,
 #tabelka3 {
@@ -221,6 +221,7 @@ select:focus {
   .flex_div {
     column-count: 2;
   }
+  #tabelka0,
   #tabelka1,
   #tabelka2,
   #tabelka3 {
@@ -308,6 +309,7 @@ select:focus {
   }
 }
 @media (max-width: 840px) {
+  #tabelka0,
   #tabelka1,
   #tabelka2,
   #tabelka3 {
