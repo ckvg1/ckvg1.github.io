@@ -194,8 +194,8 @@
         <h2>Ustawienia</h2>
         <p>Zmieniaj nazwy czujników i pomieszczeń.</p>
         <select id="pietro_settings_select" onchange="zmienPietroUstawienia()">
-          <option value="pietro0">Parter</option>
-          <option value="pietro1">Piętro 1</option>
+          <option disabled value="pietro0">Parter</option>
+          <option disabled value="pietro1">Piętro 1</option>
           <option value="pietro2">Piętro 2</option>
           <option selected="selected" value="pietro3">Piętro 3</option>
         </select>
@@ -1079,6 +1079,9 @@
                 "Błąd podczas wczytywania harmonogramu, upewnij się, ze jestes polaczony z serwerem.",
                 error
               );
+              document.getElementById("alertBox").style.display = "flex";
+              document.getElementById("alertBox").innerHTML =
+                "Błąd podczas próby zapisu harmonogramu. " + err;
             }
           }
         </script>
