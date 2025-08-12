@@ -1,10 +1,15 @@
+// serwer_node/server.js
+// Serwer Node.js do obsługi sterowania światłami, roletami i temperaturą
+// Używa biblioteki nodes7 do komunikacji z PLC, Express do obsługi HTTP i SSE, oraz NodeCache do przechowywania danych w pamięci
+// Wymaga zainstalowania bibliotek: nodes7, express, cors, async-mutex, node-cache
+
 const nodes7 = require("nodes7");
 const express = require("express");
 const cors = require("cors");
 const { Mutex } = require("async-mutex");
 const NodeCache = require("node-cache");
 const app = express();
-const port = 3000;
+const port = 3000; // Port, na którym będzie nasłuchiwał serwer
 app.use(cors());
 app.use(express.json());
 const fs = require("fs");
@@ -98,8 +103,8 @@ Można je dostosować w zależności od potrzeb aplikacji i częstotliwości zmi
 Wartości te są w sekundach
 */
 const temperature_ttl = 11; // TTL dla temperatury
-const lights_ttl = 0.4; // TTL dla świateł
-const blinds_ttl = 0.6; // TTL dla rolet
+const lights_ttl = 1; // TTL dla świateł
+const blinds_ttl = 1; // TTL dla rolet
 
 /*
 Klucze do wyjść, potrzebne zeby zapisywać wartosci do cache. 
@@ -145,7 +150,6 @@ readConn.initiateConnection(
   Dzięki temu unikamy konfliktów przy odczycie/zapisie do PLC.
 
   Funkcja jest wywoływana tylko raz po starcie serwera, żeby wstępnie załadować dane do cache.
-
  */
 function readAfterStartup() {
   readMutex.runExclusive(async () => {

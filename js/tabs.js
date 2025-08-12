@@ -51,10 +51,9 @@ async function hamburger(x) {
 }
 function pojawianie() {
   tabsList = document.querySelector(".tabs-list");
-  if(window.innerWidth <= 810){
+  if (window.innerWidth <= 810) {
     tabsList.style.display = "block";
-  }
-  else{
+  } else {
     tabsList.style.display = "flex";
   }
 }
@@ -65,13 +64,11 @@ async function znikanie() {
     tabsList.style.right = "-300px";
     burger.classList.toggle("change");
     await sleep(500);
-    tabslist.style.display = "none";
+    tabsList.style.display = "none";
   } else {
-    tabslist.style.display = "block";
+    tabsList.style.display = "block";
   }
-  pojawianie()
+  pojawianie();
 }
-
-
 
 window.addEventListener("resize", pojawianie);
