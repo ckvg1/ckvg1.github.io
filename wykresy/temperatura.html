@@ -97,6 +97,7 @@
       }
 
       function fetchAndPlot(url, layoutOverrides = {}) {
+        try {
         const nazwyBiur = generujNazwyBiur(pietro);
 
         fetch(url)
@@ -185,7 +186,13 @@
               responsive: true,
             });
           })
-          .catch((error) => console.error("Error fetching data:", error));
+          .catch((error) => {
+            console.error("Błąd podczas pobierania danych:", error);
+            document.getElementById("alertBox").style.display = "block";
+            document.getElementById("alertBox").innerHTML =
+              "<strong>Uwaga</strong> - Błąd podczas tworzenia wykresu. Sprawdź połączenie z bazą danych.";
+          });
+        } catch (error) {
       }
 
       function toLocalISOString(date = new Date()) {
