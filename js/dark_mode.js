@@ -2,7 +2,7 @@ const local = localStorage.getItem("theme");
 if (local === "ciemny-motyw") {
   document
     .querySelectorAll(
-      "body, header, .modal-content, .hamburger, .tab-button, .oaerror, strong, section, .przycisk, input, select, .icons_div, .bar1, .bar2, .bar3, .nazwaBiura, .temperatura"
+      "body, header, .modal, .modal-content, .header-modal, .modal-form, .hamburger, .tab-button, .oaerror, strong, section, .przycisk, input, select, .icons_div, .bar1, .bar2, .bar3, .nazwaBiura, .temperatura"
     )
     .forEach((el) => {
       el.classList.add("ciemny");
