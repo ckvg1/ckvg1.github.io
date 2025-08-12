@@ -245,19 +245,31 @@
           });
       }
 
+      const isDarkMode = localStorage.getItem("theme") === "ciemny-motyw";
+
+      const heatmapGradient = isDarkMode
+        ? {
+            0: "#1e1e1e", // bardzo ciemny
+            0.25: "#5e60ce", // ciemny indygo
+            0.5: "#3a0ca3", // głęboki fiolet
+            0.75: "#7209b7", // intensywny purpurowy
+            1: "#f72585", // róż-fuksja
+          }
+        : {
+            0: "#ffffff", // jasny
+            0.25: "#90e0ef", // błękit
+            0.5: "#00b4d8", // nasycony turkus
+            0.75: "#0077b6", // głęboki niebieski
+            1: "#03045e", // granatowy
+          };
+
       const heatmapInstance = h337.create({
         container: document.querySelector(".heatmap"),
         radius: 80,
         blur: 0.9,
         maxOpacity: 0.7,
         minOpacity: 0,
-        gradient: {
-          0: "#ffffff",
-          0.25: "#78bcff",
-          0.5: "#6fa0ff",
-          0.75: "#3f85fe",
-          1: "#0020ff",
-        },
+        gradient: heatmapGradient,
       });
 
       function generujHeatmape(endpoint) {
