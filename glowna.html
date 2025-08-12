@@ -1063,16 +1063,23 @@
             wczytajHarmonogram();
           });
           async function wczytajHarmonogram() {
-            const harmonogram = await axios.get(
-              `${window.config.apiBaseUrl}/harmonogram`
-            );
-            Object.entries(harmonogram["data"]).forEach(([key, value]) => {
-              const el = document.getElementById(`${key}_time`);
-              if (el) {
-                el.value = value;
-              } else {
-              }
-            });
+            try {
+              const harmonogram = await axios.get(
+                `${window.config.apiBaseUrl}/harmonogram`
+              );
+              Object.entries(harmonogram["data"]).forEach(([key, value]) => {
+                const el = document.getElementById(`${key}_time`);
+                if (el) {
+                  el.value = value;
+                } else {
+                }
+              });
+            } catch (error) {
+              console.error(
+                "Błąd podczas wczytywania harmonogramu, upewnij się, ze jestes polaczony z serwerem.",
+                error
+              );
+            }
           }
         </script>
       </div>
