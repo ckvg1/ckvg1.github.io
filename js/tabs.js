@@ -66,9 +66,9 @@ async function znikanie() {
     await sleep(500);
     tabsList.style.display = "none";
   } else {
-    tabsList.style.display = "block";
+    pojawianie();
   }
-  pojawianie();
+  
 }
 
 window.addEventListener("resize", pojawianie);
