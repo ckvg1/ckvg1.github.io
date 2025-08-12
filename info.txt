@@ -10,4 +10,9 @@
 
     folder wykresy:
     - Usunac disabled z option w pliku: statystyki.html
+
+    plik dodaj_dane.php: 
+    Dodaj parter i pierwsze pietro w ten sam sposob w ktory jest zrobiona reszta. 
+    Teraz w bazie defaultowo jak cos pojdzie nie tak, to jest 99.0 i 0 dla swiatel.
+
     

@@ -147,102 +147,110 @@
       const alertBox = document.getElementById("alertBox");
 
       function generujWykresKolowy(endpoint) {
-        fetch(endpoint)
-          .then((res) => res.json())
-          .then((dane) => {
-            if (!sprawdzCzySaDane(Object.values(dane))) {
-              alertBox.style.display = "block";
-              document.querySelector(".oaerror").innerHTML =
-                "<strong>Uwaga</strong> - Brak danych do wyświetlenia wykresu. Proszę podać daty pomiaru.";
-              translatePage(getCookie("lang") || "pl");
+        try {
+          fetch(endpoint)
+            .then((res) => res.json())
+            .then((dane) => {
+              if (!sprawdzCzySaDane(Object.values(dane))) {
+                alertBox.style.display = "block";
+                document.querySelector(".oaerror").innerHTML =
+                  "<strong>Uwaga</strong> - Brak danych do wyświetlenia wykresu. Proszę podać daty pomiaru.";
+                translatePage(getCookie("lang") || "pl");
+                document.getElementById("myDiv2").innerHTML = "";
+                return;
+              } else {
+                alertBox.style.display = "none";
+              }
+
+              const isDark = localStorage.getItem("theme") === "ciemny-motyw";
+
+              let biura = generujNazwyBiur(pietro);
               document.getElementById("myDiv2").innerHTML = "";
-              return;
-            } else {
-              alertBox.style.display = "none";
-            }
+              let values = [];
 
-            const isDark = localStorage.getItem("theme") === "ciemny-motyw";
+              const czujniki = generujNazwyCzujnikow(pietro);
+              for (let i = 0; i < czujniki.length; i += 2) {
+                values.push(dane[czujniki[i]]);
+              }
 
-            let biura = generujNazwyBiur(pietro);
-            document.getElementById("myDiv2").innerHTML = "";
-            let values = [];
+              const labelsNames = biura.map((key) => parsedCookie[key] || key);
 
-            const czujniki = generujNazwyCzujnikow(pietro);
-            for (let i = 0; i < czujniki.length; i += 2) {
-              values.push(dane[czujniki[i]]);
-            }
+              // Palety kolorów dopasowane do wykresów temperatur
+              const lightColors = [
+                "#d7263d",
+                "#f46036",
+                "#ffc43d",
+                "#8c7ef2",
+                "#1b998b",
+                "#3f72af",
+                "#ff9f1c",
+                "#335c67",
+                "#ffcad4",
+                "#8479e1",
+              ];
+              const darkColors = [
+                "#ff6361",
+                "#bc5090",
+                "#ffa600",
+                "#58508d",
+                "#2ca58d",
+                "#4cc9f0",
+                "#f72585",
+                "#4361ee",
+                "#ffd166",
+                "#3a86ff",
+              ];
 
-            const labelsNames = biura.map((key) => parsedCookie[key] || key);
+              const sliceColors = (isDark ? darkColors : lightColors).slice(
+                0,
+                labelsNames.length
+              );
 
-            // Palety kolorów dopasowane do wykresów temperatur
-            const lightColors = [
-              "#d7263d",
-              "#f46036",
-              "#ffc43d",
-              "#8c7ef2",
-              "#1b998b",
-              "#3f72af",
-              "#ff9f1c",
-              "#335c67",
-              "#ffcad4",
-              "#8479e1",
-            ];
-            const darkColors = [
-              "#ff6361",
-              "#bc5090",
-              "#ffa600",
-              "#58508d",
-              "#2ca58d",
-              "#4cc9f0",
-              "#f72585",
-              "#4361ee",
-              "#ffd166",
-              "#3a86ff",
-            ];
-
-            const sliceColors = (isDark ? darkColors : lightColors).slice(
-              0,
-              labelsNames.length
-            );
-
-            const data = [
-              {
-                values,
-                labels: labelsNames,
-                type: "pie",
-                hole: 0.35,
-                name: "Procent udziału we włączonym świetle",
-                textinfo: "label+percent",
-                textposition: "inside",
-                marker: {
-                  colors: sliceColors,
-                  line: {
-                    color: isDark ? "rgba(0,0,0,0.35)" : "#ffffff",
-                    width: 2,
+              const data = [
+                {
+                  values,
+                  labels: labelsNames,
+                  type: "pie",
+                  hole: 0.35,
+                  name: "Procent udziału we włączonym świetle",
+                  textinfo: "label+percent",
+                  textposition: "inside",
+                  marker: {
+                    colors: sliceColors,
+                    line: {
+                      color: isDark ? "rgba(0,0,0,0.35)" : "#ffffff",
+                      width: 2,
+                    },
                   },
+                  hoverinfo: "label+percent+value",
+                  insidetextfont: { color: isDark ? "#f1f5f9" : "#1f2937" },
                 },
-                hoverinfo: "label+percent+value",
-                insidetextfont: { color: isDark ? "#f1f5f9" : "#1f2937" },
-              },
-            ];
+              ];
 
-            const layout = {
-              paper_bgcolor: isDark ? "transparent" : "transparent",
-              plot_bgcolor: isDark ? "transparent" : "transparent",
-              title: {
-                text: "Procent udziału we włączonym świetle",
-                font: { size: 18, color: isDark ? "#e5e7eb" : "#111827" },
-              },
-              height: 450,
-              width: 550,
-              margin: { t: 30, b: 30, l: 30, r: 30 },
-              uniformtext: { minsize: 12, mode: "hide" },
-              showlegend: false,
-              font: { color: isDark ? "#e5e7eb" : "#111827" },
-            };
+              const layout = {
+                paper_bgcolor: isDark ? "transparent" : "transparent",
+                plot_bgcolor: isDark ? "transparent" : "transparent",
+                title: {
+                  text: "Procent udziału we włączonym świetle",
+                  font: { size: 18, color: isDark ? "#e5e7eb" : "#111827" },
+                },
+                height: 450,
+                width: 550,
+                margin: { t: 30, b: 30, l: 30, r: 30 },
+                uniformtext: { minsize: 12, mode: "hide" },
+                showlegend: false,
+                font: { color: isDark ? "#e5e7eb" : "#111827" },
+              };
 
-            Plotly.newPlot("myDiv2", data, layout, { responsive: true });
-          });
+              Plotly.newPlot("myDiv2", data, layout, { responsive: true });
+            });
+        } catch (error) {
+          console.error("Błąd podczas generowania wykresu kołowego:", error);
+          alertBox.style.display = "block";
+          document.querySelector(".oaerror").innerHTML =
+            "<strong>Uwaga</strong> - Wystąpił błąd podczas generowania wykresu kołowego. Sprawdź połączenie z bazą danych.";
+          translatePage(getCookie("lang") || "pl");
+        }
       }
 
       const isDarkMode = localStorage.getItem("theme") === "ciemny-motyw";
@@ -273,49 +281,57 @@
       });
 
       function generujHeatmape(endpoint) {
-        const czujniki = generujNazwyCzujnikow(pietro);
-        fetch(endpoint)
-          .then((res) => res.json())
-          .then((dane) => {
-            console.log(endpoint, dane);
-            let points = [];
-            const cords =
-              pietro == 0
-                ? [
-                    [142, 198],
-                    [550, 217],
-                    [758, 216],
-                  ]
-                : [
-                    [142, 198],
-                    [550, 217],
-                    [758, 216],
-                    [144, 535],
-                    [377, 537],
-                    [557, 537],
-                    [760, 537],
-                  ];
-            let j = 0,
-              max = 0;
+        try {
+          const czujniki = generujNazwyCzujnikow(pietro);
+          fetch(endpoint)
+            .then((res) => res.json())
+            .then((dane) => {
+              console.log(endpoint, dane);
+              let points = [];
+              const cords =
+                pietro == 0
+                  ? [
+                      [142, 198],
+                      [550, 217],
+                      [758, 216],
+                    ]
+                  : [
+                      [142, 198],
+                      [550, 217],
+                      [758, 216],
+                      [144, 535],
+                      [377, 537],
+                      [557, 537],
+                      [760, 537],
+                    ];
+              let j = 0,
+                max = 0;
 
-            for (let i = 0; i < czujniki.length; i += 2) {
-              const point = {
-                x: cords[j][0],
-                y: cords[j][1],
-                value: dane[czujniki[i]],
-                radius: 80,
-              };
-              points.push(point);
-              if (max < dane[czujniki[i]]) max = dane[czujniki[i]];
-              if (j < cords.length - 1) j++;
-            }
+              for (let i = 0; i < czujniki.length; i += 2) {
+                const point = {
+                  x: cords[j][0],
+                  y: cords[j][1],
+                  value: dane[czujniki[i]],
+                  radius: 80,
+                };
+                points.push(point);
+                if (max < dane[czujniki[i]]) max = dane[czujniki[i]];
+                if (j < cords.length - 1) j++;
+              }
 
-            heatmapInstance.setData({
-              min: 0,
-              max: max === 0 ? 100 : max,
-              data: points,
+              heatmapInstance.setData({
+                min: 0,
+                max: max === 0 ? 100 : max,
+                data: points,
+              });
             });
-          });
+        } catch (error) {
+          console.error("Błąd podczas generowania heatmapy:", error);
+          alertBox.style.display = "block";
+          document.querySelector(".oaerror").innerHTML =
+            "<strong>Uwaga</strong> - Wystąpił błąd podczas generowania heatmapy. Sprawdź połączenie z bazą danych.";
+          translatePage(getCookie("lang") || "pl");
+        }
       }
 
       function toLocalISOString(date = new Date()) {
@@ -341,103 +357,115 @@
       }
 
       function generujWykres(endpoint) {
-        const czujniki = generujNazwyCzujnikow(pietro);
-        fetch(endpoint)
-          .then((res) => res.json())
-          .then((dane) => {
-            const container = document.getElementById("myPlot");
-            container.innerHTML = "";
+        try {
+          const czujniki = generujNazwyCzujnikow(pietro);
+          fetch(endpoint)
+            .then((res) => res.json())
+            .then((dane) => {
+              const container = document.getElementById("myPlot");
+              container.innerHTML = "";
 
-            if (!cookie) {
-              console.error("Brak ciasteczka dla piętra: " + pietro);
-              return;
-            }
+              if (!cookie) {
+                console.error("Brak ciasteczka dla piętra: " + pietro);
+                return;
+              }
 
-            const isDark = localStorage.getItem("theme") === "ciemny-motyw";
+              const isDark = localStorage.getItem("theme") === "ciemny-motyw";
 
-            const sensorNames = czujniki.map((key) => parsedCookie[key] || key);
+              const sensorNames = czujniki.map(
+                (key) => parsedCookie[key] || key
+              );
 
-            const darkColors = [
-              "#ff6361",
-              "#bc5090",
-              "#ffa600",
-              "#58508d",
-              "#ff9478",
-              "#8d5fd3",
-              "#ffd66b",
-              "#7072ab",
-              "#f38f8f",
-              "#b07acb",
-            ];
-            const lightColors = [
-              "#d7263d",
-              "#f46036",
-              "#ffc43d",
-              "#2e294e",
-              "#1b998b",
-              "#3f72af",
-              "#ff9f1c",
-              "#335c67",
-              "#ffcad4",
-              "#8479e1",
-            ];
+              const darkColors = [
+                "#ff6361",
+                "#bc5090",
+                "#ffa600",
+                "#58508d",
+                "#ff9478",
+                "#8d5fd3",
+                "#ffd66b",
+                "#7072ab",
+                "#f38f8f",
+                "#b07acb",
+              ];
+              const lightColors = [
+                "#d7263d",
+                "#f46036",
+                "#ffc43d",
+                "#2e294e",
+                "#1b998b",
+                "#3f72af",
+                "#ff9f1c",
+                "#335c67",
+                "#ffcad4",
+                "#8479e1",
+              ];
 
-            const sensorColors = isDark ? darkColors : lightColors;
-            const bgPlot = isDark ? "#121212" : "#f9fafb";
-            const bgPaper = isDark ? "#1e1e1e" : "#ffffff";
-            const fontColor = isDark ? "#e0e0e0" : "#333";
-            const gridColor = isDark ? "#2c2c2c" : "#e0e0e0";
+              const sensorColors = isDark ? darkColors : lightColors;
+              const bgPlot = isDark ? "#121212" : "#f9fafb";
+              const bgPaper = isDark ? "#1e1e1e" : "#ffffff";
+              const fontColor = isDark ? "#e0e0e0" : "#333";
+              const gridColor = isDark ? "#2c2c2c" : "#e0e0e0";
 
-            for (let i = 0; i < czujniki.length; i++) {
-              const sensorKey = czujniki[i];
-              const plotDiv = document.createElement("div");
-              plotDiv.id = "plotSensor" + (i + 1);
-              plotDiv.className = "plotSensor";
-              plotDiv.style.margin = "1%";
-              plotDiv.style.height = "400px";
-              plotDiv.style.float = "left";
-              plotDiv.style.marginBottom = "20px";
-              container.appendChild(plotDiv);
+              for (let i = 0; i < czujniki.length; i++) {
+                const sensorKey = czujniki[i];
+                const plotDiv = document.createElement("div");
+                plotDiv.id = "plotSensor" + (i + 1);
+                plotDiv.className = "plotSensor";
+                plotDiv.style.margin = "1%";
+                plotDiv.style.height = "400px";
+                plotDiv.style.float = "left";
+                plotDiv.style.marginBottom = "20px";
+                container.appendChild(plotDiv);
 
-              const trace = {
-                x: dane["data"],
-                y: dane[sensorKey],
-                mode: "lines",
-                name: sensorNames[i],
-                line: {
-                  shape: "hv",
-                  color: sensorColors[i % sensorColors.length],
-                  width: 2,
-                },
-                fill: "tonexty",
-                fillcolor: "rgba(255, 255, 255, 0.04)",
-              };
+                const trace = {
+                  x: dane["data"],
+                  y: dane[sensorKey],
+                  mode: "lines",
+                  name: sensorNames[i],
+                  line: {
+                    shape: "hv",
+                    color: sensorColors[i % sensorColors.length],
+                    width: 2,
+                  },
+                  fill: "tonexty",
+                  fillcolor: "rgba(255, 255, 255, 0.04)",
+                };
 
-              const layout = {
-                paper_bgcolor: bgPaper,
-                plot_bgcolor: bgPlot,
-                title: {
-                  text: sensorNames[i],
-                  font: { size: 22, color: fontColor },
-                },
-                xaxis: {
-                  title: "Oś X",
-                  gridcolor: gridColor,
-                  tickfont: { color: fontColor },
-                  titlefont: { color: fontColor },
-                },
-                yaxis: {
-                  title: "Oś Y",
-                  gridcolor: gridColor,
-                  tickfont: { color: fontColor },
-                  titlefont: { color: fontColor },
-                },
-                font: { color: fontColor },
-              };
+                const layout = {
+                  paper_bgcolor: bgPaper,
+                  plot_bgcolor: bgPlot,
+                  title: {
+                    text: sensorNames[i],
+                    font: { size: 22, color: fontColor },
+                  },
+                  xaxis: {
+                    title: "Oś X",
+                    gridcolor: gridColor,
+                    tickfont: { color: fontColor },
+                    titlefont: { color: fontColor },
+                  },
+                  yaxis: {
+                    title: "Oś Y",
+                    gridcolor: gridColor,
+                    tickfont: { color: fontColor },
+                    titlefont: { color: fontColor },
+                  },
+                  font: { color: fontColor },
+                };
 
-              Plotly.newPlot(plotDiv.id, [trace], layout, { responsive: true });
-            }
-          });
+                Plotly.newPlot(plotDiv.id, [trace], layout, {
+                  responsive: true,
+                });
+              }
+            });
+        } catch (error) {
+          console.error("Błąd podczas generowania wykresu:", error);
+          alertBox.style.display = "block";
+          document.querySelector(".oaerror").innerHTML =
+            "<strong>Uwaga</strong> - Wystąpił błąd podczas generowania wykresu. Sprawdź połączenie z bazą danych.";
+          translatePage(getCookie("lang") || "pl");
+        }
       }
     </script>
     <script src="../js/dark_mode.js"></script>

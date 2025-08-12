@@ -13,6 +13,8 @@ a {
   position: relative;
   margin: auto;
   opacity: 0.35;
+  cursor: default;
+  pointer-events: none;
 }
 
 .main_image img {
@@ -744,13 +746,22 @@ a {
   }
 }
 
-@media only screen and (max-width: 500px){
-
-  .nazwaBiura{
+@media only screen and (max-width: 500px) {
+  .nazwaBiura {
     font-size: 10pt;
   }
-  #all_l0_1,#all_l1_1,#all_l2_1,#all_l3_1 {left: 65%;}
-  #all_l0_2,#all_l1_2,#all_l2_2,#all_l3_2 {left: 83%;}
+  #all_l0_1,
+  #all_l1_1,
+  #all_l2_1,
+  #all_l3_1 {
+    left: 65%;
+  }
+  #all_l0_2,
+  #all_l1_2,
+  #all_l2_2,
+  #all_l3_2 {
+    left: 83%;
+  }
 
   #blokZarowki0_3 {
     top: 210%;

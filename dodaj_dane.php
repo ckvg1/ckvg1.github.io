@@ -62,7 +62,6 @@ $l3 = get_light_array("l3");
 $sql = "INSERT INTO temperatura (
     t3_1, t3_2, t3_3, t3_4, t3_5, t3_6, t3_7,
     t2_1, t2_2, t2_3, t2_4, t2_5, t2_6, t2_7,
-
     t_zewn
 ) VALUES (
     $t3[0], $t3[1], $t3[2], $t3[3], $t3[4], $t3[5], $t3[6], 
