@@ -96,21 +96,27 @@
             </button>
           </li>
           <li>
+            <!--usun style i disabled-->
             <button
               onclick="znikanie()"
               class="tab-button"
               data-tab="pietro0"
               data-src="sterowanie/sterowanie0.html"
+              disabled
+              style="text-decoration: none; color: gray; cursor: not-allowed"
             >
               Parter
             </button>
           </li>
           <li>
+            <!-- usun style i disabled-->
             <button
               onclick="znikanie()"
               class="tab-button"
               data-tab="pietro1"
               data-src="sterowanie/sterowanie1.html"
+              disabled
+              style="text-decoration: none; color: gray; cursor: not-allowed"
             >
               Piętro 1
             </button>
@@ -1149,20 +1155,44 @@
       function logoF() {
         logo = document.querySelector(".logo");
         ramka = document.querySelector("iframe");
-        url = new URL(ramka.src)
-        sterowanieUrl = url.pathname.split("/").filter(Boolean).pop()
+        url = new URL(ramka.src);
+        sterowanieUrl = url.pathname.split("/").filter(Boolean).pop();
         const jezyk = getCookie("lang");
-        if (document.body.classList.contains("ciemny") && jezyk == "si" && (sterowanieUrl == "sterowanie0.html" || sterowanieUrl == "sterowanie1.html" || sterowanieUrl == "sterowanie2.html" || sterowanieUrl == "sterowanie3.html")) {
+        if (
+          document.body.classList.contains("ciemny") &&
+          jezyk == "si" &&
+          (sterowanieUrl == "sterowanie0.html" ||
+            sterowanieUrl == "sterowanie1.html" ||
+            sterowanieUrl == "sterowanie2.html" ||
+            sterowanieUrl == "sterowanie3.html")
+        ) {
           logo.src = "img_main/logoFamilok-dark.svg";
-        } else if(jezyk == "si" && (sterowanieUrl == "sterowanie0.html" || sterowanieUrl == "sterowanie1.html" || sterowanieUrl == "sterowanie2.html" || sterowanieUrl == "sterowanie3.html")){
+        } else if (
+          jezyk == "si" &&
+          (sterowanieUrl == "sterowanie0.html" ||
+            sterowanieUrl == "sterowanie1.html" ||
+            sterowanieUrl == "sterowanie2.html" ||
+            sterowanieUrl == "sterowanie3.html")
+        ) {
           logo.src = "img_main/logoFamilok.svg";
-        }else if (document.body.classList.contains("ciemny") &&(sterowanieUrl == "sterowanie0.html" || sterowanieUrl == "sterowanie1.html" || sterowanieUrl == "sterowanie2.html" || sterowanieUrl == "sterowanie3.html")) {
+        } else if (
+          document.body.classList.contains("ciemny") &&
+          (sterowanieUrl == "sterowanie0.html" ||
+            sterowanieUrl == "sterowanie1.html" ||
+            sterowanieUrl == "sterowanie2.html" ||
+            sterowanieUrl == "sterowanie3.html")
+        ) {
           logo.src = "img_main/logoTower-dark.svg";
-        } else if(sterowanieUrl == "sterowanie0.html" || sterowanieUrl == "sterowanie1.html" || sterowanieUrl == "sterowanie2.html" || sterowanieUrl == "sterowanie3.html"){
+        } else if (
+          sterowanieUrl == "sterowanie0.html" ||
+          sterowanieUrl == "sterowanie1.html" ||
+          sterowanieUrl == "sterowanie2.html" ||
+          sterowanieUrl == "sterowanie3.html"
+        ) {
           logo.src = "img_main/logoTower.svg";
         } else if (document.body.classList.contains("ciemny")) {
           logo.src = "img_main/logo-dark.svg";
-        }else {
+        } else {
           logo.src = "img_main/logo.svg";
         }
         if (window.innerWidth <= 810) {
