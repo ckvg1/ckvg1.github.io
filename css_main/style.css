@@ -20,11 +20,10 @@ iframe {
   gap: 20px;
 }
 
-#settings_icon{
+#settings_icon {
   position: absolute;
   left: 110%;
 }
-
 
 #dark-mode {
   width: 32px;
@@ -134,14 +133,14 @@ main {
   max-height: 90vh; /* nie wychodzi poza ekran */
 }
 
-.header-modal{
+.header-modal {
   padding: 40px 50px 0px;
   background-color: #f4f7f9;
   border-image: linear-gradient(180deg, #333 95%, #f4f7f9) 1;
   border-bottom: 5px solid;
 }
 
-.modal-form{
+.modal-form {
   padding: 10px 50px 100px;
 }
 
@@ -153,13 +152,13 @@ main {
   background: #00152c;
 }
 
-.header-modal.ciemny{
+.header-modal.ciemny {
   background-color: #00152c;
   border-image: linear-gradient(180deg, #00152c 99%, #ffffff) 1;
   border-bottom: 1px solid;
 }
 
-.modal-form.ciemny{
+.modal-form.ciemny {
   padding: 10px 50px 100px;
 }
 .modal select {
@@ -300,7 +299,7 @@ select:focus {
   .tabs-list li {
     padding-top: 10px;
   }
-  #settings_icon{
+  #settings_icon {
     left: 150%;
   }
   .hamburger {
@@ -363,4 +362,3 @@ select:focus {
     height: 100vh;
   }
 }
-
