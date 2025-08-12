@@ -11,7 +11,6 @@ iframe {
 }
 .logo {
   height: 50px;
-  /* background-color: #00ffff; */
 }
 #logo_settings {
   display: flex;
@@ -19,13 +18,11 @@ iframe {
   justify-content: space-between;
   position: relative;
   gap: 20px;
-  /* background-color: #00ff00; */
 }
 
 #settings_icon{
-  /* background-color: #ff00ff; */
   position: absolute;
-  left: 100%;
+  left: 110%;
 }
 
 
