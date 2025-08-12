@@ -359,8 +359,12 @@ select:focus {
 
 @media (max-width: 800px) {
   .modal-content {
-    width: 80vw;
+    width: 100vw;
     height: 100vh;
+  }
+  #dark-mode{
+    top: 50px;
+    left: 40px;
   }
 }
 
