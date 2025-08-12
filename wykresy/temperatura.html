@@ -185,7 +185,12 @@
               responsive: true,
             });
           })
-          .catch((error) => console.error("Error fetching data:", error));
+          .catch((error) => {
+            console.error("Błąd podczas pobierania danych:", error);
+            document.getElementById("alertBox").style.display = "block";
+            document.getElementById("alertBox").innerHTML =
+              "<strong>Uwaga</strong> - Błąd podczas tworzenia wykresu. Sprawdź połączenie z bazą danych.";
+          });
       }
 
       function toLocalISOString(date = new Date()) {
