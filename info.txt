@@ -3,4 +3,11 @@
     - server.js: Odkomentować według instrukcji w komentarzach (po prostu analogicznie do innych, zrobionych juz pięter)
     - /variables/floor0: Zmienic adresy w plikach, zeby sie zgadzalo z tym co jest w plc. Nazwy zostawic, powinny byc dobre.
     - /variables/floor1: Sprawdz prosze, czy wpisalem dobrze adresy. Jesli tak, powinno dzialac.
+
+
+    folder rs:
+    - Usunac disabled z option w pliku glowna.html
+
+    folder wykresy:
+    - Usunac disabled z option w pliku: statystyki.html
     

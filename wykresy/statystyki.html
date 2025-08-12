@@ -41,8 +41,8 @@
           <select id="temperaturaPietroSelect">
             <option disabled value="0">Parter</option>
             <option disabled value="1">Piętro 1</option>
-            <option selected value="2">Piętro 2</option>
-            <option value="3">Piętro 3</option>
+            <option value="2">Piętro 2</option>
+            <option selected value="3">Piętro 3</option>
           </select>
         </div>
         <div
@@ -107,7 +107,7 @@
             <option disabled value="0">Parter</option>
             <option disabled value="1">Piętro 1</option>
             <option value="2">Piętro 2</option>
-            <option value="3">Piętro 3</option>
+            <option selected value="3">Piętro 3</option>
           </select>
         </div>
         <div
@@ -195,10 +195,15 @@
                 all_OFF_l3: `${godzina}`,
                 all_OFF_l2: `${godzina}`,
               };
+              const loadingGif = document.getElementById("loadingGif");
+              const loadingParagraf =
+                document.getElementById("loadingParagraf");
               try {
                 await axios.put(
                   `${window.config.apiBaseUrl}/harmonogram/add`,
-                  harmonogram
+                  harmonogram,
+                  (loadingGif.style.display = "flex"),
+                  (loadingParagraf.innerHTML = "Zapisuję harmonogram...")
                 );
                 document.getElementById("alertBox").style.display = "flex";
                 document.getElementById("alertBox").innerHTML =
@@ -208,6 +213,9 @@
                 document.getElementById("alertBox").style.display = "flex";
                 document.getElementById("alertBox").innerHTML =
                   "Błąd podczas próby zapisu harmonogramu. " + err;
+                loadingParagraf.innerHTML = "Wystąpił błąd. " + err;
+              } finally {
+                loadingGif.style.display = "none";
               }
             } else {
               try {
@@ -342,6 +350,22 @@
           <button type="button" onclick="ustawHarmonogram()" class="przycisk">
             Zapisz
           </button>
+          <div
+            style="
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-direction: column;
+            "
+          >
+            <img
+              id="loadingGif"
+              src=".././img_main/icony/loading.gif"
+              alt="loading gif"
+              style="display: none; width: 50px"
+            />
+            <p id="loadingParagraf"></p>
+          </div>
         </div>
       </section>
     </div>
