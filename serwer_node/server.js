@@ -277,6 +277,23 @@ function connectedWrite(err) {
     const { swiatlo } = req.params; // np. "l3_1_1" (zdefiniowane w HTML, parametr funkcji wyslijTrue(swiatlo))
     const { wartosc } = req.body; // true lub false
 
+    if (typeof wartosc !== "boolean") {
+      // wartosc powinna byc typu boolean
+      console.error("Próba zapisu nieprawidłowej wartości:", wartosc, req.ip);
+      return res
+        .status(400)
+        .json({ error: "Nieprawidłowa wartość (oczekiwano true/false)" });
+    }
+
+    if (Object.keys(variables).indexOf(`wej_${swiatlo}`) === -1) {
+      // jezeli światło nie istnieje w naszym obiekcie, zwracamy błąd
+      console.error(
+        "Próba zapisu do nieistniejącego światła:",
+        swiatlo,
+        req.ip
+      );
+      return res.status(400).json({ error: "Nieprawidłowa nazwa światła" });
+    }
     await writeMutex.runExclusive(
       // używamy mutexa, żeby zapewnić, że tylko jeden zapis będzie wykonywany w danym momencie
       () =>
@@ -316,6 +333,20 @@ function connectedWrite(err) {
   app.put("/rolety/:roleta", async (req, res) => {
     const { roleta } = req.params; // np. "b2_r4_1" (zdefiniowane w HTML, parametr funkcji roletaWlacz(roleta))
     const { wartosc } = req.body; // true lub false
+
+    if (typeof wartosc !== "boolean") {
+      // wartosc powinna byc typu boolean
+      console.error("Próba zapisu nieprawidłowej wartości:", wartosc, req.ip);
+      return res
+        .status(400)
+        .json({ error: "Nieprawidłowa wartość (oczekiwano true/false)" });
+    }
+
+    if (Object.keys(variables).indexOf(`wej_${roleta}`) === -1) {
+      // jezeli roleta nie istnieje w naszym obiekcie, zwracamy błąd
+      console.error("Próba zapisu nieistniejącej rolety:", swiatlo, req.ip);
+      return res.status(400).json({ error: "Nieprawidłowa nazwa rolety" });
+    }
 
     // Funkcja działa tak samo jak w przypadku świateł, ale oddzielamy ją (i cały endpoint), żeby było jasne, że chodzi o rolety
     await writeMutex.runExclusive(async () => {
@@ -390,7 +421,15 @@ function connectedWrite(err) {
   // PUT: aktualizacja/dodanie wpisów w harmonogramie
   app.put("/harmonogram/add", (req, res) => {
     const noweWartosci = req.body; // np. { "all_OFF_l2": "17:30", "all_OFF_l3": "18:00" }
-
+    Object.keys(noweWartosci).forEach((key) => {
+      if (Object.keys(variables).indexOf(`wej_${key}`) === -1) {
+        console.log(
+          "W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete",
+          key
+        );
+        delete noweWartosci[key];
+      }
+    });
     let harmonogram = {};
 
     // Nadpisz lub dodaj nowe wartości
@@ -455,8 +494,6 @@ function connectedWrite(err) {
           console.log("Aktualna godzina taka sama jak w harmonogramie.");
           writeMutex.runExclusive(async () => {
             console.log(`Wyłączam ${key} według harmonogramu`);
-
-            // l3
             await new Promise((resolve) => {
               writeConn.writeItems(`wej_${key}`, true, (err) => {
                 if (err) console.error(`Blad wej_${key} na true:`, err);
