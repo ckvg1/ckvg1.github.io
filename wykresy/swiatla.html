@@ -161,6 +161,8 @@
               alertBox.style.display = "none";
             }
 
+            const isDark = localStorage.getItem("theme") === "ciemny-motyw";
+
             let biura = generujNazwyBiur(pietro);
             document.getElementById("myDiv2").innerHTML = "";
             let values = [];
@@ -172,32 +174,71 @@
 
             const labelsNames = biura.map((key) => parsedCookie[key] || key);
 
+            // Palety kolorów dopasowane do wykresów temperatur
+            const lightColors = [
+              "#d7263d",
+              "#f46036",
+              "#ffc43d",
+              "#8c7ef2",
+              "#1b998b",
+              "#3f72af",
+              "#ff9f1c",
+              "#335c67",
+              "#ffcad4",
+              "#8479e1",
+            ];
+            const darkColors = [
+              "#ff6361",
+              "#bc5090",
+              "#ffa600",
+              "#58508d",
+              "#2ca58d",
+              "#4cc9f0",
+              "#f72585",
+              "#4361ee",
+              "#ffd166",
+              "#3a86ff",
+            ];
+
+            const sliceColors = (isDark ? darkColors : lightColors).slice(
+              0,
+              labelsNames.length
+            );
+
             const data = [
               {
-                values: values,
+                values,
                 labels: labelsNames,
                 type: "pie",
-                hole: 0.3,
+                hole: 0.35,
                 name: "Procent udziału we włączonym świetle",
                 textinfo: "label+percent",
                 textposition: "inside",
-                marker: { line: { color: "#ffffff", width: 2 } },
-                hoverinfo: "label+percent",
+                marker: {
+                  colors: sliceColors,
+                  line: {
+                    color: isDark ? "rgba(0,0,0,0.35)" : "#ffffff",
+                    width: 2,
+                  },
+                },
+                hoverinfo: "label+percent+value",
+                insidetextfont: { color: isDark ? "#f1f5f9" : "#1f2937" },
               },
             ];
 
             const layout = {
-              paper_bgcolor: "#f4f7f9",
-              plot_bgcolor: "rgb(211, 226, 236)",
+              paper_bgcolor: isDark ? "transparent" : "transparent",
+              plot_bgcolor: isDark ? "transparent" : "transparent",
               title: {
                 text: "Procent udziału we włączonym świetle",
-                font: { size: 18 },
+                font: { size: 18, color: isDark ? "#e5e7eb" : "#111827" },
               },
               height: 450,
               width: 550,
               margin: { t: 30, b: 30, l: 30, r: 30 },
               uniformtext: { minsize: 12, mode: "hide" },
               showlegend: false,
+              font: { color: isDark ? "#e5e7eb" : "#111827" },
             };
 
             Plotly.newPlot("myDiv2", data, layout, { responsive: true });
@@ -300,23 +341,40 @@
               return;
             }
 
+            const isDark = localStorage.getItem("theme") === "ciemny-motyw";
+
             const sensorNames = czujniki.map((key) => parsedCookie[key] || key);
-            const sensorColors = [
-              "Black",
-              "Black",
-              "Green",
-              "Green",
-              "Orange",
-              "Orange",
-              "Yellow",
-              "Yellow",
-              "Pink",
-              "Pink",
-              "Blue",
-              "Blue",
-              "Red",
-              "Red",
+
+            const darkColors = [
+              "#ff6361",
+              "#bc5090",
+              "#ffa600",
+              "#58508d",
+              "#ff9478",
+              "#8d5fd3",
+              "#ffd66b",
+              "#7072ab",
+              "#f38f8f",
+              "#b07acb",
             ];
+            const lightColors = [
+              "#d7263d",
+              "#f46036",
+              "#ffc43d",
+              "#2e294e",
+              "#1b998b",
+              "#3f72af",
+              "#ff9f1c",
+              "#335c67",
+              "#ffcad4",
+              "#8479e1",
+            ];
+
+            const sensorColors = isDark ? darkColors : lightColors;
+            const bgPlot = isDark ? "#121212" : "#f9fafb";
+            const bgPaper = isDark ? "#1e1e1e" : "#ffffff";
+            const fontColor = isDark ? "#e0e0e0" : "#333";
+            const gridColor = isDark ? "#2c2c2c" : "#e0e0e0";
 
             for (let i = 0; i < czujniki.length; i++) {
               const sensorKey = czujniki[i];
@@ -334,19 +392,35 @@
                 y: dane[sensorKey],
                 mode: "lines",
                 name: sensorNames[i],
-                line: { shape: "hv", color: sensorColors[i] },
+                line: {
+                  shape: "hv",
+                  color: sensorColors[i % sensorColors.length],
+                  width: 2,
+                },
                 fill: "tonexty",
+                fillcolor: "rgba(255, 255, 255, 0.04)",
               };
 
               const layout = {
-                paper_bgcolor: "rgb(252 252 252)",
-                plot_bgcolor: "rgb(252 252 252)",
+                paper_bgcolor: bgPaper,
+                plot_bgcolor: bgPlot,
                 title: {
                   text: sensorNames[i],
-                  font: { size: 24, color: "#333" },
+                  font: { size: 22, color: fontColor },
                 },
-                xaxis: { title: "Oś X" },
-                yaxis: { title: "Oś Y" },
+                xaxis: {
+                  title: "Oś X",
+                  gridcolor: gridColor,
+                  tickfont: { color: fontColor },
+                  titlefont: { color: fontColor },
+                },
+                yaxis: {
+                  title: "Oś Y",
+                  gridcolor: gridColor,
+                  tickfont: { color: fontColor },
+                  titlefont: { color: fontColor },
+                },
+                font: { color: fontColor },
               };
 
               Plotly.newPlot(plotDiv.id, [trace], layout, { responsive: true });

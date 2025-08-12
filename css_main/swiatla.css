@@ -10,7 +10,8 @@ body {
 form {
   padding: 5px;
 }
-input, select{
+input,
+select {
   margin-bottom: 10px;
 }
 #myDiv {
@@ -26,7 +27,7 @@ input, select{
   text-align: center;
 }
 
-.plotSensor{
+.plotSensor {
   width: 48%;
 }
 
@@ -44,15 +45,15 @@ input, select{
     font-size: 18px;
   }
 }
-@media (max-width:900px){
-  #myDiv{
+@media (max-width: 900px) {
+  #myDiv {
     width: 100%;
     margin: auto;
   }
-  #myDiv img{
+  #myDiv img {
     width: 100%;
   }
-  .plotSensor{
+  .plotSensor {
     width: 98%;
   }
 }
