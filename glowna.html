@@ -1152,20 +1152,21 @@
         url = new URL(ramka.src)
         sterowanieUrl = url.pathname.split("/").filter(Boolean).pop()
         const jezyk = getCookie("lang");
-        if (window.innerWidth <= 810) {
-          logo.src = "img_main/logo.png";
-        } else if (document.body.classList.contains("ciemny") && jezyk == "si" && (sterowanieUrl == "sterowanie0.html" || sterowanieUrl == "sterowanie1.html" || sterowanieUrl == "sterowanie2.html" || sterowanieUrl == "sterowanie3.html")) {
+        if (document.body.classList.contains("ciemny") && jezyk == "si" && (sterowanieUrl == "sterowanie0.html" || sterowanieUrl == "sterowanie1.html" || sterowanieUrl == "sterowanie2.html" || sterowanieUrl == "sterowanie3.html")) {
           logo.src = "img_main/logoFamilok-dark.svg";
         } else if(jezyk == "si" && (sterowanieUrl == "sterowanie0.html" || sterowanieUrl == "sterowanie1.html" || sterowanieUrl == "sterowanie2.html" || sterowanieUrl == "sterowanie3.html")){
           logo.src = "img_main/logoFamilok.svg";
         }else if (document.body.classList.contains("ciemny") &&(sterowanieUrl == "sterowanie0.html" || sterowanieUrl == "sterowanie1.html" || sterowanieUrl == "sterowanie2.html" || sterowanieUrl == "sterowanie3.html")) {
           logo.src = "img_main/logoTower-dark.svg";
         } else if(sterowanieUrl == "sterowanie0.html" || sterowanieUrl == "sterowanie1.html" || sterowanieUrl == "sterowanie2.html" || sterowanieUrl == "sterowanie3.html"){
-          logo.src = "img_main/text21-4.svg";
+          logo.src = "img_main/logoTower.svg";
         } else if (document.body.classList.contains("ciemny")) {
           logo.src = "img_main/logo-dark.svg";
         }else {
           logo.src = "img_main/logo.svg";
+        }
+        if (window.innerWidth <= 810) {
+          logo.src = "img_main/logo.png";
         }
       }
       window.addEventListener("resize", logoF);
