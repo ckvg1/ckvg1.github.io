@@ -25,7 +25,7 @@ iframe {
 #settings_icon{
   /* background-color: #ff00ff; */
   position: absolute;
-  right: -20%;
+  left: 100%;
 }
 
 
@@ -282,7 +282,7 @@ select:focus {
     padding-top: 10px;
   }
   #settings_icon{
-    right: -150%;
+    left: 150%;
   }
   .hamburger {
     position: absolute;

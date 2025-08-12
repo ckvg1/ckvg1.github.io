@@ -51,9 +51,7 @@ async function hamburger(x) {
 }
 function pojawianie() {
   tabsList = document.querySelector(".tabs-list");
-  if (window.innerWidth <= 810) {
-    tabsList.style.display = "block";
-  } else {
+  if (window.innerWidth >= 810) {
     tabsList.style.display = "flex";
   }
 }
