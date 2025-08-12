@@ -26,7 +26,7 @@ const dictionary = {
     "spróbuj ponownie": "Versuchen Sie es erneut",
     "Nie udało się połączyć z serwerem.":
       "Verbindung zum Server konnte nicht hergestellt werden.",
-
+    "Zapisuję harmonogram": "Ich speichere den Zeitplan",
     Ustawienia: "Einstellungen",
     Temperatura: "Temperatur",
     Światło: "Licht",
@@ -71,6 +71,7 @@ const dictionary = {
     "Sterowanie urządzeniami": "Device control",
     "spróbuj ponownie": "try again",
     "Nie udało się połączyć z serwerem.": "Connection to the server failed.",
+    "Zapisuję harmonogram": "Saving schedule",
     Ustawienia: "Settings",
     Temperatura: "Temperature",
     Światło: "Light",

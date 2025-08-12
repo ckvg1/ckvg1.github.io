@@ -6,7 +6,7 @@
 
 
     folder rs:
-    - Usunac disabled z option w pliku glowna.html
+    - Usunac disabled z option i buttonow w pliku glowna.html
 
     folder wykresy:
     - Usunac disabled z option w pliku: statystyki.html
