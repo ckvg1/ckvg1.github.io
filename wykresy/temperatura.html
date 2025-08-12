@@ -135,22 +135,36 @@
                 line: { shape: "spline" },
               });
             }
+            const isDark = localStorage.getItem("theme") === "ciemny-motyw";
 
-            const defaultLayout = {
-              bgcolor: "rgb(211, 226, 236)",
+            const layout = {
+              paper_bgcolor: isDark ? "#0f172a" : "#ffffff", // tło całej “kartki”
+              plot_bgcolor: isDark ? "#0b1220" : "#ffffff", // tło samego obszaru wykresu
               height: 650,
-              title: "Temperatura",
+              title: {
+                text: "Temperatura",
+                font: { color: isDark ? "#e5e7eb" : "#111827" },
+              },
+              font: { color: isDark ? "#e5e7eb" : "#111827" }, // tekst globalnie (legendy, adnotacje)
               xaxis: {
                 type: "date",
                 title: "Data wykonania pomiaru",
+                gridcolor: isDark ? "#334155" : "#e5e7eb",
+                linecolor: isDark ? "#94a3b8" : "#374151",
+                tickcolor: isDark ? "#94a3b8" : "#374151",
               },
               yaxis: {
-                title: "Temperatura [C]",
+                title: "Temperatura [°C]",
+                gridcolor: isDark ? "#334155" : "#e5e7eb",
+                linecolor: isDark ? "#94a3b8" : "#374151",
+                tickcolor: isDark ? "#94a3b8" : "#374151",
+              },
+              legend: {
+                bgcolor: "rgba(0,0,0,0)", // przezroczyste tło legendy
+                bordercolor: "rgba(0,0,0,0)",
               },
               showlegend: true,
             };
-
-            const layout = Object.assign({}, defaultLayout, layoutOverrides);
 
             let alertBox = document.getElementById("alertBox");
             if (
