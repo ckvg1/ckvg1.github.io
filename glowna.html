@@ -968,7 +968,8 @@
             }
           }
           zmienPietroUstawienia();
-          let language = "pl"; // domyślny język
+
+          let language = getCookie("lang") || "pl"; // pobranie jezyka z cookies ajak nie ma to pl
 
           function zmienJezyk(lang) {
             language = lang;

@@ -233,8 +233,7 @@
                 text: "Procent udziału we włączonym świetle",
                 font: { size: 18, color: isDark ? "#e5e7eb" : "#111827" },
               },
-              height: 450,
-              width: 550,
+
               margin: { t: 30, b: 30, l: 30, r: 30 },
               uniformtext: { minsize: 12, mode: "hide" },
               showlegend: false,
@@ -242,6 +241,13 @@
             };
 
             Plotly.newPlot("myDiv2", data, layout, { responsive: true });
+          })
+          .catch((error) => {
+            console.error("Błąd podczas generowania wykresu kołowego:", error);
+            alertBox.style.display = "block";
+            document.querySelector(".oaerror").innerHTML =
+              "<strong>Uwaga</strong> - Wystąpił błąd podczas generowania wykresu kołowego. Sprawdź połączenie z bazą danych.";
+            translatePage(getCookie("lang") || "pl");
           });
       }
 
@@ -272,13 +278,22 @@
         gradient: heatmapGradient,
       });
 
+      // USTAW: bazowe wymiary, dla których były mierzone współrzędne 'cords'
+      const BASE_WIDTH = 874; // przykładowa szerokość referencyjna
+      const BASE_HEIGHT = 649; // przykładowa wysokość referencyjna
+
       function generujHeatmape(endpoint) {
+        const container = document.querySelector(".heatmap"); // kontener heatmapy
+        if (!container) {
+          console.error("Brak kontenera .heatmap");
+          return;
+        }
+
         const czujniki = generujNazwyCzujnikow(pietro);
+
         fetch(endpoint)
           .then((res) => res.json())
           .then((dane) => {
-            console.log(endpoint, dane);
-            let points = [];
             const cords =
               pietro == 0
                 ? [
@@ -295,18 +310,35 @@
                     [557, 537],
                     [760, 537],
                   ];
+
+            // Bieżące wymiary kontenera
+            const rect = container.getBoundingClientRect();
+            const scaleX = rect.width / BASE_WIDTH;
+            const scaleY = rect.height / BASE_HEIGHT;
+
+            let points = [];
             let j = 0,
               max = 0;
 
             for (let i = 0; i < czujniki.length; i += 2) {
-              const point = {
-                x: cords[j][0],
-                y: cords[j][1],
-                value: dane[czujniki[i]],
-                radius: 80,
-              };
-              points.push(point);
-              if (max < dane[czujniki[i]]) max = dane[czujniki[i]];
+              const rawValue = dane[czujniki[i]];
+              const scaledX = Math.round(cords[j][0] * scaleX);
+              const scaledY = Math.round(cords[j][1] * scaleY);
+
+              // Skaluj też promień, żeby zachować proporcje
+              const baseRadius = 80;
+              const scaledRadius = Math.round(
+                baseRadius * Math.sqrt((scaleX + scaleY) / 2)
+              );
+
+              points.push({
+                x: scaledX,
+                y: scaledY,
+                value: rawValue,
+                radius: scaledRadius,
+              });
+
+              if (max < rawValue) max = rawValue;
               if (j < cords.length - 1) j++;
             }
 
@@ -315,7 +347,25 @@
               max: max === 0 ? 100 : max,
               data: points,
             });
+          })
+          .catch((error) => {
+            console.error("Błąd podczas generowania heatmapy:", error);
+            alertBox.style.display = "block";
+            document.querySelector(".oaerror").innerHTML =
+              "<strong>Uwaga</strong> - Wystąpił błąd podczas generowania heatmapy. Sprawdź połączenie z bazą danych.";
+            translatePage(getCookie("lang") || "pl");
           });
+
+        // Reaguj na zmianę rozmiaru okna – przerysuj heatmapę
+        // (debounce, żeby nie strzelać za często)
+        if (!window.__heatmapResizeBound) {
+          window.__heatmapResizeBound = true;
+          let resizeTimer;
+          window.addEventListener("resize", () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => generujHeatmape(endpoint), 150);
+          });
+        }
       }
 
       function toLocalISOString(date = new Date()) {
@@ -435,8 +485,17 @@
                 font: { color: fontColor },
               };
 
-              Plotly.newPlot(plotDiv.id, [trace], layout, { responsive: true });
+              Plotly.newPlot(plotDiv.id, [trace], layout, {
+                responsive: true,
+              });
             }
+          })
+          .catch((error) => {
+            console.error("Błąd podczas generowania wykresu:", error);
+            alertBox.style.display = "block";
+            document.querySelector(".oaerror").innerHTML =
+              "<strong>Uwaga</strong> - Wystąpił błąd podczas generowania wykresu. Sprawdź połączenie z bazą danych.";
+            translatePage(getCookie("lang") || "pl");
           });
       }
     </script>

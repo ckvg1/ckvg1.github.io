@@ -101,7 +101,38 @@ while($row = mysqli_fetch_assoc($result)) {
             $l1_7_1[] = $row['l1_7_1_count'];
             $l1_7_2[] = $row['l1_7_2_count'];
             break;
-        // case 2 i 3 analogicznie jak w Twoim kodzie
+        case 2:
+            $l2_1_1[] = $row['l2_1_1_count'];
+            $l2_1_2[] = $row['l2_1_2_count'];
+            $l2_2_1[] = $row['l2_2_1_count'];
+            $l2_2_2[] = $row['l2_2_2_count'];
+            $l2_3_1[] = $row['l2_3_1_count'];
+            $l2_3_2[] = $row['l2_3_2_count'];
+            $l2_4_1[] = $row['l2_4_1_count'];
+            $l2_4_2[] = $row['l2_4_2_count'];
+            $l2_5_1[] = $row['l2_5_1_count'];
+            $l2_5_2[] = $row['l2_5_2_count'];
+            $l2_6_1[] = $row['l2_6_1_count'];
+            $l2_6_2[] = $row['l2_6_2_count'];
+            $l2_7_1[] = $row['l2_7_1_count'];
+            $l2_7_2[] = $row['l2_7_2_count'];
+            break;
+        case 3:
+            $l3_1_1[] = $row['l3_1_1_count'];
+            $l3_1_2[] = $row['l3_1_2_count'];
+            $l3_2_1[] = $row['l3_2_1_count'];
+            $l3_2_2[] = $row['l3_2_2_count'];
+            $l3_3_1[] = $row['l3_3_1_count'];
+            $l3_3_2[] = $row['l3_3_2_count'];
+            $l3_4_1[] = $row['l3_4_1_count'];
+            $l3_4_2[] = $row['l3_4_2_count'];
+            $l3_5_1[] = $row['l3_5_1_count'];
+            $l3_5_2[] = $row['l3_5_2_count'];
+            $l3_6_1[] = $row['l3_6_1_count'];
+            $l3_6_2[] = $row['l3_6_2_count'];
+            $l3_7_1[] = $row['l3_7_1_count'];
+            $l3_7_2[] = $row['l3_7_2_count'];
+            break;
     }
 }
 

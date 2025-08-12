@@ -40,6 +40,9 @@ function showAlert(
   } else {
     no_internet = "../img_main/icony/no-internet.png";
   }
+  document.getElementsByClassName("main_image")[0].style.opacity = "0.35"; // pełna widoczność
+  document.getElementsByClassName("main_image")[0].style.pointerEvents = "none"; // aktywacja interakcji
+  document.getElementsByClassName("main_image")[0].style.cursor = "default"; // wskaźnik "ręka"
   alertBox.style.display = "block";
   document.querySelector(".oaerror").innerHTML = message;
   translatePage(getCookie("lang") || "pl"); // tłumaczenie strony na język ustawiony w ciasteczkach lub domyślnie na polski
@@ -47,7 +50,9 @@ function showAlert(
 
 function hideAlert() {
   alertBox.style.display = "none"; // ukrycie alertu
-  document.getElementsByClassName("main_image")[0].style.opacity = "1"; // przywrócenie pełnej widoczności obrazu
+  document.getElementsByClassName("main_image")[0].style.opacity = "1"; // pełna widoczność
+  document.getElementsByClassName("main_image")[0].style.pointerEvents = "auto"; // aktywacja interakcji
+  document.getElementsByClassName("main_image")[0].style.cursor = "pointer"; // wskaźnik "ręka"
 }
 
 // Po zaladowaniu strony, nawiązanie połączenia z serwerem i rozpoczęcie nasłuchiwania na zdarzenia
