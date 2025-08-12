@@ -35,20 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
-async function hamburger(x) {
-  //console.log("Kliknięto hamburger menu");
-  x.classList.toggle("change");
-  tabsList = document.querySelector(".tabs-list");
-  if (tabsList.style.right == "0px") {
-    tabsList.style.right = "-300px";
-    await sleep(500);
-    tabsList.style.display = "none";
-  } else {
-    tabsList.style.display = "block";
-    await sleep(1);
-    tabsList.style.right = "0px";
-  }
-}
+
 function pojawianie() {
   tabsList = document.querySelector(".tabs-list");
   if (window.innerWidth >= 810) {
@@ -68,5 +55,87 @@ async function znikanie() {
   }
   
 }
+// async function klik(){
+//   tabsList = document.querySelector(".tabs-list");
+//   if(!tabsList.contains(tabsList.target)){
+//     tabsList.style.right = "-300px";
+//     await sleep(500);
+//     tabsList.style.display = "none";
+//     console.log("działa")
+//   }
+// }
+// async function hamburger(x) {
+//   //console.log("Kliknięto hamburger menu");
+//   x.classList.toggle("change");
+//   tabsList = document.querySelector(".tabs-list");
+  // if (tabsList.style.right == "0px") {
+  //   tabsList.style.right = "-300px";
+  //   await sleep(500);
+  //   tabsList.style.display = "none";
+  // } else {
+  //   tabsList.style.display = "block";
+  //   await sleep(1);
+  //   tabsList.style.right = "0px";
+  // }
+// }
+async function usun() {
+  burger = document.querySelector(".hamburger");
+  tabsList = document.querySelector(".tabs-list");
+  burger.classList.remove("change");
+  tabsList.style.right = "-300px";
+  await sleep(500);
+  tabsList.style.display = "none";
+}
+async function hamburger(event){
+  burger = document.querySelector(".hamburger");
+  tabsList = document.querySelector(".tabs-list");
+  if (window.innerWidth <= 810){
+    if(burger.contains(event.target)){
+      burger.classList.toggle("change");
+      if (tabsList.style.right == "0px") {
+        tabsList.style.right = "-300px";
+        await sleep(500);
+        tabsList.style.display = "none";
+      } else {
+        tabsList.style.display = "block";
+        await sleep(1);
+        tabsList.style.right = "0px";
+      }
+    }else if(!tabsList.contains(event.target)){
+      usun()
+    }
+  }
+}
+function hamburgerIframe(){
+  if (window.innerWidth <= 810){
+    document.addEventListener('click', (event) =>{
+      if(event.target.tagName === 'IFRAME'){
+        usun()
+      }
+    })
+    function iframeF(){
+      const ramka = document.querySelectorAll("iframe");
 
+      ramka.forEach((ramka) =>{
+        ramka.addEventListener("load", () =>{
+          try{
+            const ramkaContent = ramka.contentDocument || ramka.contentWindow.document;
+            ramkaContent.addEventListener("click", usun)
+          }
+          catch(err){}
+        })
+      })
+
+    }
+
+    iframeF()
+
+    const observer = new MutationObserver(iframeF)
+    observer.observe(document.body, {childList: true, subtree: true})
+  }
+}
+
+
+window.addEventListener("click", hamburgerIframe);
+document.addEventListener("click", hamburger);
 window.addEventListener("resize", pojawianie);
