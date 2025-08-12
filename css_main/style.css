@@ -11,13 +11,23 @@ iframe {
 }
 .logo {
   height: 50px;
+  /* background-color: #00ffff; */
 }
 #logo_settings {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
   gap: 20px;
+  /* background-color: #00ff00; */
 }
+
+#settings_icon{
+  /* background-color: #ff00ff; */
+  position: absolute;
+  right: -20%;
+}
+
 
 #dark-mode {
   width: 32px;
@@ -270,6 +280,9 @@ select:focus {
   }
   .tabs-list li {
     padding-top: 10px;
+  }
+  #settings_icon{
+    right: -150%;
   }
   .hamburger {
     position: absolute;
