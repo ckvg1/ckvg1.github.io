@@ -299,7 +299,7 @@ function connectedWrite(err) {
 
     if (typeof wartosc !== "boolean") {
       // wartosc powinna byc typu boolean
-      log("Próba zapisu nieprawidłowej wartości:", wartosc, req.ip);
+      log(`Próba zapisu nieprawidłowej wartości: ${wartosc}, ${req.ip}`);
       return res
         .status(400)
         .json({ error: "Nieprawidłowa wartość (oczekiwano true/false)" });
@@ -307,7 +307,7 @@ function connectedWrite(err) {
 
     if (Object.keys(variables).indexOf(`wej_${swiatlo}`) === -1) {
       // jezeli światło nie istnieje w naszym obiekcie, zwracamy błąd
-      log("Próba zapisu do nieistniejącego światła:", swiatlo, req.ip);
+      log(`Próba zapisu do nieistniejącego światła: ${swiatlo}, ${req.ip}`);
       return res.status(400).json({ error: "Nieprawidłowa nazwa światła" });
     }
     await writeMutex.runExclusive(
@@ -321,12 +321,12 @@ function connectedWrite(err) {
             wartosc,
             (err) => {
               if (err) {
-                log("Błąd przy zapisie:", err);
+                log(`Błąd przy zapisie: ${err}`);
                 res.status(500).json({ error: "Błąd przy zapisie" });
               } else {
                 res.json({ status: "zapisano", wartosc });
 
-                log(swiatlo, wartosc, req.ip); // logujemy operacje jaką wykonaliśmy
+                log(`${swiatlo}: ${wartosc} ${req.ip}`);
               }
               resolve(); // mutex zostanie zwolniony dopiero po zakończeniu callbacka
             }
@@ -352,7 +352,7 @@ function connectedWrite(err) {
 
     if (typeof wartosc !== "boolean") {
       // wartosc powinna byc typu boolean
-      log("Próba zapisu nieprawidłowej wartości:", wartosc, req.ip);
+      log(`Próba zapisu nieprawidłowej wartości: ${wartosc}, ${req.ip}`);
       return res
         .status(400)
         .json({ error: "Nieprawidłowa wartość (oczekiwano true/false)" });
@@ -360,7 +360,7 @@ function connectedWrite(err) {
 
     if (Object.keys(variables).indexOf(`wej_${roleta}`) === -1) {
       // jezeli roleta nie istnieje w naszym obiekcie, zwracamy błąd
-      log("Próba zapisu nieistniejącej rolety:", swiatlo, req.ip);
+      log(`Próba zapisu do nieistniejącej rolety: ${roleta}, ${req.ip}`);
       return res.status(400).json({ error: "Nieprawidłowa nazwa rolety" });
     }
 
@@ -372,12 +372,12 @@ function connectedWrite(err) {
 
           res.json({ status: "zapisano", wartosc });
 
-          log(roleta, wartosc, req.ip);
+          log(`${roleta}: ${wartosc} ${req.ip}`);
           return resolve();
         });
         if (result != 0) {
           res.json({ status: "blad przy zapisie" });
-          log("Błąd przy zapisie rolety!", roleta);
+          log(`Bład przy zapisie ${roleta} ${wartosc}`);
           return resolve();
         }
       });
@@ -441,7 +441,10 @@ function connectedWrite(err) {
     // Filtrujemy nieprawidłowe klucze
     Object.keys(noweWartosci).forEach((key) => {
       if (!variables[`wej_${key}`]) {
-        log("W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete", key);
+        log(
+          `W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          ${key}`
+        );
         delete noweWartosci[key];
       }
     });
@@ -452,10 +455,14 @@ function connectedWrite(err) {
         try {
           harmonogram = JSON.parse(data);
         } catch (parseError) {
-          log("Błąd parsowania JSON, używam pustego harmonogramu:", parseError);
+          log(
+            `Błąd parsowania JSON, używam pustego harmonogramu:, ${parseError}`
+          );
         }
       } else {
-        log("Plik harmonogram.json nie istnieje lub błąd odczytu, utworzę nowy");
+        log(
+          "Plik harmonogram.json nie istnieje lub błąd odczytu, utworzę nowy"
+        );
       }
 
       // Scal nowe wartości z istniejącym harmonogramem
@@ -466,11 +473,16 @@ function connectedWrite(err) {
         JSON.stringify(updatedHarmonogram, null, 2),
         (err) => {
           if (err) {
-            log("Błąd zapisu pliku harmonogram.json:", err);
-            return res.status(500).json({ error: "Błąd zapisu pliku harmonogramu" });
+            log(`Błąd zapisu pliku harmonogram.json: ${err}`);
+            return res
+              .status(500)
+              .json({ error: "Błąd zapisu pliku harmonogramu" });
           }
-          log("Harmonogram zaktualizowany:", noweWartosci);
-          res.json({ status: "harmonogram ustawiony", harmonogram: updatedHarmonogram });
+          log(`Harmonogram zaktualizowany: ${noweWartosci}`);
+          res.json({
+            status: "harmonogram ustawiony",
+            harmonogram: updatedHarmonogram,
+          });
         }
       );
     });
@@ -480,7 +492,7 @@ function connectedWrite(err) {
   app.get("/harmonogram", (req, res) => {
     fs.readFile("harmonogram.json", "utf8", (err, data) => {
       if (err) {
-        log("Błąd odczytu pliku harmonogram.json:", err);
+        log(`Błąd odczytu pliku harmonogram.json: ${err}`);
         return res
           .status(500)
           .json({ error: "Błąd odczytu pliku harmonogramu" });
@@ -490,7 +502,7 @@ function connectedWrite(err) {
         const harmonogram = JSON.parse(data);
         res.json(harmonogram);
       } catch (parseError) {
-        log("Błąd parsowania JSON:", parseError);
+        log(`Błąd parsowania JSON: ${parseError}`);
         res.status(500).json({ error: "Błąd parsowania danych harmonogramu" });
       }
     });
@@ -501,14 +513,14 @@ function connectedWrite(err) {
     log("Próba odczytu harmonogramu");
     fs.readFile("harmonogram.json", "utf8", (err, data) => {
       if (err) {
-        log("Błąd odczytu pliku harmonogram.json:", err);
+        log(`Błąd odczytu pliku harmonogram.json: ${err}`);
         return;
       }
 
       const harmonogram = JSON.parse(data);
-      log("Godzina z harmonogramu: ", harmonogram);
+      log(`Godzina z harmonogramu: ${harmonogram}`);
       const currentHour = new Date().toLocaleTimeString().slice(0, 5);
-      log("Aktualna godzina: ", currentHour);
+      log(`Aktualna godzina: ${currentHour}`);
       Object.entries(harmonogram).forEach(([key, value]) => {
         if (value === currentHour) {
           log("Aktualna godzina taka sama jak w harmonogramie.");
