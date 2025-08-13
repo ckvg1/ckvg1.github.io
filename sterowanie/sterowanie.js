@@ -75,10 +75,14 @@ addEventListener("DOMContentLoaded", () => {
       const el = document.getElementById(id);
       if (el) {
         if (el.id.slice(0, 5) == "wyj_l") {
+          let nazwa_pliku =
+            localStorage.getItem("theme") == "ciemny-motyw"
+              ? "bulb_of-dark.png"
+              : "bulb_of.png";
           // sprawdzenie, czy element jest wyjściem światła
           el.src = wartosc // w zalezonosci od wartosci, ustawiamy odpowiedni obrazek
-            ? "../img_main/icony/bulb_on.png"
-            : "../img_main/icony/bulb_of.png";
+            ? `../img_main/icony/bulb_on.png`
+            : `../img_main/icony/${nazwa_pliku}`;
         }
       }
     });

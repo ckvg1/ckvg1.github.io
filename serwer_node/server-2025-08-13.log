@@ -1,0 +1,501 @@
+[2025-08-13T09:32:18.751Z] Serwer nasłuchuje na porcie 3000
+[2025-08-13T09:32:54.785Z] l2_3_2
+[2025-08-13T09:32:54.790Z] l2_3_2
+[2025-08-13T09:32:56.046Z] l2_3_1
+[2025-08-13T09:32:56.052Z] l2_3_1
+[2025-08-13T09:32:56.479Z] l2_3_1
+[2025-08-13T09:32:56.484Z] l2_3_1
+[2025-08-13T09:32:57.063Z] l2_3_2
+[2025-08-13T09:32:57.068Z] l2_3_2
+[2025-08-13T09:32:58.891Z] l3_2_1
+[2025-08-13T09:32:58.896Z] l3_2_1
+[2025-08-13T09:32:59.370Z] l3_2_2
+[2025-08-13T09:32:59.373Z] l3_2_2
+[2025-08-13T09:32:59.786Z] l3_2_2
+[2025-08-13T09:32:59.791Z] l3_2_2
+[2025-08-13T09:33:00.478Z] l3_2_1
+[2025-08-13T09:33:00.482Z] l3_2_1
+[2025-08-13T09:33:01.082Z] l3_2_1
+[2025-08-13T09:33:01.087Z] l3_2_1
+[2025-08-13T09:33:02.295Z] l3_2_2
+[2025-08-13T09:33:02.300Z] l3_2_2
+[2025-08-13T09:33:07.798Z] l3_2_1
+[2025-08-13T09:33:07.802Z] l3_2_1
+[2025-08-13T09:33:08.483Z] l3_2_2
+[2025-08-13T09:33:08.488Z] l3_2_2
+[2025-08-13T09:33:09.566Z] l3_2_2
+[2025-08-13T09:33:09.572Z] l3_2_2
+[2025-08-13T09:33:10.115Z] l3_2_1
+[2025-08-13T09:33:10.120Z] l3_2_1
+[2025-08-13T09:33:10.559Z] l3_2_1
+[2025-08-13T09:33:10.564Z] l3_2_1
+[2025-08-13T09:33:11.011Z] l3_2_1
+[2025-08-13T09:33:11.016Z] l3_2_1
+[2025-08-13T09:33:11.410Z] l3_2_1
+[2025-08-13T09:33:11.416Z] l3_2_1
+[2025-08-13T09:33:12.745Z] l3_2_1
+[2025-08-13T09:33:12.749Z] l3_2_1
+[2025-08-13T09:33:18.786Z] Próba odczytu harmonogramu
+[2025-08-13T09:33:18.788Z] Godzina z harmonogramu: 
+[2025-08-13T09:33:18.832Z] Aktualna godzina: 
+[2025-08-13T09:34:18.785Z] Próba odczytu harmonogramu
+[2025-08-13T09:34:18.789Z] Godzina z harmonogramu: 
+[2025-08-13T09:34:18.789Z] Aktualna godzina: 
+[2025-08-13T09:35:00.060Z] l3_2_1
+[2025-08-13T09:35:00.065Z] l3_2_1
+[2025-08-13T09:35:00.454Z] l3_2_1
+[2025-08-13T09:35:00.460Z] l3_2_1
+[2025-08-13T09:35:00.837Z] l3_2_1
+[2025-08-13T09:35:00.841Z] l3_2_1
+[2025-08-13T09:35:01.012Z] l3_2_1
+[2025-08-13T09:35:01.017Z] l3_2_1
+[2025-08-13T09:35:01.439Z] l3_2_1
+[2025-08-13T09:35:01.446Z] l3_2_1
+[2025-08-13T09:35:01.958Z] l3_2_1
+[2025-08-13T09:35:01.966Z] l3_2_1
+[2025-08-13T09:35:02.476Z] l3_2_1
+[2025-08-13T09:35:02.480Z] l3_2_1
+[2025-08-13T09:35:03.059Z] l3_2_2
+[2025-08-13T09:35:03.064Z] l3_2_2
+[2025-08-13T09:35:03.608Z] l3_2_2
+[2025-08-13T09:35:03.612Z] l3_2_2
+[2025-08-13T09:35:18.785Z] Próba odczytu harmonogramu
+[2025-08-13T09:35:18.787Z] Godzina z harmonogramu: 
+[2025-08-13T09:35:18.787Z] Aktualna godzina: 
+[2025-08-13T09:35:23.353Z] l3_2_2
+[2025-08-13T09:35:23.358Z] l3_2_2
+[2025-08-13T09:35:23.771Z] l3_2_2
+[2025-08-13T09:35:23.776Z] l3_2_2
+[2025-08-13T09:35:58.999Z] l3_3_1
+[2025-08-13T09:35:59.005Z] l3_3_1
+[2025-08-13T09:35:59.425Z] l3_3_1
+[2025-08-13T09:35:59.430Z] l3_3_1
+[2025-08-13T09:36:01.826Z] l3_2_1
+[2025-08-13T09:36:18.785Z] Próba odczytu harmonogramu
+[2025-08-13T09:36:18.788Z] Godzina z harmonogramu: 
+[2025-08-13T09:36:18.789Z] Aktualna godzina: 
+[2025-08-13T09:37:18.786Z] Próba odczytu harmonogramu
+[2025-08-13T09:37:18.789Z] Godzina z harmonogramu: 
+[2025-08-13T09:37:18.790Z] Aktualna godzina: 
+[2025-08-13T09:37:52.200Z] l3_2_1
+[2025-08-13T09:37:52.206Z] l3_2_1
+[2025-08-13T09:37:52.894Z] l3_2_1
+[2025-08-13T09:37:52.899Z] l3_2_1
+[2025-08-13T09:37:53.427Z] l3_2_1
+[2025-08-13T09:37:53.432Z] l3_2_1
+[2025-08-13T09:38:09.434Z] l3_1_1
+[2025-08-13T09:38:09.439Z] l3_1_1
+[2025-08-13T09:38:09.948Z] l3_1_2
+[2025-08-13T09:38:09.952Z] l3_1_2
+[2025-08-13T09:38:10.614Z] l3_1_1
+[2025-08-13T09:38:10.620Z] l3_1_1
+[2025-08-13T09:38:11.104Z] l3_1_2
+[2025-08-13T09:38:11.108Z] l3_1_2
+[2025-08-13T09:38:11.619Z] l3_1_2
+[2025-08-13T09:38:11.624Z] l3_1_2
+[2025-08-13T09:38:12.046Z] l3_1_2
+[2025-08-13T09:38:12.050Z] l3_1_2
+[2025-08-13T09:38:18.786Z] Próba odczytu harmonogramu
+[2025-08-13T09:38:18.788Z] Godzina z harmonogramu: 
+[2025-08-13T09:38:18.789Z] Aktualna godzina: 
+[2025-08-13T09:38:38.807Z] l3_2_1
+[2025-08-13T09:38:38.812Z] l3_2_1
+[2025-08-13T09:38:39.251Z] l3_2_1
+[2025-08-13T09:38:39.261Z] l3_2_1
+[2025-08-13T09:38:39.750Z] l3_2_1
+[2025-08-13T09:38:39.756Z] l3_2_1
+[2025-08-13T09:38:40.110Z] l3_2_1
+[2025-08-13T09:38:40.115Z] l3_2_1
+[2025-08-13T09:38:40.633Z] l3_2_1
+[2025-08-13T09:38:40.638Z] l3_2_1
+[2025-08-13T09:38:42.553Z] all_ON_l3
+[2025-08-13T09:38:42.558Z] all_ON_l3
+[2025-08-13T09:38:43.702Z] all_OFF_l3
+[2025-08-13T09:38:43.707Z] all_OFF_l3
+[2025-08-13T09:38:44.267Z] all_ON_l3
+[2025-08-13T09:38:44.272Z] all_ON_l3
+[2025-08-13T09:39:18.787Z] Próba odczytu harmonogramu
+[2025-08-13T09:39:18.790Z] Godzina z harmonogramu: 
+[2025-08-13T09:39:18.791Z] Aktualna godzina: 
+[2025-08-13T09:39:29.431Z] Harmonogram zaktualizowany:
+[2025-08-13T09:40:18.787Z] Próba odczytu harmonogramu
+[2025-08-13T09:40:18.790Z] Godzina z harmonogramu: 
+[2025-08-13T09:40:18.790Z] Aktualna godzina: 
+[2025-08-13T09:41:18.787Z] Próba odczytu harmonogramu
+[2025-08-13T09:41:18.789Z] Godzina z harmonogramu: 
+[2025-08-13T09:41:18.790Z] Aktualna godzina: 
+[2025-08-13T09:42:18.787Z] Próba odczytu harmonogramu
+[2025-08-13T09:42:18.790Z] Godzina z harmonogramu: 
+[2025-08-13T09:42:18.790Z] Aktualna godzina: 
+[2025-08-13T09:43:18.788Z] Próba odczytu harmonogramu
+[2025-08-13T09:43:18.789Z] Godzina z harmonogramu: 
+[2025-08-13T09:43:18.789Z] Aktualna godzina: 
+[2025-08-13T09:44:18.788Z] Próba odczytu harmonogramu
+[2025-08-13T09:44:18.791Z] Godzina z harmonogramu: 
+[2025-08-13T09:44:18.791Z] Aktualna godzina: 
+[2025-08-13T09:44:47.621Z] l3_1_1
+[2025-08-13T09:44:47.627Z] l3_1_1
+[2025-08-13T09:44:48.041Z] l3_1_2
+[2025-08-13T09:44:48.046Z] l3_1_2
+[2025-08-13T09:44:48.651Z] l3_1_2
+[2025-08-13T09:44:48.657Z] l3_1_2
+[2025-08-13T09:44:50.669Z] l3_1_1
+[2025-08-13T09:44:50.677Z] l3_1_1
+[2025-08-13T09:44:55.613Z] l3_1_1
+[2025-08-13T09:44:55.617Z] l3_1_1
+[2025-08-13T09:44:56.128Z] l3_1_2
+[2025-08-13T09:44:56.134Z] l3_1_2
+[2025-08-13T09:44:56.548Z] l3_1_2
+[2025-08-13T09:44:56.553Z] l3_1_2
+[2025-08-13T09:44:56.994Z] l3_1_1
+[2025-08-13T09:44:56.999Z] l3_1_1
+[2025-08-13T09:45:08.395Z] l3_3_1
+[2025-08-13T09:45:08.400Z] l3_3_1
+[2025-08-13T09:45:08.898Z] l3_3_1
+[2025-08-13T09:45:08.902Z] l3_3_1
+[2025-08-13T09:45:18.789Z] Próba odczytu harmonogramu
+[2025-08-13T09:45:18.791Z] Godzina z harmonogramu: 
+[2025-08-13T09:45:18.791Z] Aktualna godzina: 
+[2025-08-13T09:45:18.791Z] Aktualna godzina taka sama jak w harmonogramie.
+[2025-08-13T09:45:18.792Z] Aktualna godzina taka sama jak w harmonogramie.
+[2025-08-13T09:45:18.792Z] Wyłączam all_OFF_l3 według harmonogramu
+[2025-08-13T09:45:18.899Z] Wyłaczenie swiatla all_OFF_l3 powiodlo sie. 
+[2025-08-13T09:45:18.899Z] Wyłączam all_OFF_l2 według harmonogramu
+[2025-08-13T09:45:19.009Z] Wyłaczenie swiatla all_OFF_l2 powiodlo sie. 
+[2025-08-13T09:46:18.788Z] Próba odczytu harmonogramu
+[2025-08-13T09:46:18.790Z] Godzina z harmonogramu: 
+[2025-08-13T09:46:18.790Z] Aktualna godzina: 
+[2025-08-13T09:46:51.805Z] l3_2_1
+[2025-08-13T09:46:51.814Z] l3_2_1
+[2025-08-13T09:47:08.072Z] l3_1_2
+[2025-08-13T09:47:08.078Z] l3_1_2
+[2025-08-13T09:47:08.552Z] l3_1_1
+[2025-08-13T09:47:08.557Z] l3_1_1
+[2025-08-13T09:47:08.770Z] l3_1_1
+[2025-08-13T09:47:08.778Z] l3_1_1
+[2025-08-13T09:47:09.267Z] l3_1_2
+[2025-08-13T09:47:09.274Z] l3_1_2
+[2025-08-13T09:47:10.197Z] l3_2_1
+[2025-08-13T09:47:10.202Z] l3_2_1
+[2025-08-13T09:47:10.679Z] l3_2_2
+[2025-08-13T09:47:10.684Z] l3_2_2
+[2025-08-13T09:47:11.271Z] l3_2_1
+[2025-08-13T09:47:11.277Z] l3_2_1
+[2025-08-13T09:47:12.064Z] all_ON_l3
+[2025-08-13T09:47:12.068Z] all_ON_l3
+[2025-08-13T09:47:12.668Z] all_OFF_l3
+[2025-08-13T09:47:12.674Z] all_OFF_l3
+[2025-08-13T09:47:13.368Z] all_ON_l3
+[2025-08-13T09:47:13.373Z] all_ON_l3
+[2025-08-13T09:47:18.788Z] Próba odczytu harmonogramu
+[2025-08-13T09:47:18.790Z] Godzina z harmonogramu: 
+[2025-08-13T09:47:18.790Z] Aktualna godzina: 
+[2025-08-13T09:47:25.235Z] all_OFF_l3
+[2025-08-13T09:47:25.239Z] all_OFF_l3
+[2025-08-13T09:47:25.704Z] all_ON_l3
+[2025-08-13T09:47:25.709Z] all_ON_l3
+[2025-08-13T09:47:26.416Z] all_OFF_l3
+[2025-08-13T09:47:26.421Z] all_OFF_l3
+[2025-08-13T09:47:27.148Z] all_ON_l3
+[2025-08-13T09:47:27.155Z] all_ON_l3
+[2025-08-13T09:47:27.715Z] all_OFF_l3
+[2025-08-13T09:47:27.722Z] all_OFF_l3
+[2025-08-13T09:47:28.333Z] all_ON_l3
+[2025-08-13T09:47:28.338Z] all_ON_l3
+[2025-08-13T09:47:49.509Z] l3_2_2
+[2025-08-13T09:47:49.513Z] l3_2_2
+[2025-08-13T09:47:50.654Z] l3_2_1
+[2025-08-13T09:47:50.658Z] l3_2_1
+[2025-08-13T09:47:51.771Z] l3_5_1
+[2025-08-13T09:47:51.776Z] l3_5_1
+[2025-08-13T09:47:52.287Z] l3_5_2
+[2025-08-13T09:47:52.293Z] l3_5_2
+[2025-08-13T09:47:53.260Z] l3_6_2
+[2025-08-13T09:47:53.264Z] l3_6_2
+[2025-08-13T09:47:53.704Z] l3_6_1
+[2025-08-13T09:47:53.709Z] l3_6_1
+[2025-08-13T09:47:54.921Z] l3_1_2
+[2025-08-13T09:47:54.926Z] l3_1_2
+[2025-08-13T09:47:56.772Z] l3_1_1
+[2025-08-13T09:47:56.778Z] l3_1_1
+[2025-08-13T09:47:57.749Z] l3_3_2
+[2025-08-13T09:47:57.753Z] l3_3_2
+[2025-08-13T09:47:58.358Z] l3_3_1
+[2025-08-13T09:47:58.362Z] l3_3_1
+[2025-08-13T09:47:59.323Z] l3_7_1
+[2025-08-13T09:47:59.329Z] l3_7_1
+[2025-08-13T09:48:00.570Z] l3_2_1
+[2025-08-13T09:48:00.575Z] l3_2_1
+[2025-08-13T09:48:05.204Z] l2_2_2
+[2025-08-13T09:48:05.208Z] l2_2_2
+[2025-08-13T09:48:05.620Z] l2_2_1
+[2025-08-13T09:48:05.624Z] l2_2_1
+[2025-08-13T09:48:08.455Z] l2_1_2
+[2025-08-13T09:48:08.459Z] l2_1_2
+[2025-08-13T09:48:10.440Z] l2_6_2
+[2025-08-13T09:48:10.444Z] l2_6_2
+[2025-08-13T09:48:11.722Z] l2_6_1
+[2025-08-13T09:48:11.726Z] l2_6_1
+[2025-08-13T09:48:18.790Z] Próba odczytu harmonogramu
+[2025-08-13T09:48:18.791Z] Godzina z harmonogramu: 
+[2025-08-13T09:48:18.791Z] Aktualna godzina: 
+[2025-08-13T09:48:58.022Z] Harmonogram zaktualizowany:
+[2025-08-13T09:49:18.789Z] Próba odczytu harmonogramu
+[2025-08-13T09:49:18.790Z] Godzina z harmonogramu: 
+[2025-08-13T09:49:18.791Z] Aktualna godzina: 
+[2025-08-13T09:49:18.791Z] Aktualna godzina taka sama jak w harmonogramie.
+[2025-08-13T09:49:18.791Z] Wyłączam l3_5_1 według harmonogramu
+[2025-08-13T09:49:18.897Z] Wyłaczenie swiatla l3_5_1 powiodlo sie. 
+[2025-08-13T09:50:18.790Z] Próba odczytu harmonogramu
+[2025-08-13T09:50:18.791Z] Godzina z harmonogramu: 
+[2025-08-13T09:50:18.792Z] Aktualna godzina: 
+[2025-08-13T09:51:18.790Z] Próba odczytu harmonogramu
+[2025-08-13T09:51:18.792Z] Godzina z harmonogramu: 
+[2025-08-13T09:51:18.792Z] Aktualna godzina: 
+[2025-08-13T09:52:18.790Z] Próba odczytu harmonogramu
+[2025-08-13T09:52:18.792Z] Godzina z harmonogramu: 
+[2025-08-13T09:52:18.792Z] Aktualna godzina: 
+[2025-08-13T09:53:18.790Z] Próba odczytu harmonogramu
+[2025-08-13T09:53:18.791Z] Godzina z harmonogramu: 
+[2025-08-13T09:53:18.792Z] Aktualna godzina: 
+[2025-08-13T09:54:18.789Z] Próba odczytu harmonogramu
+[2025-08-13T09:54:18.791Z] Godzina z harmonogramu: 
+[2025-08-13T09:54:18.792Z] Aktualna godzina: 
+[2025-08-13T09:55:18.789Z] Próba odczytu harmonogramu
+[2025-08-13T09:55:18.791Z] Godzina z harmonogramu: 
+[2025-08-13T09:55:18.791Z] Aktualna godzina: 
+[2025-08-13T09:56:18.789Z] Próba odczytu harmonogramu
+[2025-08-13T09:56:18.791Z] Godzina z harmonogramu: 
+[2025-08-13T09:56:18.791Z] Aktualna godzina: 
+[2025-08-13T09:57:18.789Z] Próba odczytu harmonogramu
+[2025-08-13T09:57:18.796Z] Godzina z harmonogramu: 
+[2025-08-13T09:57:18.797Z] Aktualna godzina: 
+[2025-08-13T09:58:18.788Z] Próba odczytu harmonogramu
+[2025-08-13T09:58:18.790Z] Godzina z harmonogramu: 
+[2025-08-13T09:58:18.790Z] Aktualna godzina: 
+[2025-08-13T09:58:57.746Z] Serwer zamykany przez SIGINT
+[2025-08-13T09:58:57.747Z] Proces zakończony z kodem: 0
+[2025-08-13T09:58:59.532Z] Serwer nasłuchuje na porcie 3000
+[2025-08-13T09:59:38.584Z] Harmonogram zaktualizowany:
+[2025-08-13T09:59:59.566Z] Próba odczytu harmonogramu
+[2025-08-13T09:59:59.567Z] Godzina z harmonogramu: 
+[2025-08-13T09:59:59.592Z] Aktualna godzina: 
+[2025-08-13T10:00:59.566Z] Próba odczytu harmonogramu
+[2025-08-13T10:00:59.568Z] Godzina z harmonogramu: 
+[2025-08-13T10:00:59.568Z] Aktualna godzina: 
+[2025-08-13T10:01:59.565Z] Próba odczytu harmonogramu
+[2025-08-13T10:01:59.567Z] Godzina z harmonogramu: 
+[2025-08-13T10:01:59.567Z] Aktualna godzina: 
+[2025-08-13T10:02:13.901Z] Harmonogram zaktualizowany:
+[2025-08-13T10:02:28.181Z] Harmonogram zaktualizowany:
+[2025-08-13T10:02:59.564Z] Próba odczytu harmonogramu
+[2025-08-13T10:02:59.566Z] Godzina z harmonogramu: 
+[2025-08-13T10:02:59.566Z] Aktualna godzina: 
+[2025-08-13T10:03:26.009Z] Serwer zamykany przez SIGINT
+[2025-08-13T10:03:26.010Z] Proces zakończony z kodem: 0
+[2025-08-13T10:03:27.433Z] Serwer nasłuchuje na porcie 3000
+[2025-08-13T10:03:48.610Z] Harmonogram zaktualizowany:
+[2025-08-13T10:04:27.468Z] Próba odczytu harmonogramu
+[2025-08-13T10:04:27.470Z] Godzina z harmonogramu: 
+[2025-08-13T10:04:27.493Z] Aktualna godzina: 
+[2025-08-13T10:04:45.623Z] Serwer zamykany przez SIGINT
+[2025-08-13T10:04:45.624Z] Proces zakończony z kodem: 0
+[2025-08-13T10:04:48.157Z] Serwer nasłuchuje na porcie 3000
+[2025-08-13T10:05:15.133Z] Harmonogram zaktualizowany:
+[2025-08-13T10:05:48.189Z] Próba odczytu harmonogramu
+[2025-08-13T10:05:48.191Z] Godzina z harmonogramu: 
+[2025-08-13T10:05:48.225Z] Aktualna godzina: 
+[2025-08-13T10:06:12.244Z] Serwer zamykany przez SIGINT
+[2025-08-13T10:06:12.245Z] Proces zakończony z kodem: 0
+[2025-08-13T10:06:13.454Z] Serwer nasłuchuje na porcie 3000
+[2025-08-13T10:06:16.205Z] Błąd parsowania JSON:
+[2025-08-13T10:06:16.207Z] Harmonogram zaktualizowany:
+[2025-08-13T10:06:16.207Z] Proces zakończony z kodem: 1
+[2025-08-13T10:07:24.041Z] Serwer nasłuchuje na porcie 3000
+[2025-08-13T10:07:27.995Z] Błąd parsowania JSON:
+[2025-08-13T10:07:27.998Z] Harmonogram zaktualizowany:
+[2025-08-13T10:07:27.999Z] Proces zakończony z kodem: 1
+[2025-08-13T10:07:55.563Z] Serwer nasłuchuje na porcie 3000
+[2025-08-13T10:07:59.072Z] Harmonogram zaktualizowany:
+[2025-08-13T10:08:46.083Z] Serwer zamykany przez SIGINT
+[2025-08-13T10:08:46.084Z] Proces zakończony z kodem: 0
+[2025-08-13T10:08:47.270Z] Serwer nasłuchuje na porcie 3000
+[2025-08-13T10:08:49.654Z] Harmonogram zaktualizowany:
+[2025-08-13T10:08:50.004Z] Harmonogram zaktualizowany:
+[2025-08-13T10:08:50.705Z] Harmonogram zaktualizowany:
+[2025-08-13T10:08:50.928Z] Harmonogram zaktualizowany:
+[2025-08-13T10:08:51.955Z] Harmonogram zaktualizowany:
+[2025-08-13T10:08:53.060Z] Harmonogram zaktualizowany:
+[2025-08-13T10:08:54.706Z] Harmonogram zaktualizowany:
+[2025-08-13T10:08:56.029Z] Harmonogram zaktualizowany:
+[2025-08-13T10:08:57.857Z] Harmonogram zaktualizowany:
+[2025-08-13T10:09:08.961Z] Harmonogram zaktualizowany:
+[2025-08-13T10:09:43.568Z] Serwer zamykany przez SIGINT
+[2025-08-13T10:09:43.569Z] Proces zakończony z kodem: 0
+[2025-08-13T10:09:44.566Z] Serwer nasłuchuje na porcie 3000
+[2025-08-13T10:09:51.857Z] Harmonogram zaktualizowany:
+[2025-08-13T10:10:01.911Z] Harmonogram zaktualizowany:
+[2025-08-13T10:10:16.966Z] Harmonogram zaktualizowany:
+[2025-08-13T10:10:27.483Z] Harmonogram zaktualizowany:
+[2025-08-13T10:10:38.972Z] Harmonogram zaktualizowany:
+[2025-08-13T10:10:44.598Z] Próba odczytu harmonogramu
+[2025-08-13T10:10:44.600Z] Godzina z harmonogramu: 
+[2025-08-13T10:10:44.627Z] Aktualna godzina: 
+[2025-08-13T10:11:44.805Z] Próba odczytu harmonogramu
+[2025-08-13T10:11:44.806Z] Godzina z harmonogramu: 
+[2025-08-13T10:11:44.807Z] Aktualna godzina: 
+[2025-08-13T10:12:44.805Z] Próba odczytu harmonogramu
+[2025-08-13T10:12:44.807Z] Godzina z harmonogramu: 
+[2025-08-13T10:12:44.808Z] Aktualna godzina: 
+[2025-08-13T10:12:51.239Z] Serwer zamykany przez SIGINT
+[2025-08-13T10:12:51.239Z] Proces zakończony z kodem: 0
+[2025-08-13T10:12:52.716Z] Serwer nasłuchuje na porcie 3000
+[2025-08-13T10:13:06.540Z] Harmonogram zaktualizowany:
+[2025-08-13T10:13:39.024Z] Harmonogram zaktualizowany:
+[2025-08-13T10:13:52.200Z] Harmonogram zaktualizowany:
+[2025-08-13T10:13:52.750Z] Próba odczytu harmonogramu
+[2025-08-13T10:13:52.752Z] Godzina z harmonogramu: 
+[2025-08-13T10:13:52.775Z] Aktualna godzina: 
+[2025-08-13T10:14:26.384Z] l3_3_1
+[2025-08-13T10:14:26.389Z] l3_3_1
+[2025-08-13T10:14:26.883Z] l3_3_1
+[2025-08-13T10:14:26.889Z] l3_3_1
+[2025-08-13T10:14:52.752Z] Próba odczytu harmonogramu
+[2025-08-13T10:14:52.753Z] Godzina z harmonogramu: 
+[2025-08-13T10:14:52.754Z] Aktualna godzina: 
+[2025-08-13T10:15:52.754Z] Próba odczytu harmonogramu
+[2025-08-13T10:15:52.756Z] Godzina z harmonogramu: 
+[2025-08-13T10:15:52.756Z] Aktualna godzina: 
+[2025-08-13T10:16:33.633Z] Serwer zamykany przez SIGINT
+[2025-08-13T10:16:33.634Z] Proces zakończony z kodem: 0
+[2025-08-13T10:16:34.885Z] Serwer nasłuchuje na porcie 3000
+[2025-08-13T10:16:59.581Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:16:59.582Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:16:59.582Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:16:59.582Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:16:59.582Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:16:59.583Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:16:59.583Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:16:59.583Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:16:59.583Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:16:59.583Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:16:59.583Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:16:59.583Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:16:59.583Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:16:59.583Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:16:59.583Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:16:59.584Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:16:59.584Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:16:59.584Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:16:59.584Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:16:59.586Z] Harmonogram zaktualizowany:
+[2025-08-13T10:17:34.920Z] Próba odczytu harmonogramu
+[2025-08-13T10:17:34.922Z] Godzina z harmonogramu: 
+[2025-08-13T10:17:34.951Z] Aktualna godzina: 
+[2025-08-13T10:17:39.198Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:39.198Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:39.198Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:39.199Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:39.199Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:39.199Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:39.199Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:39.199Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:39.199Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:39.199Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:39.199Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:39.199Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:39.199Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:39.199Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:39.199Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:39.199Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:39.199Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:39.200Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:39.200Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:39.203Z] Harmonogram zaktualizowany:
+[2025-08-13T10:17:45.363Z] Harmonogram zaktualizowany:
+[2025-08-13T10:17:49.827Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:49.828Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:49.828Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:49.828Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:49.828Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:49.828Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:49.828Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:49.828Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:49.829Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:49.829Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:49.829Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:49.829Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:49.829Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:49.829Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:49.829Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:49.829Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:49.829Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:49.829Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:49.829Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:49.830Z] Harmonogram zaktualizowany:
+[2025-08-13T10:17:54.933Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:54.933Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:54.934Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:54.934Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:54.934Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:54.934Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:54.934Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:54.934Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:54.934Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:54.934Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:54.934Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:54.934Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:54.934Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:54.935Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:54.935Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:54.935Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:54.935Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:54.935Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:54.935Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:17:54.936Z] Harmonogram zaktualizowany:
+[2025-08-13T10:18:09.846Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:18:09.847Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:18:09.847Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:18:09.847Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:18:09.847Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:18:09.848Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:18:09.848Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:18:09.848Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:18:09.848Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:18:09.848Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:18:09.848Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:18:09.848Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:18:09.849Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:18:09.849Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:18:09.849Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:18:09.849Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:18:09.849Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:18:09.849Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:18:09.849Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete
+[2025-08-13T10:18:09.854Z] Harmonogram zaktualizowany:
+[2025-08-13T10:18:34.921Z] Próba odczytu harmonogramu
+[2025-08-13T10:18:34.923Z] Godzina z harmonogramu: 
+[2025-08-13T10:18:34.923Z] Aktualna godzina: 
+[2025-08-13T10:19:34.923Z] Próba odczytu harmonogramu
+[2025-08-13T10:19:34.925Z] Godzina z harmonogramu: 
+[2025-08-13T10:19:34.925Z] Aktualna godzina: 
+[2025-08-13T10:19:34.925Z] Aktualna godzina taka sama jak w harmonogramie.
+[2025-08-13T10:19:34.925Z] Wyłączam l3_2_1 według harmonogramu
+[2025-08-13T10:19:35.032Z] Wyłaczenie swiatla l3_2_1 powiodlo sie. 
+[2025-08-13T10:20:34.925Z] Próba odczytu harmonogramu
+[2025-08-13T10:20:34.926Z] Godzina z harmonogramu: 
+[2025-08-13T10:20:34.927Z] Aktualna godzina: 
+[2025-08-13T10:20:34.927Z] Aktualna godzina taka sama jak w harmonogramie.
+[2025-08-13T10:20:34.927Z] Aktualna godzina taka sama jak w harmonogramie.
+[2025-08-13T10:20:34.927Z] Wyłączam all_OFF_l3 według harmonogramu
+[2025-08-13T10:20:35.037Z] Wyłaczenie swiatla all_OFF_l3 powiodlo sie. 
+[2025-08-13T10:20:35.038Z] Wyłączam all_OFF_l2 według harmonogramu
+[2025-08-13T10:20:35.147Z] Wyłaczenie swiatla all_OFF_l2 powiodlo sie. 
+[2025-08-13T10:37:25.233Z] Próba odczytu harmonogramu
+[2025-08-13T10:37:25.326Z] Godzina z harmonogramu: 
+[2025-08-13T10:37:25.326Z] Aktualna godzina: 
+[2025-08-13T10:51:29.502Z] Próba odczytu harmonogramu
+[2025-08-13T10:51:29.582Z] Godzina z harmonogramu: 
+[2025-08-13T10:51:29.583Z] Aktualna godzina: 
+[2025-08-13T10:51:41.587Z] Serwer zamykany przez SIGINT
+[2025-08-13T10:51:41.588Z] Proces zakończony z kodem: 0

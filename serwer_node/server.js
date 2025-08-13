@@ -13,11 +13,27 @@ const port = 3000; // Port, na którym będzie nasłuchiwał serwer
 app.use(cors());
 app.use(express.json());
 const fs = require("fs");
+const path = require("path");
 const readConn = new nodes7();
 const writeConn = new nodes7();
 const readMutex = new Mutex();
 const writeMutex = new Mutex();
 const cache = new NodeCache({ stdTTL: 0, checkperiod: 1 });
+
+// Plik logów z datą w nazwie
+const getLogFilePath = () => {
+  const date = new Date().toISOString().split("T")[0]; // YYYY-MM-DD
+  return path.join(__dirname, `server-${date}.log`);
+};
+
+// Funkcja logująca do pliku i konsoli
+function log(message) {
+  const logFilePath = getLogFilePath();
+  const time = new Date().toISOString();
+  const formatted = `[${time}] ${message}\n`;
+  fs.appendFileSync(logFilePath, formatted);
+  console.log(formatted.trim());
+}
 
 // 3 pietro
 const L3_in = require("./variables/floor3/L3_in");
@@ -126,7 +142,7 @@ const BLINDS_KEYS = [...new Set([...B0_out_keys, ...B1_out_keys, ...B2_out_keys,
 
 // Inicjalizcja serwera Express
 const server = app.listen(port, "0.0.0.0", () => {
-  console.log(`Serwer nasłuchuje na porcie ${port}`);
+  log(`Serwer nasłuchuje na porcie ${port}`);
 });
 
 // Inicjalizacja połączenia z PLC (odczyt)
@@ -187,7 +203,7 @@ function readAfterStartup() {
 }
 function connectedRead(err) {
   if (err) {
-    console.error("Błąd połączenia z PLC:", err);
+    log("Błąd połączenia z PLC:", err);
     return;
   }
   // Połączenie readConn udało się, więc możemy rozpocząć odczyty i nawiązać połączenie writeConn
@@ -254,7 +270,7 @@ function connectedRead(err) {
 
 function connectedWrite(err) {
   if (err) {
-    console.error("Błąd połączenia z PLC:", err);
+    log("Błąd połączenia z PLC:", err);
     return;
   }
 
@@ -283,7 +299,7 @@ function connectedWrite(err) {
 
     if (typeof wartosc !== "boolean") {
       // wartosc powinna byc typu boolean
-      console.error("Próba zapisu nieprawidłowej wartości:", wartosc, req.ip);
+      log("Próba zapisu nieprawidłowej wartości:", wartosc, req.ip);
       return res
         .status(400)
         .json({ error: "Nieprawidłowa wartość (oczekiwano true/false)" });
@@ -291,11 +307,7 @@ function connectedWrite(err) {
 
     if (Object.keys(variables).indexOf(`wej_${swiatlo}`) === -1) {
       // jezeli światło nie istnieje w naszym obiekcie, zwracamy błąd
-      console.error(
-        "Próba zapisu do nieistniejącego światła:",
-        swiatlo,
-        req.ip
-      );
+      log("Próba zapisu do nieistniejącego światła:", swiatlo, req.ip);
       return res.status(400).json({ error: "Nieprawidłowa nazwa światła" });
     }
     await writeMutex.runExclusive(
@@ -309,12 +321,12 @@ function connectedWrite(err) {
             wartosc,
             (err) => {
               if (err) {
-                console.error("Błąd przy zapisie:", err);
+                log("Błąd przy zapisie:", err);
                 res.status(500).json({ error: "Błąd przy zapisie" });
               } else {
                 res.json({ status: "zapisano", wartosc });
-                var godzina = new Date().toISOString();
-                console.info(swiatlo, wartosc, godzina, req.ip); // logujemy operacje jaką wykonaliśmy
+
+                log(swiatlo, wartosc, req.ip); // logujemy operacje jaką wykonaliśmy
               }
               resolve(); // mutex zostanie zwolniony dopiero po zakończeniu callbacka
             }
@@ -323,7 +335,7 @@ function connectedWrite(err) {
           // Jezeli result nie jest 0, to znaczy, że zapis został odrzucony (np. inny zapis już trwa)
           // W takim przypadku zwracamy błąd 409 (Conflict) i nie wykonujemy dalszych operacji
           if (result != 0) {
-            console.error("writeItems odrzucone: zapis już trwa");
+            log("writeItems odrzucone: zapis już trwa");
             res
               .status(409)
               .json({ error: "Zapis w trakcie, spróbuj ponownie" });
@@ -340,7 +352,7 @@ function connectedWrite(err) {
 
     if (typeof wartosc !== "boolean") {
       // wartosc powinna byc typu boolean
-      console.error("Próba zapisu nieprawidłowej wartości:", wartosc, req.ip);
+      log("Próba zapisu nieprawidłowej wartości:", wartosc, req.ip);
       return res
         .status(400)
         .json({ error: "Nieprawidłowa wartość (oczekiwano true/false)" });
@@ -348,7 +360,7 @@ function connectedWrite(err) {
 
     if (Object.keys(variables).indexOf(`wej_${roleta}`) === -1) {
       // jezeli roleta nie istnieje w naszym obiekcie, zwracamy błąd
-      console.error("Próba zapisu nieistniejącej rolety:", swiatlo, req.ip);
+      log("Próba zapisu nieistniejącej rolety:", swiatlo, req.ip);
       return res.status(400).json({ error: "Nieprawidłowa nazwa rolety" });
     }
 
@@ -359,13 +371,13 @@ function connectedWrite(err) {
           if (err) return res.status(500).json({ error: "Błąd przy zapisie" });
 
           res.json({ status: "zapisano", wartosc });
-          var godzina = new Date().toISOString();
-          console.info(roleta, wartosc, godzina, req.ip);
+
+          log(roleta, wartosc, req.ip);
           return resolve();
         });
         if (result != 0) {
           res.json({ status: "blad przy zapisie" });
-          console.error("Błąd przy zapisie rolety!");
+          log("Błąd przy zapisie rolety!", roleta);
           return resolve();
         }
       });
@@ -425,46 +437,50 @@ function connectedWrite(err) {
   // PUT: aktualizacja/dodanie wpisów w harmonogramie
   app.put("/harmonogram/add", (req, res) => {
     const noweWartosci = req.body; // np. { "all_OFF_l2": "17:30", "all_OFF_l3": "18:00" }
+
+    // Filtrujemy nieprawidłowe klucze
     Object.keys(noweWartosci).forEach((key) => {
-      if (Object.keys(variables).indexOf(`wej_${key}`) === -1) {
-        console.log(
-          "W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete",
-          key
-        );
+      if (!variables[`wej_${key}`]) {
+        log("W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete", key);
         delete noweWartosci[key];
       }
     });
-    let harmonogram = {};
 
-    // Nadpisz lub dodaj nowe wartości
-    Object.entries(noweWartosci).forEach(([key, value]) => {
-      harmonogram[key] = value;
-    });
-    // Zapisz harmonogram do pliku harmonogram.json
-    // Jeśli plik nie istnieje, zostanie utworzony
-    // Jeśli istnieje, zostanie nadpisany
-    fs.writeFile(
-      "harmonogram.json",
-      JSON.stringify(harmonogram, null, 2),
-      (err) => {
-        if (err) {
-          console.error("Błąd zapisu pliku harmonogram.json:", err);
-          return res
-            .status(500)
-            .json({ error: "Błąd zapisu pliku harmonogramu" });
+    fs.readFile("harmonogram.json", "utf8", (err, data) => {
+      let harmonogram = {};
+      if (!err) {
+        try {
+          harmonogram = JSON.parse(data);
+        } catch (parseError) {
+          log("Błąd parsowania JSON, używam pustego harmonogramu:", parseError);
         }
-
-        console.log("Harmonogram zaktualizowany:", noweWartosci);
-        res.json({ status: "harmonogram ustawiony", harmonogram });
+      } else {
+        log("Plik harmonogram.json nie istnieje lub błąd odczytu, utworzę nowy");
       }
-    );
+
+      // Scal nowe wartości z istniejącym harmonogramem
+      const updatedHarmonogram = { ...harmonogram, ...noweWartosci };
+
+      fs.writeFile(
+        "harmonogram.json",
+        JSON.stringify(updatedHarmonogram, null, 2),
+        (err) => {
+          if (err) {
+            log("Błąd zapisu pliku harmonogram.json:", err);
+            return res.status(500).json({ error: "Błąd zapisu pliku harmonogramu" });
+          }
+          log("Harmonogram zaktualizowany:", noweWartosci);
+          res.json({ status: "harmonogram ustawiony", harmonogram: updatedHarmonogram });
+        }
+      );
+    });
   });
 
   // GET: pełny harmonogram
   app.get("/harmonogram", (req, res) => {
     fs.readFile("harmonogram.json", "utf8", (err, data) => {
       if (err) {
-        console.error("Błąd odczytu pliku harmonogram.json:", err);
+        log("Błąd odczytu pliku harmonogram.json:", err);
         return res
           .status(500)
           .json({ error: "Błąd odczytu pliku harmonogramu" });
@@ -474,7 +490,7 @@ function connectedWrite(err) {
         const harmonogram = JSON.parse(data);
         res.json(harmonogram);
       } catch (parseError) {
-        console.error("Błąd parsowania JSON:", parseError);
+        log("Błąd parsowania JSON:", parseError);
         res.status(500).json({ error: "Błąd parsowania danych harmonogramu" });
       }
     });
@@ -482,29 +498,29 @@ function connectedWrite(err) {
   // Cykliczne sprawdzanie harmonogramu i wwylaczanie swiatel.
   // Automatyczne wyłączanie świateł na podstawie harmonogramu
   setInterval(() => {
-    console.log("Próba odczytu harmonogramu");
+    log("Próba odczytu harmonogramu");
     fs.readFile("harmonogram.json", "utf8", (err, data) => {
       if (err) {
-        console.error("Błąd odczytu pliku harmonogram.json:", err);
+        log("Błąd odczytu pliku harmonogram.json:", err);
         return;
       }
 
       const harmonogram = JSON.parse(data);
-      console.log("Godzina z harmonogramu: ", harmonogram);
+      log("Godzina z harmonogramu: ", harmonogram);
       const currentHour = new Date().toLocaleTimeString().slice(0, 5);
-      console.log("Aktualna godzina: ", currentHour);
+      log("Aktualna godzina: ", currentHour);
       Object.entries(harmonogram).forEach(([key, value]) => {
         if (value === currentHour) {
-          console.log("Aktualna godzina taka sama jak w harmonogramie.");
+          log("Aktualna godzina taka sama jak w harmonogramie.");
           writeMutex.runExclusive(async () => {
-            console.log(`Wyłączam ${key} według harmonogramu`);
+            log(`Wyłączam ${key} według harmonogramu`);
             await new Promise((resolve) => {
               writeConn.writeItems(`wej_${key}`, true, (err) => {
-                if (err) console.error(`Blad wej_${key} na true:`, err);
+                if (err) log(`Blad wej_${key} na true:`, err);
                 setTimeout(() => {
                   writeConn.writeItems(`wej_${key}`, false, (err) => {
-                    if (err) console.error(`Blad wej_${key} na false:`, err);
-                    console.log(`Wyłaczenie swiatla ${key} powiodlo sie. `);
+                    if (err) log(`Blad wej_${key} na false:`, err);
+                    log(`Wyłaczenie swiatla ${key} powiodlo sie. `);
                     resolve();
                   });
                 }, 100);
@@ -517,3 +533,17 @@ function connectedWrite(err) {
   }, 60000); // Sprawdzamy harmonogram co 60 sekund (60000 ms)
   // Można zmienić ten czas, jeśli potrzebujesz częstszych lub rzadszych sprawdzeń
 }
+
+process.on("SIGINT", () => {
+  log("Serwer zamykany przez SIGINT");
+  process.exit(0);
+});
+
+process.on("SIGTERM", () => {
+  log("Serwer zamykany przez SIGTERM");
+  process.exit(0);
+});
+
+process.on("exit", (code) => {
+  log(`Proces zakończony z kodem: ${code}`);
+});
