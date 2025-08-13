@@ -413,23 +413,22 @@
       //button do zamykania alertBox
       const button = document.createElement("button");
       button.innerText = "X";
-      button.style.padding = "5px";
       button.title = "Zamknij";
-      button.style.backgroundColor = "white";
+
+      // Stylowanie
       Object.assign(button.style, {
+        padding: "5px",
+        backgroundColor: "white",
         color: "red",
         border: "none",
         cursor: "pointer",
       });
 
+      // Obsługa kliknięcia
       button.onclick = () => {
-        const date = new Date();
-        date.setTime(date.getTime() + 24 * 60 * 60 * 1000); // dzisiaj + 1 dzien
-        const expires = "expires=" + date.toUTCString();
-        const alertBox = document.getElementById("alertBox");
-        alertBox.style.display = "none";
-        // ciasteczko zeby przegladarka pamietala ze alertbox wylaczony
-        document.cookie = "alertBoxClosed=true; " + expires + "; path=/";
+        document.getElementById("alertBox").style.display = "none";
+        const expires = new Date(Date.now() + 864e5).toUTCString(); // 24h
+        document.cookie = `alertBoxClosed=true; expires=${expires}; path=/`;
       };
 
       function getCookie(name) {
