@@ -990,6 +990,12 @@
           //funkcja po nacisnieciu przycisku zapisz
           async function zapiszUstawienia() {
             const allLights = [
+              "l0_1_1",
+              "l0_1_2",
+              "l0_2_1",
+              "l0_2_2",
+              "l0_3_1",
+              "l0_3_2",
               "l1_1_1",
               "l1_1_2",
               "l1_2_1",
@@ -1297,13 +1303,20 @@
     <script>
       const modal = document.getElementById("settingsModal");
       const settingsIcon = document.getElementById("settings_icon");
-      settingsIcon.addEventListener("click", () => {
-        modal.style.display = "flex";
-        wczytajHarmonogram();
-      });
+      const modal_content = document.querySelector(".modal-content")
       function closeModal() {
         modal.style.display = "none";
       }
+      function settingsF(event) {
+        if(settingsIcon.contains(event.target)){
+          modal.style.display = "flex";
+          wczytajHarmonogram();
+        }
+        else if (!modal_content.contains(event.target)) {
+          closeModal();
+        }
+      }
+      document.addEventListener("click", settingsF)
     </script>
     <script src="./js/tabs.js"></script>
 
