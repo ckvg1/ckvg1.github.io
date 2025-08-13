@@ -2,17 +2,20 @@ body {
   margin: 0;
   padding: 20px;
 }
+
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
 }
-input.ciemny {
-  background-color: #00152c;
-  color: #ffffff;
-  border: 1px solid #ffffff;
+
+input,
+select {
+  margin-bottom: auto;
 }
+
+input.ciemny,
 select.ciemny {
   background-color: #00152c;
   color: #ffffff;
@@ -25,68 +28,64 @@ select.ciemny {
   align-items: center;
   flex-wrap: wrap;
 }
-input, select{
-  margin-bottom: auto;
-}
 
-/* CSS tylko dla switcha - codepan */
+/* Switch */
 input[type=checkbox] {
-    height: 0;
-    width: 0;
-    padding: 0;
-    border: 0;
-    margin: 0;
-    visibility: hidden;
+  height: 0;
+  width: 0;
+  padding: 0;
+  border: 0;
+  margin: 0;
+  visibility: hidden;
 }
+
 label {
-    cursor: pointer;
-    text-indent: -9999px;
-    width: 66px;           /* 200 / 3 */
-    height: 33px;          /* 100 / 3 */
-    background: grey;
-    display: flex;
-    border-radius: 33px;   /* 100 / 3 */
-    position: relative;
-}
-label:after {
-    content: '';
-    position: absolute;
-    top: 1.67px;           /* 5 / 3 */
-    left: 1.67px;          /* 5 / 3 */
-    width: 30px;           /* 90 / 3 */
-    height: 30px;          /* 90 / 3 */
-    background: #fff;
-    border-radius: 30px;   /* 90 / 3 */
-    transition: 0.3s;
-}
-input:checked + label {
-    background: #2a80f9;
-}
-input:checked + label:after {
-    left: calc(100% - 1.67px);
-    transform: translateX(-100%);
-}
-label:active:after {
-    width: 43.33px;        /* 130 / 3 */
-}
-
-
-.container {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 66px;
+  height: 33px;
+  background: grey;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
+  border-radius: 33px;
+  position: relative;
 }
 
+label:after {
+  content: '';
+  position: absolute;
+  top: 1.67px;
+  left: 1.67px;
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  border-radius: 30px;
+  transition: 0.3s;
+}
 
+input:checked + label {
+  background: #2a80f9;
+}
+
+input:checked + label:after {
+  left: calc(100% - 1.67px);
+  transform: translateX(-100%);
+}
+
+label:active:after {
+  width: 43.33px;
+}
+
+/* Media Queries */
 @media (max-width: 1100px) {
   #myDiv {
     display: none;
   }
+
   #myDiv2 {
     display: block;
     scale: 0.8;
   }
+
   header img {
     width: 400px;
   }
@@ -96,11 +95,13 @@ label:active:after {
     flex-direction: column;
     align-items: center;
   }
+
   #dataInfoText {
     font-size: 18px;
   }
-  input, select{
+
+  input,
+  select {
     margin-bottom: 10px;
   }
-
 }

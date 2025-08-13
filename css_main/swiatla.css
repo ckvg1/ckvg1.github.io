@@ -10,26 +10,27 @@ body {
 form {
   padding: 5px;
 }
+
 input,
 select {
   margin-bottom: 10px;
 }
-#myDiv {
-  margin: auto;
-}
-#myDiv2 {
-  display: block;
-}
-input.ciemny {
-  background-color: #00152c;
-  color: #ffffff;
-  border: 1px solid #ffffff;
-}
+
+input.ciemny,
 select.ciemny {
   background-color: #00152c;
   color: #ffffff;
   border: 1px solid #ffffff;
 }
+
+#myDiv {
+  margin: auto;
+}
+
+#myDiv2 {
+  display: block;
+}
+
 #myPlot {
   width: 100%;
   height: 400px;
@@ -50,22 +51,26 @@ select.ciemny {
     flex-direction: column;
     align-items: center;
   }
+
   #dataInfoText {
     font-size: 18px;
   }
 }
+
 @media (max-width: 900px) {
   #myDiv {
     width: 100%;
-    margin: auto;
   }
+
   #myDiv img {
     width: 100%;
   }
+
   .plotSensor {
     width: 98%;
   }
 }
+
 @media (max-width: 520px) {
   #myDiv2 {
     width: 100%;

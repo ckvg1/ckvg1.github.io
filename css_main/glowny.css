@@ -2,8 +2,8 @@ body {
   font-family: "Ubuntu", Courier, monospace;
   background-color: #f4f7f9;
   color: #000000;
-  overflow-x: scroll !important;
 }
+
 body.ciemny {
   background-color: #06111b;
   color: #ffffff;
@@ -16,14 +16,13 @@ header {
   justify-content: space-between;
   flex-wrap: wrap;
   background-color: #f4f7f9;
-  border-image: linear-gradient(180deg, #333 95%, #f4f7f9) 1;
   border-bottom: 5px solid;
+  border-image: linear-gradient(180deg, #333 95%, #f4f7f9) 1;
 }
 
 header.ciemny {
   background-color: #00152c;
   border-image: linear-gradient(180deg, #00152c 98%, #06111b) 1;
-  border-bottom: 5px solid;
 }
 
 .przycisk {
@@ -31,12 +30,13 @@ header.ciemny {
   color: white;
   padding: 12px 24px;
   font-size: 16px;
-  border: 2px #7faeef solid;
+  border: 2px solid #7faeef;
   border-radius: 6px;
   cursor: pointer;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
   transition: all 0.2s;
 }
+
 .przycisk:hover {
   background-color: white;
   color: #2a80f9;
@@ -49,17 +49,7 @@ header.ciemny {
 
 .przycisk.ciemny {
   background-color: #163259;
-  border: 2px solid #012253;
-}
-
-.przycisk.ciemny:hover {
-  background-color: white;
-  color: #2a80f9;
-}
-
-.przycisk.ciemny:active {
-  background-color: #2a80f9;
-  color: white;
+  border-color: #012253;
 }
 
 .settingsInput {
@@ -67,6 +57,7 @@ header.ciemny {
   display: flex;
   align-items: center;
 }
+
 .settingsInput input {
   width: 20%;
 }
@@ -95,28 +86,14 @@ select:hover {
 input:focus,
 select:focus {
   border-color: #007bff;
-  background-color: #e6f0ff;
-  outline: none;
   background-color: #d3e2ec;
+  outline: none;
   padding: 10px 30px;
 }
 
 input.ciemny,
 select.ciemny {
   background-color: #cbcccc;
-}
-input:hover,
-select:hover {
-  border-color: #007bff;
-  background-color: #d3e2ec;
-}
-
-input:focus,
-select:focus {
-  border-color: #007bff;
-  background-color: #e6f0ff;
-  background-color: #d3e2ec;
-  padding: 10px 30px;
 }
 
 .oaerror {
@@ -134,8 +111,7 @@ select:focus {
 
 .oaerror.ciemny {
   background-color: #012253;
-  border: 1px solid #2a80f9;
-  border-left-width: 5px;
+  border-color: #2a80f9;
 }
 
 .oaerror.ciemny strong.ciemny {

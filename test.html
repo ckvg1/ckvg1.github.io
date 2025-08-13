@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #000000;
+            text-align: center;
+        }
+        .zarowka{
+            cursor: pointer;
+        }
+        #wyj_l1_1_2{
+            height: 60px;
+            position: absolute;
+            top: 500px;
+            left: 45%;
+            
+        }
+        #wyj_l1_2_2{
+            height: 60px;
+            top: 500px;
+            left: 55%;
+            position: absolute;
+        }
+        .glow {
+            box-shadow: 0 0 30px 15px #ffe600aa;
+            border-radius: 50%;
+        }
+
+    </style>
+</head>
+<body>
+    <img
+        id="wyj_l1_1_2"
+        class="zarowka"
+        src="img_main/icony/bulb_on.png"
+    />
+    <img
+        id="wyj_l1_2_2"
+        class="zarowka"
+        src="img_main/icony/bulb_on.png"
+    />
+
+    <img
+        id="wyj_l1_1_2"
+        style="top: 300px;"
+        class="zarowka"
+        src="img_main/icony/bulb_of.png"
+    />
+    <img
+        id="wyj_l1_2_2"
+        style="top: 300px;"
+        class="zarowka"
+        src="img_main/icony/bulb_of.png"
+    />
+<script>
+    document.querySelectorAll('.zarowka').forEach(img => {
+        if (img.src.includes('bulb_on.png')) {
+            img.style.filter = 'drop-shadow(0px -7px 10px  #ffff00)'
+        }
+    });
+</script>
+
+</body>
+</html>
+
