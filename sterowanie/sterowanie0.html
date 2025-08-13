@@ -143,6 +143,11 @@
 
     <script src="../js/dark_mode.js"></script>
     <script>
+      document.querySelectorAll('.zarowka').forEach(img => {
+        if (document.body.classList.contains("ciemny") && img.src.includes('bulb_on.png')) {
+            img.style.filter = 'drop-shadow(0px -7px 10px  #ffff00)'
+        }
+      });
       main_image = document.getElementById("main_image");
       if (document.body.classList.contains("ciemny")) {
         main_image.src = "../img_main/mapy/rzut_parter-dark.png";
