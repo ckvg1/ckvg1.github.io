@@ -1247,9 +1247,6 @@
                 "Błąd podczas wczytywania harmonogramu, upewnij się, ze jestes polaczony z serwerem.",
                 error
               );
-              document.getElementById("alertBox").style.display = "flex";
-              document.getElementById("alertBox").innerHTML =
-                "Błąd podczas próby zapisu harmonogramu. " + err;
             }
           }
         </script>
@@ -1303,20 +1300,19 @@
     <script>
       const modal = document.getElementById("settingsModal");
       const settingsIcon = document.getElementById("settings_icon");
-      const modal_content = document.querySelector(".modal-content")
+      const modal_content = document.querySelector(".modal-content");
       function closeModal() {
         modal.style.display = "none";
       }
       function settingsF(event) {
-        if(settingsIcon.contains(event.target)){
+        if (settingsIcon.contains(event.target)) {
           modal.style.display = "flex";
           wczytajHarmonogram();
-        }
-        else if (!modal_content.contains(event.target)) {
+        } else if (!modal_content.contains(event.target)) {
           closeModal();
         }
       }
-      document.addEventListener("click", settingsF)
+      document.addEventListener("click", settingsF);
     </script>
     <script src="./js/tabs.js"></script>
 
