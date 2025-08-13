@@ -21,14 +21,16 @@
       <!-- <header>
         <img src="../logo.svg" alt="Logo" />
       </header> -->
-
+      <!-- Ustawiamy domyślnie 24 godziny -->
       <h1>Data wykonania pomiaru (od-do):</h1>
       <h4 id="zakresDat">Używam danych z: Ostatnie 24 godziny</h4>
 
       <div class="form-group" id="formularz">
+        <!-- Wybór dat i godzin -->
         <input type="datetime-local" id="data1" />
         -
         <input type="datetime-local" id="data2" />
+        <!-- Wybór piętra - parter jako piętro 0 -->
         <select onchange="ustaw_pietro()" id="pietroSelect">
           <option value="0">Parter</option>
           <option value="1">Piętro 1</option>
@@ -36,24 +38,28 @@
           <option value="3" selected>Piętro 3</option>
         </select>
         <button class="przycisk" id="filtrujBtn">Filtruj</button>
-
+        <!-- Przełącznik trybu wykresu -->
         <input type="checkbox" id="switch" />
         <label for="switch">Toggle</label>
         <!-- <button id="markersBtn">Wykres kropkowy</button>
         <button id="linesBtn">Wykres liniowy</button> -->
       </div>
-      <!-- domyslnie ukryty, pokazuje sie jak nie bedzie danych -->
+      <!-- Domyslnie ukryty, pokazuje sie jak nie bedzie danych, lub wystąpi błąd -->
       <div id="alertBox" class="oaerror danger" style="display: none"></div>
-
+      <!-- Kontener na wykres temperatury -->
       <div id="myPlot" style="width: 100%"></div>
     </div>
 
     <script>
       "use strict";
+      // Ustawienia początkowe - domyślnie wyświetlamy dane z piętra 3
+      // oraz tryb wykresu jako "markers" (kropki)
 
       let currentMode = "markers"; // tryb wykresu: markers / lines
       let pietro = "3"; // domyślne piętro
 
+      // Funkcja do ustawienia piętra na podstawie wyboru użytkownika
+      // Ustawia zmienną pietro na wartość wybraną w select
       function ustaw_pietro() {
         const select = document.getElementById("pietroSelect");
         pietro = select.value;
@@ -62,6 +68,8 @@
       const zakresDat = document.getElementById("zakresDat");
       const filtrujBtn = document.getElementById("filtrujBtn");
 
+      // Funkcja do formatowania daty w formacie DD-MM-YYYY HH:MM
+      // Przyjmuje string daty i zwraca sformatowany tekst
       function formatDate(dateString) {
         const date = new Date(dateString);
         const year = date.getFullYear();
@@ -88,15 +96,22 @@
       let cookie = getCookie("pietro" + pietro);
       let parsedCookie = JSON.parse(cookie);
 
+      // Lista bazowych nazw biur dla każdego piętra
+      // Parter ma 3 biura, pozostałe piętra mają 7 biur
+      // Używane do generowania nazw biur potrzebnych do wykresu
       const bazoweBiura = ["1", "2", "3", "4", "5", "6", "7"];
       const bazoweBiuraParter = ["1", "2", "3"];
 
+      // Funkcja generująca nazwy biur na podstawie piętra
+      // Przyjmuje numer piętra jako argument i zwraca listę nazw biur
       function generujNazwyBiur(pietro) {
-        const lista = pietro === "0" ? bazoweBiuraParter : bazoweBiura;
-        return lista.map((id) => `r${pietro}_${id}`);
+        const lista = pietro === "0" ? bazoweBiuraParter : bazoweBiura; // Jeśli parter, użyj krótszej listy
+        return lista.map((id) => `r${pietro}_${id}`); // Generuje nazwy w formacie rX_Y, gdzie X to piętro, a Y to numer biura
       }
 
-      function fetchAndPlot(url, layoutOverrides = {}) {
+      // Funkcja do pobierania danych z serwera i rysowania wykresu
+      // Przyjmuje URL do pobrania danych
+      function fetchAndPlot(url) {
         const nazwyBiur = generujNazwyBiur(pietro);
 
         fetch(url)
@@ -107,25 +122,27 @@
             return response.json();
           })
           .then((dane) => {
-            const seriesData = [];
-            const nazwy = nazwyBiur.map((key) => parsedCookie[key] || key);
+            const seriesData = []; // Tablica do przechowywania danych serii wykresu
+            const nazwy = nazwyBiur.map((key) => parsedCookie[key] || key); // Przypisuje nazwy biur z ciasteczka lub używa domyślnych, jeśli nie ma ciasteczka
 
-            const liczbaCzujnikow = pietro === "0" ? 3 : 7;
+            const liczbaCzujnikow = pietro === "0" ? 3 : 7; // Liczba czujników na piętrze: 3 dla parteru, 7 dla pozostałych pięter
 
             for (let i = 1; i <= liczbaCzujnikow; i++) {
+              // Klucz dla temperatury danego biura, np. "Temp. 3_1", czyli 3 pietro i 1 biuro
+              // Dlaczego tak? Zobacz php odczytaj_dane.php. Mozesz sobie pozmieniac
               const key = `Temp. ${pietro}_${i}`;
               if (dane[key]) {
                 seriesData.push({
-                  x: dane.Data,
-                  y: dane[key],
-                  mode: currentMode,
-                  name: nazwy[i - 1] || key,
-                  line: { shape: "spline" },
+                  x: dane.Data, // Oś X - daty pomiarów
+                  y: dane[key], // Oś Y - wartości temperatury
+                  mode: currentMode, // Tryb wykresu: "markers" lub "lines" (kropki lub linie)
+                  name: nazwy[i - 1] || key, // Nazwa serii - z ciasteczka lub domyślna
+                  line: { shape: "spline" }, // Ustawienie linii jako spline dla lepszej estetyki (gładkie krzywe)
                 });
               }
             }
 
-            // Dodaj temperatura zewnętrzną
+            // Dodaj temperatura zewnętrzną - robimy tak samo jak z biurami
             if (dane["Temp. zewn"]) {
               seriesData.push({
                 x: dane.Data,
@@ -135,17 +152,27 @@
                 line: { shape: "spline" },
               });
             }
+
+            // Sprawdzenie, czy jest tryb ciemny i ustawienie kolorów wykresu
             const isDark = localStorage.getItem("theme") === "ciemny-motyw";
 
+            const windowHeight = window.innerHeight;
+            const dynamicHeight = Math.max(
+              300,
+              Math.round(windowHeight * 0.75)
+            ); // minimum 300px
+
+            // Obiekt layout opisuje ustawienia wykresu
+            // Kolory są ustawione w zależności od trybu ciemnego lub jasnego
             const layout = {
-              paper_bgcolor: isDark ? "#0f172a" : "#ffffff", // tło całej “kartki”
-              plot_bgcolor: isDark ? "#0b1220" : "#ffffff", // tło samego obszaru wykresu
-              height: 650,
+              paper_bgcolor: isDark ? "#0f172a" : "#ffffff",
+              plot_bgcolor: isDark ? "#0b1220" : "#ffffff",
+              height: dynamicHeight,
               title: {
                 text: "Temperatura",
                 font: { color: isDark ? "#e5e7eb" : "#111827" },
               },
-              font: { color: isDark ? "#e5e7eb" : "#111827" }, // tekst globalnie (legendy, adnotacje)
+              font: { color: isDark ? "#e5e7eb" : "#111827" },
               xaxis: {
                 type: "date",
                 title: "Data wykonania pomiaru",
@@ -160,7 +187,7 @@
                 tickcolor: isDark ? "#94a3b8" : "#374151",
               },
               legend: {
-                bgcolor: "rgba(0,0,0,0)", // przezroczyste tło legendy
+                bgcolor: "rgba(0,0,0,0)",
                 bordercolor: "rgba(0,0,0,0)",
               },
               showlegend: true,
@@ -168,22 +195,24 @@
 
             let alertBox = document.getElementById("alertBox");
             if (
+              // Sprawdza czy nie ma danych do wyświetlenia
               seriesData.length === 0 ||
               (dane[`Temp. ${pietro}_1`] &&
                 dane[`Temp. ${pietro}_1`].length === 0)
             ) {
+              // Jeśli nie ma danych, pokazuje alert
               alertBox.style.display = "block";
               alertBox.innerHTML =
                 "<strong>Uwaga</strong> - Brak danych do wyświetlenia wykresu. Proszę podać daty pomiaru.";
               translatePage(getCookie("lang") || "pl");
             } else {
+              // Jeśli są dane, ukrywa alert i rysuje wykres
               alertBox.style.display = "none";
+              Plotly.newPlot("myPlot", seriesData, layout, {
+                scrollZoom: true,
+                responsive: true,
+              });
             }
-
-            Plotly.newPlot("myPlot", seriesData, layout, {
-              scrollZoom: true,
-              responsive: true,
-            });
           })
           .catch((error) => {
             console.error("Błąd podczas pobierania danych:", error);
@@ -193,6 +222,7 @@
           });
       }
 
+      // Funkcja konwertujaca czas na Polska strefe czasowa
       function toLocalISOString(date = new Date()) {
         const pad = (num) => String(num).padStart(2, "0");
         return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(
@@ -206,25 +236,33 @@
         const dateInput1 = document.getElementById("data1").value;
         const dateInput2 = document.getElementById("data2").value;
 
+        // Jezeli zaznaczono 2 daty:
         if (dateInput1 && dateInput2) {
           const data1 = new Date(dateInput1).toISOString();
           const data2 = new Date(dateInput2).toISOString();
           zakresDat.innerHTML = `Używam danych z: ${formatDate(
             data1
           )} - ${formatDate(data2)}`;
+
+          // Ustawiamy nowe url do fetchowania, z pietrem i datami
           const url = `odczytaj_dane.php?data_od=${toLocalISOString(
             new Date(data1)
           )}&data_do=${toLocalISOString(new Date(data2))}&pietro=${pietro}`;
+
+          // Fetchujemy i generujemy od nowa wykres
           fetchAndPlot(url);
         } else if (!dateInput1 && !dateInput2) {
+          // Jezeli nie ma ustawionych zadnych dat to fetchujemy tylko z pietrem, wiec PHP zwroci ostatnie 24h
           zakresDat.innerHTML = "Używam danych z: Ostatnie 24 godziny";
           fetchAndPlot(`odczytaj_dane.php?pietro=${pietro}`);
         } else {
+          // Jezeli jest wybrana tylko jedna data
           alert("Wybierz obie daty pomiaru!");
         }
         translatePage(getCookie("lang") || "pl");
       }
 
+      // Event listenery do filtrowania i zmiany typu wykresu
       filtrujBtn.addEventListener("click", filtruj);
       document.getElementById("switch").addEventListener("change", (e) => {
         currentMode = e.target.checked ? "lines" : "markers";
