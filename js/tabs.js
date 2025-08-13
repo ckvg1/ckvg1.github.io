@@ -51,6 +51,9 @@ async function znikanie() {
   if (burger.classList.contains("change") && window.innerWidth <= 810) {
     burger.classList.remove("change");
     tabsList.classList.remove("menu-open");
+    tabsList.addEventListener("transitionend", () => {
+      tabsList.style.display = "none"
+    })
   } 
   else {
     pojawianie();
@@ -108,6 +111,9 @@ async function hamburger(event) {
       hamburgerIframe();
     }
   }
+  else{
+    pojawianie()
+  }
 }
 
 const observer = new MutationObserver(hamburgerIframe)
@@ -117,3 +123,4 @@ window.addEventListener("click", hamburgerIframe);
 window.addEventListener("load", hamburgerIframe);
 document.addEventListener("click", hamburger);
 window.addEventListener("resize", pojawianie);
+window.addEventListener("load", pojawianie);
