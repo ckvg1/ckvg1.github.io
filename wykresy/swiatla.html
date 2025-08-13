@@ -75,6 +75,25 @@
 
       function ustaw_pietro() {
         pietro = document.getElementById("pietroSelect").value;
+        if (pietro == 0) {
+          let sciezka_parter =
+            localStorage.getItem("theme") == "ciemny-motyw"
+              ? "../img_main/mapy/rzut_parter-dark.png"
+              : "../img_main/mapy/rzut_parter.png";
+          document
+            .getElementById("mapa-swiatla")
+            .setAttribute("src", sciezka_parter);
+        } else {
+          let sciezka_pietro =
+            localStorage.getItem("theme") == "ciemny-motyw"
+              ? "../img_main/mapy/swiatla-bg-dark.png"
+              : "../img_main/mapy/swiatla-bg.png";
+
+          document
+            .getElementById("mapa-swiatla")
+            .setAttribute("src", sciezka_pietro);
+        }
+        filtruj();
       }
 
       const zakresDat = document.getElementById("zakresDat");
@@ -150,6 +169,7 @@
         fetch(endpoint)
           .then((res) => res.json())
           .then((dane) => {
+            console.log("Dane z php: ", dane);
             if (!sprawdzCzySaDane(Object.values(dane))) {
               alertBox.style.display = "block";
               document.querySelector(".oaerror").innerHTML =
@@ -294,12 +314,13 @@
         fetch(endpoint)
           .then((res) => res.json())
           .then((dane) => {
+            console.log("Dane do heatmapy: ", dane);
             const cords =
               pietro == 0
                 ? [
                     [142, 198],
-                    [550, 217],
-                    [758, 216],
+                    [142, 475],
+                    [650, 340],
                   ]
                 : [
                     [142, 198],
@@ -330,18 +351,20 @@
               const scaledRadius = Math.round(
                 baseRadius * Math.sqrt((scaleX + scaleY) / 2)
               );
-
-              points.push({
+              if(rawValue != 0) {
+                points.push({
                 x: scaledX,
                 y: scaledY,
                 value: rawValue,
                 radius: scaledRadius,
               });
+              }
+              
 
               if (max < rawValue) max = rawValue;
               if (j < cords.length - 1) j++;
             }
-
+            console.log(max);
             heatmapInstance.setData({
               min: 0,
               max: max === 0 ? 100 : max,
@@ -369,8 +392,8 @@
               ? new Date(document.getElementById("data2").value).toISOString()
               : null;
 
-            console.log(data1);
-            console.log(data2);
+            //console.log(data1);
+            //console.log(data2);
             clearTimeout(resizeTimer);
             if (data1 == null || data2 == null) {
               resizeTimer = setTimeout(

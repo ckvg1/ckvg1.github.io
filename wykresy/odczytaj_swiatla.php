@@ -279,7 +279,7 @@ function policzProcentDlaParyCzujnikow($czujnik1, $czujnik2) {
     $aktywnych = array_sum($czujnik1) + array_sum($czujnik2);
     $iloscOdczytow = count($czujnik1) + count($czujnik2);
 
-    return $iloscOdczytow > 0 ? round(($aktywnych / $iloscOdczytow) * 100) : 0;
+    return $iloscOdczytow > 0 ? ($aktywnych / $iloscOdczytow) : 0;
 }
 
 ?>
