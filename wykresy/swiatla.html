@@ -362,8 +362,23 @@
           window.__heatmapResizeBound = true;
           let resizeTimer;
           window.addEventListener("resize", () => {
+            const data1 = document.getElementById("data1").value
+              ? new Date(document.getElementById("data1").value).toISOString()
+              : null;
+            const data2 = document.getElementById("data2").value
+              ? new Date(document.getElementById("data2").value).toISOString()
+              : null;
+
             clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(() => generujHeatmape(endpoint), 150);
+            resizeTimer = setTimeout(
+              () =>
+                generujHeatmape(
+                  `odczytaj_swiatla.php?od=${toLocalISOString(
+                    new Date(data1)
+                  )}&do=${toLocalISOString(new Date(data2))}&pietro=${pietro}`
+                ),
+              150
+            );
           });
         }
       }
