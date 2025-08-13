@@ -26,7 +26,6 @@ if ($pietro < 0 || $pietro > 4) {
 
 $czasDodaniaKlauzula = $tabela === "light" ? "data" : "czas_dodania";
 // Ustawienie nazwy pliku CSV na podstawie piętra i tabeli
-// Miesiąc jest dodawany do nazwy pliku, aby uniknąć konfliktów nazw plików
 // Jeśli piętro to 4, to pobieramy wszystkie dane z wszystkich pięter
 // W przeciwnym razie, pobieramy dane tylko z wybranego piętra
 // Nazwa pliku będzie miała format: "pietro_tabela_miesiac.csv"
