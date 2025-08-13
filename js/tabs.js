@@ -78,21 +78,29 @@ async function usun() {
   if (!tabsList.classList.contains("menu-open")) return;
   burger.classList.remove("change");
   tabsList.classList.remove("menu-open");
+  tabsList.addEventListener("transitionend", () => {
+    tabsList.style.display = "none"
+  })
 }
 
 async function hamburger(event) {
   const burger = document.querySelector(".hamburger");
   const tabsList = document.querySelector(".tabs-list");
-
   if (window.innerWidth <= 810) {
     if (burger.contains(event.target)) {
       const isOpen = tabsList.classList.contains("menu-open");
 
       if (isOpen) {
         await usun();
-      } else {
+      } 
+      else {
+        tabsList.style.display = "block"
         burger.classList.add("change");
+        await sleep(1)
         tabsList.classList.add("menu-open");
+        tabsList.addEventListener("transitionend", () => {
+          tabsList.style.display = "block"
+        })
       }
     } else if (!tabsList.contains(event.target)) {
       await usun();

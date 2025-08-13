@@ -43,7 +43,7 @@ iframe {
 }
 
 .tabs-list {
-  display: flex;
+  /* display: flex; */
   flex-wrap: wrap;
   list-style: none;
 }
@@ -280,22 +280,22 @@ select:focus {
     padding: 10px 0 0 10px;
     right: 0;
     width: 200px;
-    /* height: 100%; */
     border: #007bff 1px solid;
     background-color: #007bffde;
     transform: translateX(100%);
     opacity: 0;
     pointer-events: none;
+    display: none;
     transition: transform 0.4s ease, opacity 0.4s ease;
     z-index: 1000;
   }
 
   .tabs-list.menu-open {
+    display: block;
     transform: translateX(0%);
     opacity: 1;
-    pointer-events: auto;
-    display: block;
   }
+
   .tab-button {
     border-bottom: 2px solid transparent;
     transition: border-color 0.3s, color 0.3s;
