@@ -41,101 +41,71 @@ function pojawianie() {
   if (window.innerWidth >= 810) {
     tabsList.style.display = "flex";
   }
+  else{
+    tabsList.style.display = "block";
+  }
 }
 async function znikanie() {
   tabsList = document.querySelector(".tabs-list");
   burger = document.querySelector(".hamburger");
-  if (window.innerWidth <= 810) {
-    tabsList.style.right = "-300px";
-    burger.classList.toggle("change");
-    await sleep(500);
-    tabsList.style.display = "none";
-  } else {
+  if (burger.classList.contains("change") && window.innerWidth <= 810) {
+    burger.classList.remove("change");
+    tabsList.classList.remove("menu-open");
+  } 
+  else {
     pojawianie();
   }
   
 }
-// async function klik(){
-//   tabsList = document.querySelector(".tabs-list");
-//   if(!tabsList.contains(tabsList.target)){
-//     tabsList.style.right = "-300px";
-//     await sleep(500);
-//     tabsList.style.display = "none";
-//     console.log("działa")
-//   }
-// }
-// async function hamburger(x) {
-//   //console.log("Kliknięto hamburger menu");
-//   x.classList.toggle("change");
-//   tabsList = document.querySelector(".tabs-list");
-  // if (tabsList.style.right == "0px") {
-  //   tabsList.style.right = "-300px";
-  //   await sleep(500);
-  //   tabsList.style.display = "none";
-  // } else {
-  //   tabsList.style.display = "block";
-  //   await sleep(1);
-  //   tabsList.style.right = "0px";
-  // }
-// }
-async function usun() {
-  burger = document.querySelector(".hamburger");
-  tabsList = document.querySelector(".tabs-list");
-  burger.classList.remove("change");
-  tabsList.style.right = "-300px";
-  await sleep(500);
-  tabsList.style.display = "none";
-}
-async function hamburger(event){
-  burger = document.querySelector(".hamburger");
-  tabsList = document.querySelector(".tabs-list");
-  if (window.innerWidth <= 810){
-    if(burger.contains(event.target)){
-      burger.classList.toggle("change");
-      if (tabsList.style.right == "0px") {
-        tabsList.style.right = "-300px";
-        await sleep(500);
-        tabsList.style.display = "none";
-      } else {
-        tabsList.style.display = "block";
-        await sleep(1);
-        tabsList.style.right = "0px";
-      }
-    }else if(!tabsList.contains(event.target)){
-      usun()
-    }
-  }
-}
+
 function hamburgerIframe(){
-  if (window.innerWidth <= 810){
-    document.addEventListener('click', (event) =>{
-      if(event.target.tagName === 'IFRAME'){
-        usun()
+  const ramka = document.querySelectorAll("iframe");
+  ramka.forEach((ramka) =>{
+    ramka.addEventListener("load", () =>{
+      try{
+        const ramkaContent = ramka.contentDocument || ramka.contentWindow.document;
+        ramkaContent.addEventListener("click", usun)
       }
+      catch(err){}
     })
-    function iframeF(){
-      const ramka = document.querySelectorAll("iframe");
+  })
+}
 
-      ramka.forEach((ramka) =>{
-        ramka.addEventListener("load", () =>{
-          try{
-            const ramkaContent = ramka.contentDocument || ramka.contentWindow.document;
-            ramkaContent.addEventListener("click", usun)
-          }
-          catch(err){}
-        })
-      })
+async function usun() {
+  const burger = document.querySelector(".hamburger");
+  const tabsList = document.querySelector(".tabs-list");
 
+  if (!tabsList.classList.contains("menu-open")) return;
+  burger.classList.remove("change");
+  tabsList.classList.remove("menu-open");
+}
+
+async function hamburger(event) {
+  const burger = document.querySelector(".hamburger");
+  const tabsList = document.querySelector(".tabs-list");
+
+  if (window.innerWidth <= 810) {
+    if (burger.contains(event.target)) {
+      const isOpen = tabsList.classList.contains("menu-open");
+
+      if (isOpen) {
+        await usun();
+      } else {
+        burger.classList.add("change");
+        tabsList.classList.add("menu-open");
+      }
+    } else if (!tabsList.contains(event.target)) {
+      await usun();
+    } else {
+      hamburgerIframe();
     }
-
-    iframeF()
-
-    const observer = new MutationObserver(iframeF)
-    observer.observe(document.body, {childList: true, subtree: true})
   }
 }
 
+const observer = new MutationObserver(hamburgerIframe)
+observer.observe(document.body, {childList: true, subtree: true})
 
 window.addEventListener("click", hamburgerIframe);
+window.addEventListener("load", hamburgerIframe);
 document.addEventListener("click", hamburger);
 window.addEventListener("resize", pojawianie);
