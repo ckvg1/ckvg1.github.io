@@ -1427,10 +1427,10 @@
 
         logo.src = src;
       }
-
-      window.addEventListener("resize", logoF);
-      window.addEventListener("load", logoF);
-      window.addEventListener("click", logoF);
+      //Wywolanie funkcji przy zmainei rozmiaru, ladowaniu i kliknieciu
+      ["resize", "load", "click"].forEach((event) =>
+        window.addEventListener(event, logoF)
+      );
     </script>
     <script src="./js/dark_mode.js"></script>
   </body>
