@@ -369,16 +369,25 @@
               ? new Date(document.getElementById("data2").value).toISOString()
               : null;
 
+            console.log(data1);
+            console.log(data2);
             clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(
-              () =>
-                generujHeatmape(
-                  `odczytaj_swiatla.php?od=${toLocalISOString(
-                    new Date(data1)
-                  )}&do=${toLocalISOString(new Date(data2))}&pietro=${pietro}`
-                ),
-              150
-            );
+            if (data1 == null || data2 == null) {
+              resizeTimer = setTimeout(
+                () => generujHeatmape(`odczytaj_swiatla.php?&pietro=${pietro}`),
+                150
+              );
+            } else {
+              resizeTimer = setTimeout(
+                () =>
+                  generujHeatmape(
+                    `odczytaj_swiatla.php?od=${toLocalISOString(
+                      new Date(data1)
+                    )}&do=${toLocalISOString(new Date(data2))}&pietro=${pietro}`
+                  ),
+                150
+              );
+            }
           });
         }
       }
