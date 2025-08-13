@@ -973,32 +973,20 @@
 
           function zmienJezyk(lang) {
             language = lang;
-            // console.log("Zmieniono język na:", lang);
-            if (lang == "pl") {
-              document.getElementById("poland_flag").style.border =
-                "2px solid red";
-              document.getElementById("germany_flag").style.border = "none";
-              document.getElementById("uk_flag").style.border = "none";
-              document.getElementById("silesia_flag").style.border = "none";
-            } else if (lang == "de") {
-              document.getElementById("germany_flag").style.border =
-                "2px solid red";
-              document.getElementById("poland_flag").style.border = "none";
-              document.getElementById("uk_flag").style.border = "none";
-              document.getElementById("silesia_flag").style.border = "none";
-            } else if (lang == "uk") {
-              document.getElementById("uk_flag").style.border = "2px solid red";
-              document.getElementById("poland_flag").style.border = "none";
-              document.getElementById("germany_flag").style.border = "none";
-              document.getElementById("silesia_flag").style.border = "none";
-            } else if (lang == "si") {
-              document.getElementById("silesia_flag").style.border =
-                "2px solid red";
-              document.getElementById("poland_flag").style.border = "none";
-              document.getElementById("germany_flag").style.border = "none";
-              document.getElementById("uk_flag").style.border = "none";
+
+            const flags = {
+              pl: "poland_flag",
+              de: "germany_flag",
+              uk: "uk_flag",
+              si: "silesia_flag",
+            };
+
+            for (const [key, id] of Object.entries(flags)) {
+              document.getElementById(id).style.border =
+                key === lang ? "2px solid red" : "none";
             }
           }
+
           //funkcja po nacisnieciu przycisku zapisz
           async function zapiszUstawienia() {
             const allLights = [
@@ -1144,6 +1132,8 @@
           }
 
           //deafulowe wartosci zeby utworzyc ciasteczka
+
+          //dla parteru - pietra0 reczne ustawienie wartosci ze wzgledu na inna strukture
           const default0 = {
             l0_1_1: "0_1_1",
             l0_1_2: "0_1_2",
@@ -1158,96 +1148,33 @@
             r0_2: "r0_2",
             r0_3: "r0_3",
           };
-          const default1 = {
-            l1_1_1: "1_1_1",
-            l1_1_2: "1_1_2",
-            l1_2_1: "1_2_1",
-            l1_2_2: "1_2_2",
-            l1_3_1: "1_3_1",
-            l1_3_2: "1_3_2",
-            l1_4_1: "1_4_1",
-            l1_4_2: "1_4_2",
-            l1_5_1: "1_5_1",
-            l1_5_2: "1_5_2",
-            l1_6_1: "1_6_1",
-            l1_6_2: "1_6_2",
-            l1_7_1: "1_7_1",
-            l1_7_2: "1_7_2",
-            t1_1: "t1_1",
-            t1_2: "t1_2",
-            t1_3: "t1_3",
-            t1_4: "t1_4",
-            t1_5: "t1_5",
-            t1_6: "t1_6",
-            t1_7: "t1_7",
-            r1_1: "r1_1",
-            r1_2: "r1_2",
-            r1_3: "r1_3",
-            r1_4: "r1_4",
-            r1_5: "r1_5",
-            r1_6: "r1_6",
-            r1_7: "r1_7",
-          };
-          const default2 = {
-            l2_1_1: "2_1_1",
-            l2_1_2: "2_1_2",
-            l2_2_1: "2_2_1",
-            l2_2_2: "2_2_2",
-            l2_3_1: "2_3_1",
-            l2_3_2: "2_3_2",
-            l2_4_1: "2_4_1",
-            l2_4_2: "2_4_2",
-            l2_5_1: "2_5_1",
-            l2_5_2: "2_5_2",
-            l2_6_1: "2_6_1",
-            l2_6_2: "2_6_2",
-            l2_7_1: "2_7_1",
-            l2_7_2: "2_7_2",
-            t2_1: "t2_1",
-            t2_2: "t2_2",
-            t2_3: "t2_3",
-            t2_4: "t2_4",
-            t2_5: "t2_5",
-            t2_6: "t2_6",
-            t2_7: "t2_7",
-            r2_1: "r2_1",
-            r2_2: "r2_2",
-            r2_3: "r2_3",
-            r2_4: "r2_4",
-            r2_5: "r2_5",
-            r2_6: "r2_6",
-            r2_7: "r2_7",
-          };
-          const default3 = {
-            l3_1_1: "3_1_1",
-            l3_1_2: "3_1_2",
-            l3_2_1: "3_2_1",
-            l3_2_2: "3_2_2",
-            l3_3_1: "3_3_1",
-            l3_3_2: "3_3_2",
-            l3_4_1: "3_4_1",
-            l3_4_2: "3_4_2",
-            l3_5_1: "3_5_1",
-            l3_5_2: "3_5_2",
-            l3_6_1: "3_6_1",
-            l3_6_2: "3_6_2",
-            l3_7_1: "3_7_1",
-            l3_7_2: "3_7_2",
-            t3_1: "t3_1",
-            t3_2: "t3_2",
-            t3_3: "t3_3",
-            t3_4: "t3_4",
-            t3_5: "t3_5",
-            t3_6: "t3_6",
-            t3_7: "t3_7",
-            r3_1: "r3_1",
-            r3_2: "r3_2",
-            r3_3: "r3_3",
-            r3_4: "r3_4",
-            r3_5: "r3_5",
-            r3_6: "r3_6",
-            r3_7: "r3_7",
-          };
+          function createDefault(floor) {
+            const obj = {};
+
+            // Swiatla: lX_Y_Z
+            for (let y = 1; y <= 7; y++) {
+              for (let z = 1; z <= 2; z++) {
+                obj[`l${floor}_${y}_${z}`] = `${floor}_${y}_${z}`;
+              }
+            }
+
+            // Temperatura: tX_Y
+            for (let y = 1; y <= 7; y++) {
+              obj[`t${floor}_${y}`] = `t${floor}_${y}`;
+            }
+
+            // Pokoj: rX_Y
+            for (let y = 1; y <= 7; y++) {
+              obj[`r${floor}_${y}`] = `r${floor}_${y}`;
+            }
+
+            return obj;
+          }
+
+          // Tworzenie obiektów
+          const default1 = createDefault(1);
+          const default2 = createDefault(2);
+          const default3 = createDefault(3);
 
           function getCookie(name) {
             let cname = name + "=";
@@ -1263,28 +1190,19 @@
           }
 
           function resetujNazwy() {
-            // Resetowanie ciasteczek do domyślnych wartości
-            setCookie("pietro0", JSON.stringify(default0));
-            setCookie("pietro1", JSON.stringify(default1));
-            setCookie("pietro2", JSON.stringify(default2));
-            setCookie("pietro3", JSON.stringify(default3));
-            // Odświeżenie strony po zresetowaniu
+            [default0, default1, default2, default3].forEach((def, i) =>
+              setCookie(`pietro${i}`, JSON.stringify(def))
+            );
+            //odwiez zeby zastosowac zmiany
             window.location.reload();
           }
 
           // Sprawdzenie ciasteczek i ustawienie domyślnych wartości
-          if (!getCookie("pietro0")) {
-            setCookie("pietro0", JSON.stringify(default0));
-          }
-          if (!getCookie("pietro1")) {
-            setCookie("pietro1", JSON.stringify(default1));
-          }
-          if (!getCookie("pietro2")) {
-            setCookie("pietro2", JSON.stringify(default2));
-          }
-          if (!getCookie("pietro3")) {
-            setCookie("pietro3", JSON.stringify(default3));
-          }
+          [default0, default1, default2, default3].forEach((def, i) => {
+            if (!getCookie(`pietro${i}`)) {
+              setCookie(`pietro${i}`, JSON.stringify(def));
+            }
+          });
 
           // Odczyt ciasteczek i ustawienie wartości w formularzach
           document.addEventListener("DOMContentLoaded", () => {
