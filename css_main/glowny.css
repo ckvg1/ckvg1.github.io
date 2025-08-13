@@ -2,6 +2,7 @@ body {
   font-family: "Ubuntu", Courier, monospace;
   background-color: #f4f7f9;
   color: #000000;
+  overflow-x: scroll !important;
 }
 body.ciemny {
   background-color: #06111b;
