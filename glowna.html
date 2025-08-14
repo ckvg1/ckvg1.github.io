@@ -29,6 +29,7 @@
           style="cursor: pointer"
         />
         <img
+          loading="eager"
           onmouseover="hover(settings_icon)"
           onmouseleave="unhover(settings_icon)"
           src="./img_main/icony/settings.png"
@@ -59,11 +60,17 @@
         }*/
       </script>
 
-      <div class="hamburger">
+      <div class="hamburger" style="display: none">
         <div class="bar1"></div>
         <div class="bar2"></div>
         <div class="bar3"></div>
       </div>
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          document.getElementsByClassName("hamburger")[0].style.display =
+            "block";
+        });
+      </script>
       <nav class="tabs">
         <ul class="tabs-list">
           <li>
