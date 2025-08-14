@@ -40,8 +40,7 @@ function pojawianie() {
   tabsList = document.querySelector(".tabs-list");
   if (window.innerWidth >= 810) {
     tabsList.style.display = "flex";
-  }
-  else{
+  } else {
     tabsList.style.display = "block";
   }
 }
@@ -51,27 +50,25 @@ async function znikanie() {
   if (burger.classList.contains("change") && window.innerWidth <= 810) {
     burger.classList.remove("change");
     tabsList.classList.remove("menu-open");
-    tabsList.addEventListener("transitionend", () => {
-      tabsList.style.display = "none"
-    })
-  } 
-  else {
+    // tabsList.addEventListener("transitionend", () => {
+    tabsList.style.display = "none";
+    // });
+  } else {
     pojawianie();
   }
-  
 }
 
-function hamburgerIframe(){
+function hamburgerIframe() {
   const ramka = document.querySelectorAll("iframe");
-  ramka.forEach((ramka) =>{
-    ramka.addEventListener("load", () =>{
-      try{
-        const ramkaContent = ramka.contentDocument || ramka.contentWindow.document;
-        ramkaContent.addEventListener("click", usun)
-      }
-      catch(err){}
-    })
-  })
+  ramka.forEach((ramka) => {
+    ramka.addEventListener("load", () => {
+      try {
+        const ramkaContent =
+          ramka.contentDocument || ramka.contentWindow.document;
+        ramkaContent.addEventListener("click", usun);
+      } catch (err) {}
+    });
+  });
 }
 
 async function usun() {
@@ -81,9 +78,9 @@ async function usun() {
   if (!tabsList.classList.contains("menu-open")) return;
   burger.classList.remove("change");
   tabsList.classList.remove("menu-open");
-  tabsList.addEventListener("transitionend", () => {
-    tabsList.style.display = "none"
-  })
+  // tabsList.addEventListener("transitionend", () => {
+  tabsList.style.display = "none";
+  // })
 }
 
 async function hamburger(event) {
@@ -95,29 +92,27 @@ async function hamburger(event) {
 
       if (isOpen) {
         await usun();
-      } 
-      else {
-        tabsList.style.display = "block"
+      } else {
+        tabsList.style.display = "block";
         burger.classList.add("change");
-        await sleep(1)
+        await sleep(1);
         tabsList.classList.add("menu-open");
-        tabsList.addEventListener("transitionend", () => {
-          tabsList.style.display = "block"
-        })
+        // tabsList.addEventListener("transitionend", () => {
+        tabsList.style.display = "block";
+        // });
       }
     } else if (!tabsList.contains(event.target)) {
       await usun();
     } else {
       hamburgerIframe();
     }
-  }
-  else{
-    pojawianie()
+  } else {
+    pojawianie();
   }
 }
 
-const observer = new MutationObserver(hamburgerIframe)
-observer.observe(document.body, {childList: true, subtree: true})
+const observer = new MutationObserver(hamburgerIframe);
+observer.observe(document.body, { childList: true, subtree: true });
 
 window.addEventListener("click", hamburgerIframe);
 window.addEventListener("load", hamburgerIframe);

@@ -176,12 +176,14 @@
           let isFetchingLight = false;
 
           async function wlaczWszstkieSwiatla() {
-            //wyslijTrue("all_ON_l1");
+            //await wyslijTrue("all_ON_l0");
+            //await wyslijTrue("all_ON_l1");
             await wyslijTrue("all_ON_l2");
             await wyslijTrue("all_ON_l3");
           }
           async function wylaczWszystkieSwiatla() {
-            //wyslijTrue("all_OFF_l1");
+            //await wyslijTrue('all_OFF_l0')
+            //await wyslijTrue("all_OFF_l1");
             await wyslijTrue("all_OFF_l2");
             await wyslijTrue("all_OFF_l3");
           }

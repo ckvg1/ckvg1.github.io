@@ -23,8 +23,8 @@ iframe {
 }
 
 #settings_icon {
-  position: absolute;
-  left: 110%;
+  position: relative;
+
   width: 45px;
   height: 45px;
   cursor: pointer;
@@ -32,10 +32,10 @@ iframe {
   margin-left: 10px;
 }
 
-#settings_icon:hover {
+/* #settings_icon:hover {
   background-image: url("./img_main/settings-move.gif");
   background-size: cover;
-}
+} */
 
 #dark-mode {
   width: 32px;
@@ -304,7 +304,7 @@ select:focus {
     border: #007bff 1px solid;
     background-color: #007bffde;
     display: none;
-    transition: right 0.4s ease;
+    /* transition: right 0.4s ease; */
   }
 
   .tabs-list.menu-open {

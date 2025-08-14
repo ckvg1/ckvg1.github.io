@@ -1,0 +1,395 @@
+[2025-08-14T08:19:37.466Z] Serwer nasłuchuje na porcie 3000
+[2025-08-14T08:19:56.855Z] all_OFF_l3: true 192.168.25.59
+[2025-08-14T08:19:56.861Z] all_OFF_l3: false 192.168.25.59
+[2025-08-14T08:19:57.792Z] all_ON_l3: true 192.168.25.59
+[2025-08-14T08:19:57.798Z] all_ON_l3: false 192.168.25.59
+[2025-08-14T08:19:59.197Z] l3_1_2: true 192.168.25.59
+[2025-08-14T08:19:59.202Z] l3_1_2: false 192.168.25.59
+[2025-08-14T08:20:00.172Z] l3_5_1: true 192.168.25.59
+[2025-08-14T08:20:00.178Z] l3_5_1: false 192.168.25.59
+[2025-08-14T08:20:00.591Z] l3_5_2: true 192.168.25.59
+[2025-08-14T08:20:00.597Z] l3_5_2: false 192.168.25.59
+[2025-08-14T08:20:01.540Z] l3_6_2: true 192.168.25.59
+[2025-08-14T08:20:01.544Z] l3_6_2: false 192.168.25.59
+[2025-08-14T08:20:01.892Z] l3_6_1: true 192.168.25.59
+[2025-08-14T08:20:01.898Z] l3_6_1: false 192.168.25.59
+[2025-08-14T08:20:03.000Z] l3_7_1: true 192.168.25.59
+[2025-08-14T08:20:03.005Z] l3_7_1: false 192.168.25.59
+[2025-08-14T08:20:03.410Z] l3_7_2: true 192.168.25.59
+[2025-08-14T08:20:03.416Z] l3_7_2: false 192.168.25.59
+[2025-08-14T08:20:04.406Z] l3_3_1: true 192.168.25.59
+[2025-08-14T08:20:04.410Z] l3_3_1: false 192.168.25.59
+[2025-08-14T08:20:05.016Z] l3_3_2: true 192.168.25.59
+[2025-08-14T08:20:05.022Z] l3_3_2: false 192.168.25.59
+[2025-08-14T08:20:08.848Z] l2_2_1: true 192.168.25.59
+[2025-08-14T08:20:08.856Z] l2_2_1: false 192.168.25.59
+[2025-08-14T08:20:09.245Z] l2_2_2: true 192.168.25.59
+[2025-08-14T08:20:09.250Z] l2_2_2: false 192.168.25.59
+[2025-08-14T08:20:10.127Z] l2_1_1: true 192.168.25.59
+[2025-08-14T08:20:10.131Z] l2_1_1: false 192.168.25.59
+[2025-08-14T08:20:11.700Z] l2_1_2: true 192.168.25.59
+[2025-08-14T08:20:11.705Z] l2_1_2: false 192.168.25.59
+[2025-08-14T08:20:13.233Z] l2_6_1: true 192.168.25.59
+[2025-08-14T08:20:13.240Z] l2_6_1: false 192.168.25.59
+[2025-08-14T08:20:37.484Z] Harmonogram zaktualizowany: all_OFF_l3,10:22,all_OFF_l2,10:22
+[2025-08-14T08:20:37.497Z] Próba odczytu harmonogramu
+[2025-08-14T08:20:37.498Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,09:22,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,09:22,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,10:04,l3_4_2,10:04,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T08:20:37.522Z] Aktualna godzina: 10:20
+[2025-08-14T08:21:00.066Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l0_1_1
+[2025-08-14T08:21:00.067Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l0_1_2
+[2025-08-14T08:21:00.070Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l0_2_1
+[2025-08-14T08:21:00.071Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l0_2_2
+[2025-08-14T08:21:00.071Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l0_3_1
+[2025-08-14T08:21:00.071Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l0_3_2
+[2025-08-14T08:21:00.072Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_1_1
+[2025-08-14T08:21:00.074Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_1_2
+[2025-08-14T08:21:00.074Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_2_1
+[2025-08-14T08:21:00.074Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_2_2
+[2025-08-14T08:21:00.075Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_3_1
+[2025-08-14T08:21:00.075Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_3_2
+[2025-08-14T08:21:00.075Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_4_2
+[2025-08-14T08:21:00.075Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_5_1
+[2025-08-14T08:21:00.075Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_5_2
+[2025-08-14T08:21:00.075Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_6_1
+[2025-08-14T08:21:00.075Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_6_2
+[2025-08-14T08:21:00.075Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_7_1
+[2025-08-14T08:21:00.075Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_7_2
+[2025-08-14T08:21:00.079Z] Harmonogram zaktualizowany: l2_1_1,09:22,l2_1_2,,l2_2_1,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_2_2,,l3_3_1,,l3_3_2,,l3_4_1,10:04,l3_4_2,10:04,l3_5_1,,l3_5_2,,l3_6_1,,l3_6_2,,l3_7_1,,l3_7_2,
+[2025-08-14T08:21:04.277Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l0_1_1
+[2025-08-14T08:21:04.282Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l0_1_2
+[2025-08-14T08:21:04.282Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l0_2_1
+[2025-08-14T08:21:04.282Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l0_2_2
+[2025-08-14T08:21:04.283Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l0_3_1
+[2025-08-14T08:21:04.283Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l0_3_2
+[2025-08-14T08:21:04.283Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_1_1
+[2025-08-14T08:21:04.283Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_1_2
+[2025-08-14T08:21:04.283Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_2_1
+[2025-08-14T08:21:04.283Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_2_2
+[2025-08-14T08:21:04.283Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_3_1
+[2025-08-14T08:21:04.283Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_3_2
+[2025-08-14T08:21:04.283Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_4_2
+[2025-08-14T08:21:04.283Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_5_1
+[2025-08-14T08:21:04.284Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_5_2
+[2025-08-14T08:21:04.284Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_6_1
+[2025-08-14T08:21:04.284Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_6_2
+[2025-08-14T08:21:04.284Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_7_1
+[2025-08-14T08:21:04.284Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_7_2
+[2025-08-14T08:21:04.287Z] Harmonogram zaktualizowany: l2_1_1,09:22,l2_1_2,,l2_2_1,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_2_2,,l3_3_1,,l3_3_2,,l3_4_1,10:04,l3_4_2,10:04,l3_5_1,,l3_5_2,,l3_6_1,,l3_6_2,,l3_7_1,,l3_7_2,
+[2025-08-14T08:21:24.637Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l0_1_1
+[2025-08-14T08:21:24.638Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l0_1_2
+[2025-08-14T08:21:24.638Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l0_2_1
+[2025-08-14T08:21:24.638Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l0_2_2
+[2025-08-14T08:21:24.639Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l0_3_1
+[2025-08-14T08:21:24.639Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l0_3_2
+[2025-08-14T08:21:24.639Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_1_1
+[2025-08-14T08:21:24.639Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_1_2
+[2025-08-14T08:21:24.639Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_2_1
+[2025-08-14T08:21:24.640Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_2_2
+[2025-08-14T08:21:24.640Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_3_1
+[2025-08-14T08:21:24.640Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_3_2
+[2025-08-14T08:21:24.640Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_4_2
+[2025-08-14T08:21:24.640Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_5_1
+[2025-08-14T08:21:24.640Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_5_2
+[2025-08-14T08:21:24.641Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_6_1
+[2025-08-14T08:21:24.641Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_6_2
+[2025-08-14T08:21:24.641Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_7_1
+[2025-08-14T08:21:24.641Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_7_2
+[2025-08-14T08:21:24.650Z] Harmonogram zaktualizowany: l2_1_1,,l2_1_2,,l2_2_1,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_2_2,,l3_3_1,,l3_3_2,,l3_4_1,10:04,l3_4_2,10:04,l3_5_1,,l3_5_2,,l3_6_1,,l3_6_2,,l3_7_1,,l3_7_2,
+[2025-08-14T08:21:37.499Z] Próba odczytu harmonogramu
+[2025-08-14T08:21:37.501Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,10:04,l3_4_2,10:04,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T08:21:37.501Z] Aktualna godzina: 10:21
+[2025-08-14T08:22:37.498Z] Próba odczytu harmonogramu
+[2025-08-14T08:22:37.499Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,10:04,l3_4_2,10:04,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T08:22:37.500Z] Aktualna godzina: 10:22
+[2025-08-14T08:22:37.500Z] Aktualna godzina taka sama jak w harmonogramie.
+[2025-08-14T08:22:37.500Z] Aktualna godzina taka sama jak w harmonogramie.
+[2025-08-14T08:22:37.500Z] Wyłączam all_OFF_l3 według harmonogramu
+[2025-08-14T08:22:37.606Z] Wyłaczenie swiatla all_OFF_l3 powiodlo sie. 
+[2025-08-14T08:22:37.606Z] Wyłączam all_OFF_l2 według harmonogramu
+[2025-08-14T08:22:37.712Z] Wyłaczenie swiatla all_OFF_l2 powiodlo sie. 
+[2025-08-14T08:23:22.150Z] l3_2_1: true 192.168.25.59
+[2025-08-14T08:23:22.155Z] l3_2_1: false 192.168.25.59
+[2025-08-14T08:23:22.654Z] l3_2_1: true 192.168.25.59
+[2025-08-14T08:23:22.665Z] l3_2_1: false 192.168.25.59
+[2025-08-14T08:23:23.374Z] l3_3_2: true 192.168.25.59
+[2025-08-14T08:23:23.378Z] l3_3_2: false 192.168.25.59
+[2025-08-14T08:23:24.818Z] l3_7_1: true 192.168.25.59
+[2025-08-14T08:23:24.826Z] l3_7_1: false 192.168.25.59
+[2025-08-14T08:23:29.572Z] l2_5_1: true 192.168.25.59
+[2025-08-14T08:23:29.577Z] l2_5_1: false 192.168.25.59
+[2025-08-14T08:23:30.189Z] l2_5_2: true 192.168.25.59
+[2025-08-14T08:23:30.196Z] l2_5_2: false 192.168.25.59
+[2025-08-14T08:23:31.680Z] l2_6_1: true 192.168.25.59
+[2025-08-14T08:23:31.686Z] l2_6_1: false 192.168.25.59
+[2025-08-14T08:23:32.847Z] l2_1_2: true 192.168.25.59
+[2025-08-14T08:23:32.853Z] l2_1_2: false 192.168.25.59
+[2025-08-14T08:23:37.499Z] Próba odczytu harmonogramu
+[2025-08-14T08:23:37.505Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,10:04,l3_4_2,10:04,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T08:23:37.505Z] Aktualna godzina: 10:23
+[2025-08-14T08:24:37.500Z] Próba odczytu harmonogramu
+[2025-08-14T08:24:37.503Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,10:04,l3_4_2,10:04,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T08:24:37.504Z] Aktualna godzina: 10:24
+[2025-08-14T08:25:37.500Z] Próba odczytu harmonogramu
+[2025-08-14T08:25:37.503Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,10:04,l3_4_2,10:04,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T08:25:37.503Z] Aktualna godzina: 10:25
+[2025-08-14T08:26:36.583Z] l3_1_1: true 192.168.25.59
+[2025-08-14T08:26:36.588Z] l3_1_1: false 192.168.25.59
+[2025-08-14T08:26:36.984Z] l3_1_1: true 192.168.25.59
+[2025-08-14T08:26:36.988Z] l3_1_1: false 192.168.25.59
+[2025-08-14T08:26:37.500Z] Próba odczytu harmonogramu
+[2025-08-14T08:26:37.505Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,10:04,l3_4_2,10:04,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T08:26:37.505Z] Aktualna godzina: 10:26
+[2025-08-14T08:27:37.501Z] Próba odczytu harmonogramu
+[2025-08-14T08:27:37.504Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,10:04,l3_4_2,10:04,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T08:27:37.504Z] Aktualna godzina: 10:27
+[2025-08-14T08:28:37.501Z] Próba odczytu harmonogramu
+[2025-08-14T08:28:37.504Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,10:04,l3_4_2,10:04,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T08:28:37.504Z] Aktualna godzina: 10:28
+[2025-08-14T08:29:37.502Z] Próba odczytu harmonogramu
+[2025-08-14T08:29:37.505Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,10:04,l3_4_2,10:04,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T08:29:37.505Z] Aktualna godzina: 10:29
+[2025-08-14T08:30:37.502Z] Próba odczytu harmonogramu
+[2025-08-14T08:30:37.505Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,10:04,l3_4_2,10:04,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T08:30:37.506Z] Aktualna godzina: 10:30
+[2025-08-14T08:31:37.503Z] Próba odczytu harmonogramu
+[2025-08-14T08:31:37.507Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,10:04,l3_4_2,10:04,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T08:31:37.508Z] Aktualna godzina: 10:31
+[2025-08-14T08:32:37.505Z] Próba odczytu harmonogramu
+[2025-08-14T08:32:37.508Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,10:04,l3_4_2,10:04,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T08:32:37.509Z] Aktualna godzina: 10:32
+[2025-08-14T08:33:37.506Z] Próba odczytu harmonogramu
+[2025-08-14T08:33:37.508Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,10:04,l3_4_2,10:04,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T08:33:37.509Z] Aktualna godzina: 10:33
+[2025-08-14T08:34:37.507Z] Próba odczytu harmonogramu
+[2025-08-14T08:34:37.509Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,10:04,l3_4_2,10:04,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T08:34:37.509Z] Aktualna godzina: 10:34
+[2025-08-14T08:35:37.507Z] Próba odczytu harmonogramu
+[2025-08-14T08:35:37.509Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,10:04,l3_4_2,10:04,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T08:35:37.509Z] Aktualna godzina: 10:35
+[2025-08-14T08:36:37.508Z] Próba odczytu harmonogramu
+[2025-08-14T08:36:37.510Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,10:04,l3_4_2,10:04,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T08:36:37.510Z] Aktualna godzina: 10:36
+[2025-08-14T08:37:37.509Z] Próba odczytu harmonogramu
+[2025-08-14T08:37:37.511Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,10:04,l3_4_2,10:04,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T08:37:37.511Z] Aktualna godzina: 10:37
+[2025-08-14T08:38:37.509Z] Próba odczytu harmonogramu
+[2025-08-14T08:38:37.512Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,10:04,l3_4_2,10:04,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T08:38:37.512Z] Aktualna godzina: 10:38
+[2025-08-14T08:39:37.508Z] Próba odczytu harmonogramu
+[2025-08-14T08:39:37.511Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,10:04,l3_4_2,10:04,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T08:39:37.511Z] Aktualna godzina: 10:39
+[2025-08-14T08:40:37.511Z] Próba odczytu harmonogramu
+[2025-08-14T08:40:37.516Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,10:04,l3_4_2,10:04,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T08:40:37.516Z] Aktualna godzina: 10:40
+[2025-08-14T08:41:37.512Z] Próba odczytu harmonogramu
+[2025-08-14T08:41:37.514Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,10:04,l3_4_2,10:04,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T08:41:37.514Z] Aktualna godzina: 10:41
+[2025-08-14T08:42:37.514Z] Próba odczytu harmonogramu
+[2025-08-14T08:42:37.518Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,10:04,l3_4_2,10:04,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T08:42:37.518Z] Aktualna godzina: 10:42
+[2025-08-14T08:43:37.517Z] Próba odczytu harmonogramu
+[2025-08-14T08:43:37.520Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,10:04,l3_4_2,10:04,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T08:43:37.520Z] Aktualna godzina: 10:43
+[2025-08-14T08:44:37.517Z] Próba odczytu harmonogramu
+[2025-08-14T08:44:37.522Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,10:04,l3_4_2,10:04,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T08:44:37.523Z] Aktualna godzina: 10:44
+[2025-08-14T08:45:37.517Z] Próba odczytu harmonogramu
+[2025-08-14T08:45:37.528Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,10:04,l3_4_2,10:04,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T08:45:37.529Z] Aktualna godzina: 10:45
+[2025-08-14T08:46:37.517Z] Próba odczytu harmonogramu
+[2025-08-14T08:46:37.521Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,10:04,l3_4_2,10:04,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T08:46:37.522Z] Aktualna godzina: 10:46
+[2025-08-14T08:47:37.518Z] Próba odczytu harmonogramu
+[2025-08-14T08:47:37.522Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,10:04,l3_4_2,10:04,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T08:47:37.522Z] Aktualna godzina: 10:47
+[2025-08-14T08:48:37.518Z] Próba odczytu harmonogramu
+[2025-08-14T08:48:37.520Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,10:04,l3_4_2,10:04,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T08:48:37.520Z] Aktualna godzina: 10:48
+[2025-08-14T08:49:37.518Z] Próba odczytu harmonogramu
+[2025-08-14T08:49:37.521Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,10:04,l3_4_2,10:04,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T08:49:37.521Z] Aktualna godzina: 10:49
+[2025-08-14T08:50:37.519Z] Próba odczytu harmonogramu
+[2025-08-14T08:50:37.529Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,10:04,l3_4_2,10:04,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T08:50:37.529Z] Aktualna godzina: 10:50
+[2025-08-14T08:51:37.520Z] Próba odczytu harmonogramu
+[2025-08-14T08:51:37.524Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,10:04,l3_4_2,10:04,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T08:51:37.525Z] Aktualna godzina: 10:51
+[2025-08-14T08:52:37.520Z] Próba odczytu harmonogramu
+[2025-08-14T08:52:37.531Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,10:04,l3_4_2,10:04,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T08:52:37.531Z] Aktualna godzina: 10:52
+[2025-08-14T08:53:37.151Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l0_1_1
+[2025-08-14T08:53:37.153Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l0_1_2
+[2025-08-14T08:53:37.153Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l0_2_1
+[2025-08-14T08:53:37.153Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l0_2_2
+[2025-08-14T08:53:37.153Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l0_3_1
+[2025-08-14T08:53:37.153Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l0_3_2
+[2025-08-14T08:53:37.153Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_1_1
+[2025-08-14T08:53:37.154Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_1_2
+[2025-08-14T08:53:37.154Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_2_1
+[2025-08-14T08:53:37.154Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_2_2
+[2025-08-14T08:53:37.154Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_3_1
+[2025-08-14T08:53:37.155Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_3_2
+[2025-08-14T08:53:37.155Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_4_2
+[2025-08-14T08:53:37.155Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_5_1
+[2025-08-14T08:53:37.155Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_5_2
+[2025-08-14T08:53:37.155Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_6_1
+[2025-08-14T08:53:37.156Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_6_2
+[2025-08-14T08:53:37.156Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_7_1
+[2025-08-14T08:53:37.157Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_7_2
+[2025-08-14T08:53:37.161Z] Harmonogram zaktualizowany: l2_1_1,,l2_1_2,,l2_2_1,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_2_2,,l3_3_1,,l3_3_2,,l3_4_1,,l3_4_2,,l3_5_1,,l3_5_2,,l3_6_1,,l3_6_2,,l3_7_1,,l3_7_2,
+[2025-08-14T08:53:37.521Z] Próba odczytu harmonogramu
+[2025-08-14T08:53:37.522Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,,l3_4_2,,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T08:53:37.523Z] Aktualna godzina: 10:53
+[2025-08-14T08:54:37.522Z] Próba odczytu harmonogramu
+[2025-08-14T08:54:37.531Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,,l3_4_2,,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T08:54:37.531Z] Aktualna godzina: 10:54
+[2025-08-14T08:55:37.523Z] Próba odczytu harmonogramu
+[2025-08-14T08:55:37.532Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,,l3_4_2,,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T08:55:37.533Z] Aktualna godzina: 10:55
+[2025-08-14T08:56:37.523Z] Próba odczytu harmonogramu
+[2025-08-14T08:56:37.528Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,,l3_4_2,,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T08:56:37.529Z] Aktualna godzina: 10:56
+[2025-08-14T08:57:37.522Z] Próba odczytu harmonogramu
+[2025-08-14T08:57:37.528Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,,l3_4_2,,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T08:57:37.528Z] Aktualna godzina: 10:57
+[2025-08-14T08:58:37.523Z] Próba odczytu harmonogramu
+[2025-08-14T08:58:37.528Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,,l3_4_2,,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T08:58:37.529Z] Aktualna godzina: 10:58
+[2025-08-14T08:59:37.524Z] Próba odczytu harmonogramu
+[2025-08-14T08:59:37.534Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,,l3_4_2,,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T08:59:37.534Z] Aktualna godzina: 10:59
+[2025-08-14T09:00:37.523Z] Próba odczytu harmonogramu
+[2025-08-14T09:00:37.527Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,,l3_4_2,,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T09:00:37.527Z] Aktualna godzina: 11:00
+[2025-08-14T09:01:37.524Z] Próba odczytu harmonogramu
+[2025-08-14T09:01:37.528Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,,l3_4_2,,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T09:01:37.528Z] Aktualna godzina: 11:01
+[2025-08-14T09:02:37.525Z] Próba odczytu harmonogramu
+[2025-08-14T09:02:37.528Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,,l3_4_2,,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T09:02:37.529Z] Aktualna godzina: 11:02
+[2025-08-14T09:03:37.525Z] Próba odczytu harmonogramu
+[2025-08-14T09:03:37.528Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,,l3_4_2,,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T09:03:37.529Z] Aktualna godzina: 11:03
+[2025-08-14T09:04:37.525Z] Próba odczytu harmonogramu
+[2025-08-14T09:04:37.534Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,,l3_4_2,,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T09:04:37.534Z] Aktualna godzina: 11:04
+[2025-08-14T09:05:37.526Z] Próba odczytu harmonogramu
+[2025-08-14T09:05:37.532Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,,l3_4_2,,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T09:05:37.533Z] Aktualna godzina: 11:05
+[2025-08-14T09:06:37.527Z] Próba odczytu harmonogramu
+[2025-08-14T09:06:37.530Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,,l3_4_2,,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T09:06:37.530Z] Aktualna godzina: 11:06
+[2025-08-14T09:07:37.528Z] Próba odczytu harmonogramu
+[2025-08-14T09:07:37.532Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,,l3_4_2,,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T09:07:37.532Z] Aktualna godzina: 11:07
+[2025-08-14T09:08:37.529Z] Próba odczytu harmonogramu
+[2025-08-14T09:08:37.533Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,,l3_4_2,,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T09:08:37.533Z] Aktualna godzina: 11:08
+[2025-08-14T09:09:02.741Z] l3_3_2: true 192.168.25.59
+[2025-08-14T09:09:02.747Z] l3_3_2: false 192.168.25.59
+[2025-08-14T09:09:03.715Z] l3_7_1: true 192.168.25.59
+[2025-08-14T09:09:03.724Z] l3_7_1: false 192.168.25.59
+[2025-08-14T09:09:04.653Z] l3_5_1: true 192.168.25.59
+[2025-08-14T09:09:04.661Z] l3_5_1: false 192.168.25.59
+[2025-08-14T09:09:05.805Z] l3_2_1: true 192.168.25.59
+[2025-08-14T09:09:05.812Z] l3_2_1: false 192.168.25.59
+[2025-08-14T09:09:07.024Z] l3_6_1: true 192.168.25.59
+[2025-08-14T09:09:07.029Z] l3_6_1: false 192.168.25.59
+[2025-08-14T09:09:07.499Z] l3_6_2: true 192.168.25.59
+[2025-08-14T09:09:07.505Z] l3_6_2: false 192.168.25.59
+[2025-08-14T09:09:10.995Z] l2_5_1: true 192.168.25.59
+[2025-08-14T09:09:11.000Z] l2_5_1: false 192.168.25.59
+[2025-08-14T09:09:11.429Z] l2_5_2: true 192.168.25.59
+[2025-08-14T09:09:11.435Z] l2_5_2: false 192.168.25.59
+[2025-08-14T09:09:12.570Z] l2_4_1: true 192.168.25.59
+[2025-08-14T09:09:12.579Z] l2_4_1: false 192.168.25.59
+[2025-08-14T09:09:14.411Z] l2_3_2: true 192.168.25.59
+[2025-08-14T09:09:14.415Z] l2_3_2: false 192.168.25.59
+[2025-08-14T09:09:37.529Z] Próba odczytu harmonogramu
+[2025-08-14T09:09:37.533Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,,l3_4_2,,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T09:09:37.533Z] Aktualna godzina: 11:09
+[2025-08-14T09:10:37.529Z] Próba odczytu harmonogramu
+[2025-08-14T09:10:37.539Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,,l3_4_2,,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T09:10:37.539Z] Aktualna godzina: 11:10
+[2025-08-14T09:11:37.530Z] Próba odczytu harmonogramu
+[2025-08-14T09:11:37.537Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,,l3_4_2,,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T09:11:37.537Z] Aktualna godzina: 11:11
+[2025-08-14T09:12:37.530Z] Próba odczytu harmonogramu
+[2025-08-14T09:12:37.533Z] Harmonogram: all_OFF_l3,10:22,all_OFF_l2,10:22,l3_2_2,,l2_1_1,,l2_1_2,,l2_2_1,,l3_6_2,,l3_7_1,,l3_7_2,,l2_2_2,,l2_3_1,,l2_3_2,,l2_4_1,,l2_4_2,,l2_5_1,,l2_5_2,,l2_6_1,,l2_6_2,,l2_7_1,,l2_7_2,,l3_1_1,,l3_1_2,,l3_2_1,,l3_3_1,,l3_3_2,,l3_4_1,,l3_4_2,,l3_5_1,,l3_5_2,,l3_6_1,
+[2025-08-14T09:12:37.534Z] Aktualna godzina: 11:12

@@ -29,6 +29,7 @@
           style="cursor: pointer"
         />
         <img
+          loading="eager"
           onmouseover="hover(settings_icon)"
           onmouseleave="unhover(settings_icon)"
           src="./img_main/icony/settings.png"
@@ -39,6 +40,7 @@
       </div>
 
       <script>
+        /*
         function hover(element) {
           if (element.classList == "jasny") {
             element.setAttribute("src", "./img_main/icony/settings-move.gif");
@@ -55,7 +57,7 @@
           } else {
             element.setAttribute("src", "./img_main/icony/settings-dark.png");
           }
-        }
+        }*/
       </script>
 
       <div class="hamburger">
@@ -63,6 +65,24 @@
         <div class="bar2"></div>
         <div class="bar3"></div>
       </div>
+      <script>
+        // window.addEventListener("resize", () => {
+        //   if (window.innerWidth < 810) {
+        //     document.getElementsByClassName("hamburger")[0].style.display =
+        //       "block";
+        //     document.getElementsByClassName("tabs-list")[0].style.display =
+        //       "none";
+        //   }
+        // });
+        window.addEventListener("DOMContentLoaded", () => {
+          if (window.innerWidth < 810) {
+            document.getElementsByClassName("hamburger")[0].style.display =
+              "block";
+            document.getElementsByClassName("tabs-list")[0].style.display =
+              "none";
+          }
+        });
+      </script>
       <nav class="tabs">
         <ul class="tabs-list">
           <li>
@@ -1094,12 +1114,8 @@
 
             //console.log("Harmonogram:", harmonogram);
 
-            const harmonogramMaWartosci = Object.values(harmonogram).some(
-              (value) => value !== ""
-            );
-
-            if (harmonogramMaWartosci) {
-              await ustawHarmonogram(harmonogram);
+            if (Object.keys(harmonogram).length > 0) {
+              ustawHarmonogram(harmonogram);
             }
             modal.style.display = "none"; // zamknij modal po zapisaniu
             window.location.reload(); // odśwież stronę, aby zastosować zmiany
