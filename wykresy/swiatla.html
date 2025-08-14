@@ -351,15 +351,14 @@
               const scaledRadius = Math.round(
                 baseRadius * Math.sqrt((scaleX + scaleY) / 2)
               );
-              if(rawValue != 0) {
+              if (rawValue != 0) {
                 points.push({
-                x: scaledX,
-                y: scaledY,
-                value: rawValue,
-                radius: scaledRadius,
-              });
+                  x: scaledX,
+                  y: scaledY,
+                  value: rawValue,
+                  radius: scaledRadius,
+                });
               }
-              
 
               if (max < rawValue) max = rawValue;
               if (j < cords.length - 1) j++;
