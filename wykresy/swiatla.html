@@ -73,8 +73,8 @@
       const bazoweBiuraParter = ["1", "2", "3"];
 
       function generujNazwyCzujnikow(pietro) {
-        const lista = pietro == 0 ? bazoweCzujnikiParter : bazoweCzujniki;
-        return lista.map((id) => `l${pietro}_${id}`);
+        const lista = pietro == 0 ? bazoweCzujnikiParter : bazoweCzujniki; // jesli pietro = 0, uzyj nazw z parteru
+        return lista.map((id) => `l${pietro}_${id}`); // przerabia na nazwy
       }
       function generujNazwyBiur(pietro) {
         const lista = pietro == 0 ? bazoweBiuraParter : bazoweBiura;
@@ -82,8 +82,9 @@
       }
 
       function ustaw_pietro() {
-        pietro = document.getElementById("pietroSelect").value;
+        pietro = document.getElementById("pietroSelect").value; //select z pietrem
         if (pietro == 0) {
+          // Jezeli wybrano parter, to ustawiamy sciezke na rzut parteru (w zalezonosci od motywu - bialy lub czarny)
           let sciezka_parter =
             localStorage.getItem("theme") == "ciemny-motyw"
               ? "../img_main/mapy/rzut_parter-dark.png"
@@ -92,20 +93,22 @@
             .getElementById("mapa-swiatla")
             .setAttribute("src", sciezka_parter);
         } else {
+          // Jezeli nie wybrano parteru, to wybrano 1, 2 lub 3 pietro (bo są takie same)
           let sciezka_pietro =
-            localStorage.getItem("theme") == "ciemny-motyw"
+            localStorage.getItem("theme") == "ciemny-motyw" // oczywiscie dostosujemy wersje do motywu
               ? "../img_main/mapy/swiatla-bg-dark.png"
               : "../img_main/mapy/swiatla-bg.png";
 
           document
             .getElementById("mapa-swiatla")
-            .setAttribute("src", sciezka_pietro);
+            .setAttribute("src", sciezka_pietro); // ustawiamy nowa mape
         }
-        filtruj();
+        filtruj(); // wyszukujemy dane
       }
 
-      const zakresDat = document.getElementById("zakresDat");
+      const zakresDat = document.getElementById("zakresDat"); // element w ktorym wyswielamy zakres dat
 
+      // od razu po zaladowaniu strony generujemy (a przynajmniej proboujemy) wykresy
       document.addEventListener("DOMContentLoaded", function () {
         generujWykres(`odczytaj_swiatla.php?wszystko=true&pietro=${pietro}`);
         generujHeatmape(`odczytaj_swiatla.php?pietro=${pietro}`);
@@ -115,7 +118,9 @@
       let cookie = getCookie("pietro" + pietro);
       let parsedCookie = JSON.parse(cookie);
 
+      // Funkcja do wyszukiwania danych i robienia nowych wykresow
       function filtruj() {
+        // Jezeli nie zaznaczono daty, to domyslnie wyszukuje z 24H
         const data1 = document.getElementById("data1").value
           ? new Date(document.getElementById("data1").value).toISOString()
           : null;
@@ -123,6 +128,7 @@
           ? new Date(document.getElementById("data2").value).toISOString()
           : null;
 
+        // Jesli ustawiono 2 daty to wyszukuje danych pomiedzy tymi datami i generuje wykresy
         if (data1 && data2) {
           zakresDat.innerHTML = `Używam danych z: ${formatDate(
             data1
@@ -145,6 +151,7 @@
             )}&do=${toLocalISOString(new Date(data2))}&pietro=${pietro}`
           );
         } else {
+          // Jezeli nie zaznaczono dat
           zakresDat.innerHTML = `Używam danych z: Ostatnie 24 godziny`;
           generujHeatmape(`odczytaj_swiatla.php?pietro=${pietro}`);
           generujWykres(`odczytaj_swiatla.php?wszystko=true&pietro=${pietro}`);
@@ -154,6 +161,7 @@
         parsedCookie = JSON.parse(cookie);
       }
 
+      // Funkcja do formatowania daty na czas polski
       function formatDate(dateString) {
         if (!dateString) return "Brak daty";
         let date = new Date(dateString);
@@ -164,21 +172,24 @@
         ).padStart(2, "0")}:${String(date.getMinutes()).padStart(2, "0")}`;
       }
 
+      // Sprawdza, czy php zwrocil dane
       function sprawdzCzySaDane(dane) {
         return dane.some(
           (wartosc) =>
-            wartosc != 0 && wartosc != null && typeof wartosc === "number"
+            wartosc != 0 && wartosc != null && typeof wartosc === "number" //jezeli nie ma samych nulli, 0 i jest typu number to zwroci true (wystarczy, ze bedzie jeden poprawny rekord)
         );
       }
 
-      const alertBox = document.getElementById("alertBox");
+      const alertBox = document.getElementById("alertBox"); // kontener do wyswietlania alertow
 
+      // fetchuje z parametru endpoint i rysuje wykres kolowy
       function generujWykresKolowy(endpoint) {
         fetch(endpoint)
           .then((res) => res.json())
           .then((dane) => {
-            console.log("Dane z php: ", dane);
+            //console.log("Dane z php: ", dane);
             if (!sprawdzCzySaDane(Object.values(dane))) {
+              //jezeli brak danych to wyswietlamy alert
               alertBox.style.display = "block";
               document.querySelector(".oaerror").innerHTML =
                 "<strong>Uwaga</strong> - Brak danych do wyświetlenia wykresu. Proszę podać daty pomiaru.";
@@ -322,7 +333,7 @@
         fetch(endpoint)
           .then((res) => res.json())
           .then((dane) => {
-            console.log("Dane do heatmapy: ", dane);
+            //console.log("Dane do heatmapy: ", dane);
             const cords =
               pietro == 0
                 ? [
@@ -359,15 +370,14 @@
               const scaledRadius = Math.round(
                 baseRadius * Math.sqrt((scaleX + scaleY) / 2)
               );
-              if(rawValue != 0) {
+              if (rawValue != 0) {
                 points.push({
-                x: scaledX,
-                y: scaledY,
-                value: rawValue,
-                radius: scaledRadius,
-              });
+                  x: scaledX,
+                  y: scaledY,
+                  value: rawValue,
+                  radius: scaledRadius,
+                });
               }
-              
 
               if (max < rawValue) max = rawValue;
               if (j < cords.length - 1) j++;
@@ -388,6 +398,7 @@
           });
 
         // Reaguj na zmianę rozmiaru okna – przerysuj heatmapę
+        // Przy kazdej zmianie rozmiaru heatmapa od nowa musi fetchowac dane zeby sie cala przerysowac
         // (debounce, żeby nie strzelać za często)
         if (!window.__heatmapResizeBound) {
           window.__heatmapResizeBound = true;
@@ -492,7 +503,7 @@
             const bgPaper = isDark ? "#1e1e1e" : "#ffffff";
             const fontColor = isDark ? "#e0e0e0" : "#333";
             const gridColor = isDark ? "#2c2c2c" : "#e0e0e0";
-
+            // Generuje tyle wykresow ile jest czujnikow
             for (let i = 0; i < czujniki.length; i++) {
               const sensorKey = czujniki[i];
               const plotDiv = document.createElement("div");
@@ -538,6 +549,12 @@
                   titlefont: { color: fontColor },
                 },
                 font: { color: fontColor },
+                margin: {
+                  l: 25, // Left margin (in pixels)
+                  r: 15, // Right margin (in pixels)
+                  t: 50, // Top margin (in pixels)
+                  b: 50, // Bottom margin (in pixels)
+                },
               };
 
               Plotly.newPlot(plotDiv.id, [trace], layout, {
