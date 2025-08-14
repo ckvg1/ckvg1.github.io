@@ -1,3 +1,8 @@
+Ogólna budowa: 
+    - glowna.html -> strona z headerem (logo rs, zakladki, ustawienia)
+                     na stronie dodane sa poprostu iframe, ktore przez tabs.js zmieniaja sie w zaleznosci od tego, na ktora zakladke sie kliknie (Statystyki, Swiatlo, Temperatura Parter, Pietro 1 2 3)
+    - statystyki.html -> co oznaczaja poszczegolne ikony mozna sie dowiedziec po najechaniu na nie myszka (title)
+
 Struktura plików projektu:
     foldery:
     - baza_danych: Mozna usunac, najnowsza baza danych ma najwyzszy numer
@@ -8,6 +13,9 @@ Struktura plików projektu:
     - serwer_node: serwer Express laczacy sie z PLC biblioteka nodeS7
     - sterowanie: folder z panelami do sterowania i biblioteka axios 
     - wykresy: folder ze stronami do wyswietlania wykresow/statystyk i potrzebne do nich php
+    - wykresy/php skrypty php do odczytywania danych z bazy i wyswietlania ich na glownej (statystyki):
+        - generate_report.php skrypt do raportow z bazy
+        - odczytaj_godzine.php odczytuje TYLKO godzine w ktorej swieci sie najwiecej swiatla (osobny skrypt, bo latwiej bylo zrobic osobne zapytanie SQL niz liczyc w PHP)
 
 
 Żeby dodać parter i 1 pietro: 
