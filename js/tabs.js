@@ -80,7 +80,7 @@ function usun() {
   const burger = document.querySelector(".hamburger");
   const tabsList = document.querySelector(".tabs-list");
 
-  // if (!tabsList.classList.contains("menu-open")) return;
+  if (!tabsList.classList.contains("menu-open")) return;
   burger.classList.remove("change");
   tabsList.classList.remove("menu-open");
   // tabsList.addEventListener("transitionend", () => {
