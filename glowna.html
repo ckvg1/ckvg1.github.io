@@ -40,7 +40,6 @@
       </div>
 
       <script>
-        /*
         function hover(element) {
           if (element.classList == "jasny") {
             element.setAttribute("src", "./img_main/icony/settings-move.gif");
@@ -57,7 +56,7 @@
           } else {
             element.setAttribute("src", "./img_main/icony/settings-dark.png");
           }
-        }*/
+        }
       </script>
 
       <div class="hamburger">
@@ -180,7 +179,7 @@
             <img
               src="./img_main/icony/dark-mode.png"
               id="dark-mode"
-              onclick="darkMode(), window.location.reload()"
+              onclick="darkMode(), window.location.href = window.location.href; // powoduje żądanie nowej wersji"
               class="jasny"
             />
             <img
@@ -1118,7 +1117,7 @@
               ustawHarmonogram(harmonogram);
             }
             modal.style.display = "none"; // zamknij modal po zapisaniu
-            window.location.reload(); // odśwież stronę, aby zastosować zmiany
+            window.location.href = window.location.href; // odśwież stronę, aby zastosować zmiany
           }
           async function ustawHarmonogram(harmonogram = null) {
             if (harmonogram === null) {
@@ -1220,7 +1219,7 @@
               setCookie(`pietro${i}`, JSON.stringify(def))
             );
             //odwiez zeby zastosowac zmiany
-            window.location.reload();
+            window.location.href = window.location.href;
           }
 
           // Sprawdzenie ciasteczek i ustawienie domyślnych wartości
