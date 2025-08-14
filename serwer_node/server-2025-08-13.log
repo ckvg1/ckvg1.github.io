@@ -499,3 +499,481 @@
 [2025-08-13T10:51:29.583Z] Aktualna godzina: 
 [2025-08-13T10:51:41.587Z] Serwer zamykany przez SIGINT
 [2025-08-13T10:51:41.588Z] Proces zakończony z kodem: 0
+[2025-08-13T13:57:28.281Z] Serwer nasłuchuje na porcie 3000
+[2025-08-13T13:57:38.257Z] Błąd odczytu pliku harmonogram.json: Error: ENOENT: no such file or directory, open 'C:\Users\RSENGINEERING16\harmonogram.json'
+[2025-08-13T13:57:38.308Z] Błąd odczytu pliku harmonogram.json: Error: ENOENT: no such file or directory, open 'C:\Users\RSENGINEERING16\harmonogram.json'
+[2025-08-13T13:57:41.010Z] all_ON_l2: true 192.168.25.59
+[2025-08-13T13:57:41.018Z] all_ON_l2: false 192.168.25.59
+[2025-08-13T13:57:41.034Z] all_ON_l3: true 192.168.25.59
+[2025-08-13T13:57:41.042Z] all_ON_l3: false 192.168.25.59
+[2025-08-13T13:57:42.227Z] all_OFF_l2: true 192.168.25.59
+[2025-08-13T13:57:42.236Z] all_OFF_l2: false 192.168.25.59
+[2025-08-13T13:57:42.248Z] all_OFF_l3: true 192.168.25.59
+[2025-08-13T13:57:42.256Z] all_OFF_l3: false 192.168.25.59
+[2025-08-13T13:57:49.374Z] all_OFF_l3: true 192.168.25.59
+[2025-08-13T13:57:49.385Z] all_OFF_l3: false 192.168.25.59
+[2025-08-13T13:57:50.240Z] all_ON_l3: true 192.168.25.59
+[2025-08-13T13:57:50.247Z] all_ON_l3: false 192.168.25.59
+[2025-08-13T13:57:51.610Z] all_OFF_l3: true 192.168.25.59
+[2025-08-13T13:57:51.623Z] all_OFF_l3: false 192.168.25.59
+[2025-08-13T13:57:52.799Z] all_ON_l3: true 192.168.25.59
+[2025-08-13T13:57:52.808Z] all_ON_l3: false 192.168.25.59
+[2025-08-13T13:58:06.886Z] Błąd odczytu pliku harmonogram.json: Error: ENOENT: no such file or directory, open 'C:\Users\RSENGINEERING16\harmonogram.json'
+[2025-08-13T13:58:28.333Z] Próba odczytu harmonogramu
+[2025-08-13T13:58:28.337Z] Błąd odczytu pliku harmonogram.json: Error: ENOENT: no such file or directory, open 'C:\Users\RSENGINEERING16\harmonogram.json'
+[2025-08-13T13:58:30.150Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l0_1_1
+[2025-08-13T13:58:30.151Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l0_1_2
+[2025-08-13T13:58:30.152Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l0_2_1
+[2025-08-13T13:58:30.153Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l0_2_2
+[2025-08-13T13:58:30.154Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l0_3_1
+[2025-08-13T13:58:30.154Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l0_3_2
+[2025-08-13T13:58:30.155Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_1_1
+[2025-08-13T13:58:30.155Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_1_2
+[2025-08-13T13:58:30.156Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_2_1
+[2025-08-13T13:58:30.157Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_2_2
+[2025-08-13T13:58:30.157Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_3_1
+[2025-08-13T13:58:30.158Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_3_2
+[2025-08-13T13:58:30.159Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_4_2
+[2025-08-13T13:58:30.160Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_5_1
+[2025-08-13T13:58:30.160Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_5_2
+[2025-08-13T13:58:30.161Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_6_1
+[2025-08-13T13:58:30.161Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_6_2
+[2025-08-13T13:58:30.162Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_7_1
+[2025-08-13T13:58:30.163Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_7_2
+[2025-08-13T13:58:30.168Z] Plik harmonogram.json nie istnieje lub błąd odczytu, utworzę nowy
+[2025-08-13T13:58:30.173Z] Harmonogram zaktualizowany: [object Object]
+[2025-08-13T13:58:38.107Z] Harmonogram zaktualizowany: [object Object]
+[2025-08-13T13:59:19.302Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l0_1_1
+[2025-08-13T13:59:19.303Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l0_1_2
+[2025-08-13T13:59:19.306Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l0_2_1
+[2025-08-13T13:59:19.308Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l0_2_2
+[2025-08-13T13:59:19.309Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l0_3_1
+[2025-08-13T13:59:19.310Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l0_3_2
+[2025-08-13T13:59:19.310Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_1_1
+[2025-08-13T13:59:19.311Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_1_2
+[2025-08-13T13:59:19.312Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_2_1
+[2025-08-13T13:59:19.313Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_2_2
+[2025-08-13T13:59:19.315Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_3_1
+[2025-08-13T13:59:19.315Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_3_2
+[2025-08-13T13:59:19.316Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_4_2
+[2025-08-13T13:59:19.316Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_5_1
+[2025-08-13T13:59:19.317Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_5_2
+[2025-08-13T13:59:19.317Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_6_1
+[2025-08-13T13:59:19.318Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_6_2
+[2025-08-13T13:59:19.318Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_7_1
+[2025-08-13T13:59:19.319Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_7_2
+[2025-08-13T13:59:19.325Z] Harmonogram zaktualizowany: [object Object]
+[2025-08-13T13:59:28.345Z] Próba odczytu harmonogramu
+[2025-08-13T13:59:28.346Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T13:59:28.449Z] Aktualna godzina: 15:59
+[2025-08-13T13:59:31.138Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l0_1_1
+[2025-08-13T13:59:31.139Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l0_1_2
+[2025-08-13T13:59:31.140Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l0_2_1
+[2025-08-13T13:59:31.141Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l0_2_2
+[2025-08-13T13:59:31.142Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l0_3_1
+[2025-08-13T13:59:31.142Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l0_3_2
+[2025-08-13T13:59:31.143Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_1_1
+[2025-08-13T13:59:31.143Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_1_2
+[2025-08-13T13:59:31.144Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_2_1
+[2025-08-13T13:59:31.144Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_2_2
+[2025-08-13T13:59:31.145Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_3_1
+[2025-08-13T13:59:31.145Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_3_2
+[2025-08-13T13:59:31.146Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_4_2
+[2025-08-13T13:59:31.147Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_5_1
+[2025-08-13T13:59:31.147Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_5_2
+[2025-08-13T13:59:31.148Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_6_1
+[2025-08-13T13:59:31.148Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_6_2
+[2025-08-13T13:59:31.149Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_7_1
+[2025-08-13T13:59:31.150Z] W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
+          l1_7_2
+[2025-08-13T13:59:31.157Z] Harmonogram zaktualizowany: [object Object]
+[2025-08-13T13:59:37.016Z] l3_4_1: true 192.168.25.59
+[2025-08-13T13:59:37.025Z] l3_4_1: false 192.168.25.59
+[2025-08-13T13:59:37.568Z] l3_4_1: true 192.168.25.59
+[2025-08-13T13:59:37.577Z] l3_4_1: false 192.168.25.59
+[2025-08-13T13:59:38.915Z] l3_4_2: true 192.168.25.59
+[2025-08-13T13:59:38.925Z] l3_4_2: false 192.168.25.59
+[2025-08-13T13:59:39.657Z] l3_4_2: true 192.168.25.59
+[2025-08-13T13:59:39.669Z] l3_4_2: false 192.168.25.59
+[2025-08-13T13:59:41.886Z] l3_1_2: true 192.168.25.59
+[2025-08-13T13:59:41.899Z] l3_1_2: false 192.168.25.59
+[2025-08-13T13:59:43.567Z] l3_5_2: true 192.168.25.59
+[2025-08-13T13:59:43.580Z] l3_5_2: false 192.168.25.59
+[2025-08-13T13:59:44.744Z] l3_5_1: true 192.168.25.59
+[2025-08-13T13:59:44.758Z] l3_5_1: false 192.168.25.59
+[2025-08-13T13:59:45.945Z] b3_5_1: true 192.168.25.59
+[2025-08-13T13:59:45.954Z] b3_5_1: false 192.168.25.59
+[2025-08-13T13:59:47.139Z] b3_5_2: true 192.168.25.59
+[2025-08-13T13:59:47.152Z] b3_5_2: false 192.168.25.59
+[2025-08-13T14:00:28.355Z] Próba odczytu harmonogramu
+[2025-08-13T14:00:28.358Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:00:28.360Z] Aktualna godzina: 16:00
+[2025-08-13T14:01:05.928Z] l3_6_1: true 192.168.25.59
+[2025-08-13T14:01:05.940Z] l3_6_1: false 192.168.25.59
+[2025-08-13T14:01:06.600Z] l3_6_1: true 192.168.25.59
+[2025-08-13T14:01:06.608Z] l3_6_1: false 192.168.25.59
+[2025-08-13T14:01:28.354Z] Próba odczytu harmonogramu
+[2025-08-13T14:01:28.368Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:01:28.371Z] Aktualna godzina: 16:01
+[2025-08-13T14:02:28.360Z] Próba odczytu harmonogramu
+[2025-08-13T14:02:28.366Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:02:28.368Z] Aktualna godzina: 16:02
+[2025-08-13T14:03:28.371Z] Próba odczytu harmonogramu
+[2025-08-13T14:03:28.379Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:03:28.381Z] Aktualna godzina: 16:03
+[2025-08-13T14:04:28.383Z] Próba odczytu harmonogramu
+[2025-08-13T14:04:28.387Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:04:28.388Z] Aktualna godzina: 16:04
+[2025-08-13T14:05:28.384Z] Próba odczytu harmonogramu
+[2025-08-13T14:05:28.391Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:05:28.393Z] Aktualna godzina: 16:05
+[2025-08-13T14:06:28.396Z] Próba odczytu harmonogramu
+[2025-08-13T14:06:28.404Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:06:28.406Z] Aktualna godzina: 16:06
+[2025-08-13T14:07:28.405Z] Próba odczytu harmonogramu
+[2025-08-13T14:07:28.413Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:07:28.415Z] Aktualna godzina: 16:07
+[2025-08-13T14:08:28.415Z] Próba odczytu harmonogramu
+[2025-08-13T14:08:28.423Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:08:28.425Z] Aktualna godzina: 16:08
+[2025-08-13T14:09:28.427Z] Próba odczytu harmonogramu
+[2025-08-13T14:09:28.431Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:09:28.433Z] Aktualna godzina: 16:09
+[2025-08-13T14:10:28.431Z] Próba odczytu harmonogramu
+[2025-08-13T14:10:28.440Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:10:28.442Z] Aktualna godzina: 16:10
+[2025-08-13T14:11:28.438Z] Próba odczytu harmonogramu
+[2025-08-13T14:11:28.441Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:11:28.442Z] Aktualna godzina: 16:11
+[2025-08-13T14:12:28.441Z] Próba odczytu harmonogramu
+[2025-08-13T14:12:28.450Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:12:28.452Z] Aktualna godzina: 16:12
+[2025-08-13T14:13:28.446Z] Próba odczytu harmonogramu
+[2025-08-13T14:13:28.449Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:13:28.449Z] Aktualna godzina: 16:13
+[2025-08-13T14:14:28.458Z] Próba odczytu harmonogramu
+[2025-08-13T14:14:28.466Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:14:28.469Z] Aktualna godzina: 16:14
+[2025-08-13T14:15:28.466Z] Próba odczytu harmonogramu
+[2025-08-13T14:15:28.471Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:15:28.472Z] Aktualna godzina: 16:15
+[2025-08-13T14:16:28.478Z] Próba odczytu harmonogramu
+[2025-08-13T14:16:28.481Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:16:28.482Z] Aktualna godzina: 16:16
+[2025-08-13T14:17:28.478Z] Próba odczytu harmonogramu
+[2025-08-13T14:17:28.486Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:17:28.488Z] Aktualna godzina: 16:17
+[2025-08-13T14:18:28.478Z] Próba odczytu harmonogramu
+[2025-08-13T14:18:28.486Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:18:28.488Z] Aktualna godzina: 16:18
+[2025-08-13T14:19:28.481Z] Próba odczytu harmonogramu
+[2025-08-13T14:19:28.486Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:19:28.488Z] Aktualna godzina: 16:19
+[2025-08-13T14:20:28.483Z] Próba odczytu harmonogramu
+[2025-08-13T14:20:28.488Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:20:28.489Z] Aktualna godzina: 16:20
+[2025-08-13T14:21:28.489Z] Próba odczytu harmonogramu
+[2025-08-13T14:21:28.493Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:21:28.494Z] Aktualna godzina: 16:21
+[2025-08-13T14:22:28.491Z] Próba odczytu harmonogramu
+[2025-08-13T14:22:28.499Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:22:28.501Z] Aktualna godzina: 16:22
+[2025-08-13T14:23:28.499Z] Próba odczytu harmonogramu
+[2025-08-13T14:23:28.506Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:23:28.508Z] Aktualna godzina: 16:23
+[2025-08-13T14:24:28.512Z] Próba odczytu harmonogramu
+[2025-08-13T14:24:28.517Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:24:28.519Z] Aktualna godzina: 16:24
+[2025-08-13T14:25:28.514Z] Próba odczytu harmonogramu
+[2025-08-13T14:25:28.519Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:25:28.520Z] Aktualna godzina: 16:25
+[2025-08-13T14:26:28.528Z] Próba odczytu harmonogramu
+[2025-08-13T14:26:28.539Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:26:28.542Z] Aktualna godzina: 16:26
+[2025-08-13T14:27:28.532Z] Próba odczytu harmonogramu
+[2025-08-13T14:27:28.537Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:27:28.538Z] Aktualna godzina: 16:27
+[2025-08-13T14:28:28.538Z] Próba odczytu harmonogramu
+[2025-08-13T14:28:28.542Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:28:28.543Z] Aktualna godzina: 16:28
+[2025-08-13T14:29:28.544Z] Próba odczytu harmonogramu
+[2025-08-13T14:29:28.552Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:29:28.554Z] Aktualna godzina: 16:29
+[2025-08-13T14:30:28.547Z] Próba odczytu harmonogramu
+[2025-08-13T14:30:28.550Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:30:28.551Z] Aktualna godzina: 16:30
+[2025-08-13T14:31:28.553Z] Próba odczytu harmonogramu
+[2025-08-13T14:31:28.558Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:31:28.559Z] Aktualna godzina: 16:31
+[2025-08-13T14:32:28.564Z] Próba odczytu harmonogramu
+[2025-08-13T14:32:28.568Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:32:28.570Z] Aktualna godzina: 16:32
+[2025-08-13T14:33:28.576Z] Próba odczytu harmonogramu
+[2025-08-13T14:33:28.584Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:33:28.586Z] Aktualna godzina: 16:33
+[2025-08-13T14:34:28.580Z] Próba odczytu harmonogramu
+[2025-08-13T14:34:28.589Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:34:28.591Z] Aktualna godzina: 16:34
+[2025-08-13T14:35:28.580Z] Próba odczytu harmonogramu
+[2025-08-13T14:35:28.583Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:35:28.584Z] Aktualna godzina: 16:35
+[2025-08-13T14:36:28.589Z] Próba odczytu harmonogramu
+[2025-08-13T14:36:28.592Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:36:28.593Z] Aktualna godzina: 16:36
+[2025-08-13T14:37:28.597Z] Próba odczytu harmonogramu
+[2025-08-13T14:37:28.601Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:37:28.603Z] Aktualna godzina: 16:37
+[2025-08-13T14:38:28.598Z] Próba odczytu harmonogramu
+[2025-08-13T14:38:28.603Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:38:28.604Z] Aktualna godzina: 16:38
+[2025-08-13T14:39:28.608Z] Próba odczytu harmonogramu
+[2025-08-13T14:39:28.616Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:39:28.618Z] Aktualna godzina: 16:39
+[2025-08-13T14:40:28.610Z] Próba odczytu harmonogramu
+[2025-08-13T14:40:28.615Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:40:28.617Z] Aktualna godzina: 16:40
+[2025-08-13T14:41:28.622Z] Próba odczytu harmonogramu
+[2025-08-13T14:41:28.627Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:41:28.628Z] Aktualna godzina: 16:41
+[2025-08-13T14:42:28.634Z] Próba odczytu harmonogramu
+[2025-08-13T14:42:28.637Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:42:28.638Z] Aktualna godzina: 16:42
+[2025-08-13T14:43:28.646Z] Próba odczytu harmonogramu
+[2025-08-13T14:43:28.649Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:43:28.650Z] Aktualna godzina: 16:43
+[2025-08-13T14:44:28.649Z] Próba odczytu harmonogramu
+[2025-08-13T14:44:28.654Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:44:28.656Z] Aktualna godzina: 16:44
+[2025-08-13T14:45:28.649Z] Próba odczytu harmonogramu
+[2025-08-13T14:45:28.652Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:45:28.653Z] Aktualna godzina: 16:45
+[2025-08-13T14:46:28.653Z] Próba odczytu harmonogramu
+[2025-08-13T14:46:28.655Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:46:28.656Z] Aktualna godzina: 16:46
+[2025-08-13T14:47:28.652Z] Próba odczytu harmonogramu
+[2025-08-13T14:47:28.665Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:47:28.668Z] Aktualna godzina: 16:47
+[2025-08-13T14:48:28.667Z] Próba odczytu harmonogramu
+[2025-08-13T14:48:28.672Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:48:28.673Z] Aktualna godzina: 16:48
+[2025-08-13T14:49:28.671Z] Próba odczytu harmonogramu
+[2025-08-13T14:49:28.676Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:49:28.678Z] Aktualna godzina: 16:49
+[2025-08-13T14:50:28.684Z] Próba odczytu harmonogramu
+[2025-08-13T14:50:28.688Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:50:28.690Z] Aktualna godzina: 16:50
+[2025-08-13T14:51:28.688Z] Próba odczytu harmonogramu
+[2025-08-13T14:51:28.696Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:51:28.699Z] Aktualna godzina: 16:51
+[2025-08-13T14:52:28.689Z] Próba odczytu harmonogramu
+[2025-08-13T14:52:28.697Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:52:28.699Z] Aktualna godzina: 16:52
+[2025-08-13T14:53:28.696Z] Próba odczytu harmonogramu
+[2025-08-13T14:53:28.699Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:53:28.700Z] Aktualna godzina: 16:53
+[2025-08-13T14:54:28.711Z] Próba odczytu harmonogramu
+[2025-08-13T14:54:28.717Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:54:28.719Z] Aktualna godzina: 16:54
+[2025-08-13T14:55:28.726Z] Próba odczytu harmonogramu
+[2025-08-13T14:55:28.734Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:55:28.736Z] Aktualna godzina: 16:55
+[2025-08-13T14:56:28.728Z] Próba odczytu harmonogramu
+[2025-08-13T14:56:28.733Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:56:28.735Z] Aktualna godzina: 16:56
+[2025-08-13T14:57:28.728Z] Próba odczytu harmonogramu
+[2025-08-13T14:57:28.736Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:57:28.739Z] Aktualna godzina: 16:57
+[2025-08-13T14:58:28.742Z] Próba odczytu harmonogramu
+[2025-08-13T14:58:28.749Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:58:28.751Z] Aktualna godzina: 16:58
+[2025-08-13T14:59:28.746Z] Próba odczytu harmonogramu
+[2025-08-13T14:59:28.750Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T14:59:28.751Z] Aktualna godzina: 16:59
+[2025-08-13T15:00:28.761Z] Próba odczytu harmonogramu
+[2025-08-13T15:00:28.764Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T15:00:28.765Z] Aktualna godzina: 17:00
+[2025-08-13T15:01:28.773Z] Próba odczytu harmonogramu
+[2025-08-13T15:01:28.776Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T15:01:28.777Z] Aktualna godzina: 17:01
+[2025-08-13T15:02:28.787Z] Próba odczytu harmonogramu
+[2025-08-13T15:02:28.794Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T15:02:28.796Z] Aktualna godzina: 17:02
+[2025-08-13T15:03:28.797Z] Próba odczytu harmonogramu
+[2025-08-13T15:03:28.800Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T15:03:28.801Z] Aktualna godzina: 17:03
+[2025-08-13T15:04:28.798Z] Próba odczytu harmonogramu
+[2025-08-13T15:04:28.803Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T15:04:28.804Z] Aktualna godzina: 17:04
+[2025-08-13T15:05:28.803Z] Próba odczytu harmonogramu
+[2025-08-13T15:05:28.808Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T15:05:28.810Z] Aktualna godzina: 17:05
+[2025-08-13T15:06:28.815Z] Próba odczytu harmonogramu
+[2025-08-13T15:06:28.817Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T15:06:28.818Z] Aktualna godzina: 17:06
+[2025-08-13T15:07:28.816Z] Próba odczytu harmonogramu
+[2025-08-13T15:07:28.820Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T15:07:28.822Z] Aktualna godzina: 17:07
+[2025-08-13T15:08:28.827Z] Próba odczytu harmonogramu
+[2025-08-13T15:08:28.833Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T15:08:28.834Z] Aktualna godzina: 17:08
+[2025-08-13T15:09:28.833Z] Próba odczytu harmonogramu
+[2025-08-13T15:09:28.839Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T15:09:28.841Z] Aktualna godzina: 17:09
+[2025-08-13T15:10:28.835Z] Próba odczytu harmonogramu
+[2025-08-13T15:10:28.839Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T15:10:28.840Z] Aktualna godzina: 17:10
+[2025-08-13T15:11:28.844Z] Próba odczytu harmonogramu
+[2025-08-13T15:11:28.852Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T15:11:28.855Z] Aktualna godzina: 17:11
+[2025-08-13T15:12:28.853Z] Próba odczytu harmonogramu
+[2025-08-13T15:12:28.858Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T15:12:28.859Z] Aktualna godzina: 17:12
+[2025-08-13T15:13:28.863Z] Próba odczytu harmonogramu
+[2025-08-13T15:13:28.867Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T15:13:28.868Z] Aktualna godzina: 17:13
+[2025-08-13T15:14:28.871Z] Próba odczytu harmonogramu
+[2025-08-13T15:14:28.877Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T15:14:28.878Z] Aktualna godzina: 17:14
+[2025-08-13T15:15:28.881Z] Próba odczytu harmonogramu
+[2025-08-13T15:15:28.886Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T15:15:28.887Z] Aktualna godzina: 17:15
+[2025-08-13T15:16:28.896Z] Próba odczytu harmonogramu
+[2025-08-13T15:16:28.904Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T15:16:28.906Z] Aktualna godzina: 17:16
+[2025-08-13T15:17:28.900Z] Próba odczytu harmonogramu
+[2025-08-13T15:17:28.903Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T15:17:28.904Z] Aktualna godzina: 17:17
+[2025-08-13T15:18:28.908Z] Próba odczytu harmonogramu
+[2025-08-13T15:18:28.911Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T15:18:28.912Z] Aktualna godzina: 17:18
+[2025-08-13T15:19:28.920Z] Próba odczytu harmonogramu
+[2025-08-13T15:19:28.925Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T15:19:28.926Z] Aktualna godzina: 17:19
+[2025-08-13T15:20:28.921Z] Próba odczytu harmonogramu
+[2025-08-13T15:20:28.925Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T15:20:28.927Z] Aktualna godzina: 17:20
+[2025-08-13T15:21:28.926Z] Próba odczytu harmonogramu
+[2025-08-13T15:21:28.931Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T15:21:28.932Z] Aktualna godzina: 17:21
+[2025-08-13T15:22:28.935Z] Próba odczytu harmonogramu
+[2025-08-13T15:22:28.938Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T15:22:28.939Z] Aktualna godzina: 17:22
+[2025-08-13T15:23:28.948Z] Próba odczytu harmonogramu
+[2025-08-13T15:23:28.953Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T15:23:28.955Z] Aktualna godzina: 17:23
+[2025-08-13T15:24:28.961Z] Próba odczytu harmonogramu
+[2025-08-13T15:24:28.966Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T15:24:28.967Z] Aktualna godzina: 17:24
+[2025-08-13T15:25:28.961Z] Próba odczytu harmonogramu
+[2025-08-13T15:25:28.965Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T15:25:28.966Z] Aktualna godzina: 17:25
+[2025-08-13T15:26:28.968Z] Próba odczytu harmonogramu
+[2025-08-13T15:26:28.973Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T15:26:28.975Z] Aktualna godzina: 17:26
+[2025-08-13T15:27:28.974Z] Próba odczytu harmonogramu
+[2025-08-13T15:27:28.976Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T15:27:28.977Z] Aktualna godzina: 17:27
+[2025-08-13T15:28:28.982Z] Próba odczytu harmonogramu
+[2025-08-13T15:28:28.994Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T15:28:28.996Z] Aktualna godzina: 17:28
+[2025-08-13T15:29:28.985Z] Próba odczytu harmonogramu
+[2025-08-13T15:29:28.993Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T15:29:28.995Z] Aktualna godzina: 17:29
+[2025-08-13T15:30:28.985Z] Próba odczytu harmonogramu
+[2025-08-13T15:30:28.989Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T15:30:28.990Z] Aktualna godzina: 17:30
+[2025-08-13T15:31:28.998Z] Próba odczytu harmonogramu
+[2025-08-13T15:31:29.001Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T15:31:29.003Z] Aktualna godzina: 17:31
+[2025-08-13T15:32:29.004Z] Próba odczytu harmonogramu
+[2025-08-13T15:32:29.007Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T15:32:29.008Z] Aktualna godzina: 17:32
+[2025-08-13T15:33:29.004Z] Próba odczytu harmonogramu
+[2025-08-13T15:33:29.009Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T15:33:29.011Z] Aktualna godzina: 17:33
+[2025-08-13T15:34:29.008Z] Próba odczytu harmonogramu
+[2025-08-13T15:34:29.016Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T15:34:29.018Z] Aktualna godzina: 17:34
+[2025-08-13T15:35:29.012Z] Próba odczytu harmonogramu
+[2025-08-13T15:35:29.018Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T15:35:29.019Z] Aktualna godzina: 17:35
+[2025-08-13T15:36:29.015Z] Próba odczytu harmonogramu
+[2025-08-13T15:36:29.019Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T15:36:29.020Z] Aktualna godzina: 17:36
+[2025-08-13T15:37:29.027Z] Próba odczytu harmonogramu
+[2025-08-13T15:37:29.034Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T15:37:29.036Z] Aktualna godzina: 17:37
+[2025-08-13T15:38:29.035Z] Próba odczytu harmonogramu
+[2025-08-13T15:38:29.043Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T15:38:29.045Z] Aktualna godzina: 17:38
+[2025-08-13T15:39:29.036Z] Próba odczytu harmonogramu
+[2025-08-13T15:39:29.038Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T15:39:29.039Z] Aktualna godzina: 17:39
+[2025-08-13T15:40:29.038Z] Próba odczytu harmonogramu
+[2025-08-13T15:40:29.042Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T15:40:29.043Z] Aktualna godzina: 17:40
+[2025-08-13T15:41:29.051Z] Próba odczytu harmonogramu
+[2025-08-13T15:41:29.060Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T15:41:29.062Z] Aktualna godzina: 17:41
+[2025-08-13T15:42:29.053Z] Próba odczytu harmonogramu
+[2025-08-13T15:42:29.058Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T15:42:29.060Z] Aktualna godzina: 17:42
+[2025-08-13T15:43:29.066Z] Próba odczytu harmonogramu
+[2025-08-13T15:43:29.071Z] Godzina z harmonogramu: [object Object]
+[2025-08-13T15:43:29.072Z] Aktualna godzina: 17:43
