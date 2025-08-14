@@ -40,7 +40,6 @@
       </div>
 
       <script>
-        /*
         function hover(element) {
           if (element.classList == "jasny") {
             element.setAttribute("src", "./img_main/icony/settings-move.gif");
@@ -57,7 +56,7 @@
           } else {
             element.setAttribute("src", "./img_main/icony/settings-dark.png");
           }
-        }*/
+        }
       </script>
 
       <div class="hamburger">
@@ -180,7 +179,7 @@
             <img
               src="./img_main/icony/dark-mode.png"
               id="dark-mode"
-              onclick="darkMode(), window.location.reload()"
+              onclick="darkMode(), window.location.href = window.location.href; // powoduje żądanie nowej wersji"
               class="jasny"
             />
             <img
