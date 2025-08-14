@@ -1095,12 +1095,8 @@
 
             //console.log("Harmonogram:", harmonogram);
 
-            const harmonogramMaWartosci = Object.values(harmonogram).some(
-              (value) => value !== ""
-            );
-
-            if (harmonogramMaWartosci) {
-              await ustawHarmonogram(harmonogram);
+            if (Object.keys(harmonogram).length > 0) {
+              ustawHarmonogram(harmonogram);
             }
             modal.style.display = "none"; // zamknij modal po zapisaniu
             window.location.reload(); // odśwież stronę, aby zastosować zmiany

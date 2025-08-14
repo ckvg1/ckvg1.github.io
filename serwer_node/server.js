@@ -2,7 +2,7 @@
 // Serwer Node.js do obsługi sterowania światłami, roletami i temperaturą
 // Używa biblioteki nodes7 do komunikacji z PLC, Express do obsługi HTTP i SSE, oraz NodeCache do przechowywania danych w pamięci
 // Wymaga zainstalowania bibliotek: nodes7, express, cors, async-mutex, node-cache
-
+// Uruchomienie: node server.js (zakladajac, ze jestesmy w folderze)
 const nodes7 = require("nodes7");
 const express = require("express");
 const cors = require("cors");
@@ -23,7 +23,11 @@ const cache = new NodeCache({ stdTTL: 0, checkperiod: 1 });
 // Plik logów z datą w nazwie
 const getLogFilePath = () => {
   const date = new Date().toISOString().split("T")[0]; // YYYY-MM-DD
-  return path.join(__dirname, `server-${date}.log`);
+  const logsDir = path.join(__dirname, "logs");
+  if (!fs.existsSync(logsDir)) {
+    fs.mkdirSync(logsDir, { recursive: true });
+  }
+  return path.join(logsDir, `server-${date}.log`);
 };
 
 // Funkcja logująca do pliku i konsoli
@@ -478,7 +482,7 @@ function connectedWrite(err) {
               .status(500)
               .json({ error: "Błąd zapisu pliku harmonogramu" });
           }
-          log(`Harmonogram zaktualizowany: ${noweWartosci}`);
+          log(`Harmonogram zaktualizowany: ${Object.entries(noweWartosci)}`);
           res.json({
             status: "harmonogram ustawiony",
             harmonogram: updatedHarmonogram,
@@ -518,7 +522,7 @@ function connectedWrite(err) {
       }
 
       const harmonogram = JSON.parse(data);
-      log(`Godzina z harmonogramu: ${harmonogram}`);
+      log(`Harmonogram: ${Object.entries(harmonogram)}`);
       const currentHour = new Date().toLocaleTimeString().slice(0, 5);
       log(`Aktualna godzina: ${currentHour}`);
       Object.entries(harmonogram).forEach(([key, value]) => {
