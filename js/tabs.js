@@ -75,7 +75,7 @@ async function usun() {
   const burger = document.querySelector(".hamburger");
   const tabsList = document.querySelector(".tabs-list");
 
-  if (!tabsList.classList.contains("menu-open")) return;
+  // if (!tabsList.classList.contains("menu-open")) return;
   burger.classList.remove("change");
   tabsList.classList.remove("menu-open");
   // tabsList.addEventListener("transitionend", () => {
@@ -117,5 +117,6 @@ observer.observe(document.body, { childList: true, subtree: true });
 window.addEventListener("click", hamburgerIframe);
 window.addEventListener("load", hamburgerIframe);
 document.addEventListener("click", hamburger);
+document.addEventListener("load", hamburger);
 window.addEventListener("resize", pojawianie);
 window.addEventListener("load", pojawianie);
