@@ -309,7 +309,7 @@ function connectedWrite(err) {
         .json({ error: "Nieprawidłowa wartość (oczekiwano true/false)" });
     }
 
-    if (Object.keys(variables).indexOf(`wej_${swiatlo}`) === -1) {
+    if (Object.keys(variables).indexOf(`in_${swiatlo}`) === -1) {
       // jezeli światło nie istnieje w naszym obiekcie, zwracamy błąd
       log(`Próba zapisu do nieistniejącego światła: ${swiatlo}, ${req.ip}`);
       return res.status(400).json({ error: "Nieprawidłowa nazwa światła" });
@@ -321,7 +321,7 @@ function connectedWrite(err) {
           // przypisujemy do zmiennej result wynik funkcji writeItems
           // writeItems zwraca 0, jeśli zapis się udał, lub inną wartość, jeśli zapis się nie powiódł
           const result = writeConn.writeItems(
-            `wej_${swiatlo}`, // dodajemy wej_ przed swiatlo, żeby dopasować do zmiennych w pliku variables/floorX/LX_in.js
+            `in_${swiatlo}`, // dodajemy in_ przed swiatlo, żeby dopasować do zmiennych w pliku variables/floorX/LX_in.js
             wartosc,
             (err) => {
               if (err) {
@@ -362,7 +362,7 @@ function connectedWrite(err) {
         .json({ error: "Nieprawidłowa wartość (oczekiwano true/false)" });
     }
 
-    if (Object.keys(variables).indexOf(`wej_${roleta}`) === -1) {
+    if (Object.keys(variables).indexOf(`in_${roleta}`) === -1) {
       // jezeli roleta nie istnieje w naszym obiekcie, zwracamy błąd
       log(`Próba zapisu do nieistniejącej rolety: ${roleta}, ${req.ip}`);
       return res.status(400).json({ error: "Nieprawidłowa nazwa rolety" });
@@ -371,7 +371,7 @@ function connectedWrite(err) {
     // Funkcja działa tak samo jak w przypadku świateł, ale oddzielamy ją (i cały endpoint), żeby było jasne, że chodzi o rolety
     await writeMutex.runExclusive(async () => {
       await new Promise((resolve) => {
-        let result = writeConn.writeItems(`wej_${roleta}`, wartosc, (err) => {
+        let result = writeConn.writeItems(`in_${roleta}`, wartosc, (err) => {
           if (err) return res.status(500).json({ error: "Błąd przy zapisie" });
 
           res.json({ status: "zapisano", wartosc });
@@ -444,7 +444,7 @@ function connectedWrite(err) {
 
     // Filtrujemy nieprawidłowe klucze
     Object.keys(noweWartosci).forEach((key) => {
-      if (!variables[`wej_${key}`]) {
+      if (!variables[`in_${key}`]) {
         log(
           `W harmonogramie znaleziono nieprawidłowe światło, zostanie usuniete:
           ${key}`
@@ -531,11 +531,11 @@ function connectedWrite(err) {
           writeMutex.runExclusive(async () => {
             log(`Wyłączam ${key} według harmonogramu`);
             await new Promise((resolve) => {
-              writeConn.writeItems(`wej_${key}`, true, (err) => {
-                if (err) log(`Blad wej_${key} na true:`, err);
+              writeConn.writeItems(`in_${key}`, true, (err) => {
+                if (err) log(`Blad in_${key} na true:`, err);
                 setTimeout(() => {
-                  writeConn.writeItems(`wej_${key}`, false, (err) => {
-                    if (err) log(`Blad wej_${key} na false:`, err);
+                  writeConn.writeItems(`in_${key}`, false, (err) => {
+                    if (err) log(`Blad in_${key} na false:`, err);
                     log(`Wyłaczenie swiatla ${key} powiodlo sie. `);
                     resolve();
                   });

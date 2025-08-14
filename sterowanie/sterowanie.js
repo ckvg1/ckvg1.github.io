@@ -74,7 +74,7 @@ addEventListener("DOMContentLoaded", () => {
     Object.entries(dane).forEach(([id, wartosc]) => {
       const el = document.getElementById(id);
       if (el) {
-        if (el.id.slice(0, 5) == "wyj_l") {
+        if (el.id.slice(0, 5) == "out_l") {
           let nazwa_pliku =
             localStorage.getItem("theme") == "ciemny-motyw"
               ? "bulb_of-dark.png"
@@ -161,6 +161,7 @@ async function wyslijTrue(swiatlo) {
     await axios.put(`${window.config.apiBaseUrl}/swiatla/${swiatlo}`, {
       wartosc: true,
     });
+    await delay(100); //delay dla bezpieczenstwa
     //Potem false
     await axios.put(`${window.config.apiBaseUrl}/swiatla/${swiatlo}`, {
       wartosc: false,
