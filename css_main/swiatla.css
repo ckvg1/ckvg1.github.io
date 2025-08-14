@@ -22,8 +22,8 @@ select.ciemny {
   color: #ffffff;
   border: 1px solid #ffffff;
 }
-.nazwaSwiatla{
-  display: block !important;
+.nazwaSwiatla {
+  display: block;
   border: none !important;
   background-color: #fff;
 }

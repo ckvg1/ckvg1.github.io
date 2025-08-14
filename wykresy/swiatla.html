@@ -104,6 +104,7 @@
             .getElementById("mapa-swiatla")
             .setAttribute("src", sciezka_pietro); // ustawiamy nowa mape
         }
+
         setRoomNamesSwiatlo("pietro" + pietro);
         filtruj(); // wyszukujemy dane
       }
@@ -592,8 +593,16 @@
           console.log("Ciasteczko nie istnieje!");
         }
 
+        if (pietro == "pietro0") {
+          document.querySelectorAll(".nazwaBiura").forEach((div) => {
+            div.style.display = "none";
+          });
+          return;
+        }
+
         // Ustawianie nazw w divach
         document.querySelectorAll(".nazwaBiura").forEach((div) => {
+          div.style.display = "block";
           const id = div.id.replace(
             "nazwa3",
             document.getElementById("pietroSelect").value
