@@ -110,6 +110,14 @@
         return lista.map((id) => `r${pietro}_${id}`); // Generuje nazwy w formacie rX_Y, gdzie X to piętro, a Y to numer biura
       }
 
+      //Szerplpsc zeby decydowac o tym czy jest widoczna legenda czty nie
+
+      let windowWidth = window.innerWidth;
+      window.addEventListener("resize", () => {
+        windowWidth = window.innerWidth;
+        // console.log("szerokosc: ", windowWidth);
+      });
+
       // Funkcja do pobierania danych z serwera i rysowania wykresu
       // Przyjmuje URL do pobrania danych
       function fetchAndPlot(url) {
@@ -191,7 +199,13 @@
                 bgcolor: "rgba(0,0,0,0)",
                 bordercolor: "rgba(0,0,0,0)",
               },
-              showlegend: true,
+              margin: {
+                l: 23,
+                r: 10,
+                t: 23,
+                b: 23,
+              },
+              showlegend: windowWidth > 800 ? true : false,
             };
 
             let alertBox = document.getElementById("alertBox");
