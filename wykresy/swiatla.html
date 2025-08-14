@@ -6,8 +6,10 @@
     <title>Światła</title>
     <script src="js/heatmap.js"></script>
     <script src="js/plotly.min.js" charset="utf-8"></script>
+
     <link rel="icon" type="image/x-icon" href="../img_main/icon.png" />
     <link rel="stylesheet" href="../css_main/glowny.css" />
+    <link rel="stylesheet" href="../css_main/sterowanie.css" />
     <link rel="stylesheet" href="../css_main/swiatla.css" />
     <link rel="stylesheet" href="../css_main/czcionka.css" />
     <script src="../js/translations.js"></script>
@@ -31,6 +33,13 @@
     <div id="alertBox" class="oaerror danger" style="display: none"></div>
     <div id="myDiv" class="heatmap">
       <img id="mapa-swiatla" src="../img_main/mapy/swiatla-bg.png" />
+      <div class="nazwaBiura nazwaSwiatla" id="nazwa3_1_2">da</div>
+      <div class="nazwaBiura nazwaSwiatla" id="nazwa3_2_2">da</div>
+      <div class="nazwaBiura nazwaSwiatla" id="nazwa3_3_2">da</div>
+      <div class="nazwaBiura nazwaSwiatla" id="nazwa3_4_2">da</div>
+      <div class="nazwaBiura nazwaSwiatla" id="nazwa3_5_2">da</div>
+      <div class="nazwaBiura nazwaSwiatla" id="nazwa3_6_2">da</div>
+      <div class="nazwaBiura nazwaSwiatla" id="nazwa3_7_2">da</div>
     </div>
     <div id="myDiv2"></div>
     <div id="myPlot"></div>
@@ -95,6 +104,7 @@
             .getElementById("mapa-swiatla")
             .setAttribute("src", sciezka_pietro); // ustawiamy nowa mape
         }
+        setRoomNamesSwiatlo("pietro" + pietro);
         filtruj(); // wyszukujemy dane
       }
 
@@ -374,7 +384,7 @@
               if (max < rawValue) max = rawValue;
               if (j < cords.length - 1) j++;
             }
-            console.log(max);
+            // console.log(max);
             heatmapInstance.setData({
               min: 0,
               max: max === 0 ? 100 : max,
@@ -569,6 +579,37 @@
       if (document.body.classList.contains("ciemny")) {
         mapa_swiatla.src = "../img_main/mapy/swiatla-bg-dark.png";
       }
+    </script>
+
+    <script>
+      //Lekko zmieniona funkcja z load_cookies_data.js
+      function setRoomNamesSwiatlo(pietro) {
+        const cookie = getCookie(pietro);
+        let parsedCookie = {};
+        if (cookie) {
+          parsedCookie = JSON.parse(cookie);
+        } else {
+          console.log("Ciasteczko nie istnieje!");
+        }
+
+        // Ustawianie nazw w divach
+        document.querySelectorAll(".nazwaBiura").forEach((div) => {
+          const id = div.id.replace(
+            "nazwa3",
+            document.getElementById("pietroSelect").value
+          );
+          //console.log("id: ", id);
+          if (id.endsWith("_2") && id.length > 4) {
+            // To jest "drugi" div — kopiujemy nazwę z poprzednika
+            const mainId = id.replace("_2", "");
+            div.innerText = parsedCookie["r" + mainId] || "Brak nazwy";
+          } else {
+            // To jest główny div — ustawiamy z cookies
+            div.innerText = parsedCookie["r" + id] || "Brak nazwy";
+          }
+        });
+      }
+      setRoomNamesSwiatlo("pietro" + pietro);
     </script>
   </body>
 </html>

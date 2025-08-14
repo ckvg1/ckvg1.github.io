@@ -22,9 +22,15 @@ select.ciemny {
   color: #ffffff;
   border: 1px solid #ffffff;
 }
+.nazwaSwiatla{
+  display: block !important;
+  border: none !important;
+  background-color: #fff;
+}
 
 #myDiv {
   margin: auto;
+  position: relative;
 }
 
 #myDiv2 {
