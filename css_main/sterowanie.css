@@ -13,7 +13,7 @@ a {
   position: relative;
   margin: auto;
   opacity: 0.35;
-  cursor: default;
+  /* cursor: pointer; */
   pointer-events: none;
 }
 
