@@ -514,7 +514,7 @@ function connectedWrite(err) {
   // Cykliczne sprawdzanie harmonogramu i wwylaczanie swiatel.
   // Automatyczne wyłączanie świateł na podstawie harmonogramu
   setInterval(() => {
-    log("Próba odczytu harmonogramu");
+    log("Odczytuje harmonogram...");
     fs.readFile("harmonogram.json", "utf8", (err, data) => {
       if (err) {
         log(`Błąd odczytu pliku harmonogram.json: ${err}`);
@@ -522,7 +522,7 @@ function connectedWrite(err) {
       }
 
       const harmonogram = JSON.parse(data);
-      log(`Harmonogram: ${Object.entries(harmonogram)}`);
+
       const currentHour = new Date().toLocaleTimeString().slice(0, 5);
       log(`Aktualna godzina: ${currentHour}`);
       Object.entries(harmonogram).forEach(([key, value]) => {
