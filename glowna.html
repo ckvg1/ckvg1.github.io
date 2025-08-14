@@ -66,9 +66,13 @@
         <div class="bar3"></div>
       </div>
       <script>
-        document.addEventListener("DOMContentLoaded", () => {
-          document.getElementsByClassName("hamburger")[0].style.display =
-            "block";
+        window.addEventListener("resize", () => {
+          if (window.innerWidth < 810) {
+            document.getElementsByClassName("hamburger")[0].style.display =
+              "block";
+            document.getElementsByClassName("tab-lists")[0].style.display =
+              "none";
+          }
         });
       </script>
       <nav class="tabs">
