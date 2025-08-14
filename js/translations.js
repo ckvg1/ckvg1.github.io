@@ -8,6 +8,7 @@ const dictionary = {
     "Błąd podczas tworzenia wykresu.":"Fehler beim Erstellen des Diagramms.",
     "Wystąpił błąd podczas generowania wykresu kołowego.":"Beim Generieren des Kreisdiagramms ist ein Fehler aufgetreten.",
     "Wystąpił błąd podczas generowania heatmapy.":"Beim Generieren der Heatmap ist ein Fehler aufgetreten.",
+    "Wystąpił błąd podczas generowania wykresu.":"Beim Generieren des Diagramms ist ein Fehler aufgetreten.",
     "Zmieniaj nazwy czujników i pomieszczeń":
       "Ändere die Namen von Sensoren und Räumen",
     "Wyłącz wszystkie światła": "Schalte alle Lichter aus ",
@@ -65,6 +66,7 @@ const dictionary = {
     "Błąd podczas tworzenia wykresu.":"Error creating the chart.",
     "Wystąpił błąd podczas generowania wykresu kołowego.":"An error occurred while generating a pie chart.",
     "Wystąpił błąd podczas generowania heatmapy.":"An error occurred while generating the heatmap.",
+    "Wystąpił błąd podczas generowania wykresu.":"An error occurred while generating the graph.",
     "Zmieniaj nazwy czujników i pomieszczeń":
       "Change names of sensors and rooms",
     "Wyłącz wszystkie światła": "Turn off all lights ",
@@ -118,6 +120,7 @@ const dictionary = {
     "Błąd podczas tworzenia wykresu.":"Feler przi szkryflaniu wykresu.",
     "Wystąpił błąd podczas generowania wykresu kołowego.":"Feler przi szkryflaniu wykresu kołowego.",
     "Wystąpił błąd podczas generowania heatmapy.":"Feler przi szkryflaniu mapy ciepła.",
+    "Wystąpił błąd podczas generowania wykresu.":"Feler przi szkryflaniu wykresu.",
     "Zmieniaj nazwy czujników i pomieszczeń": "Zmiyniej nazwy kneflōw i izbōw",
     "Wyłącz wszystkie światła": "Wyszaltrōj sztrōm",
     "Włącz wszystkie światła": "Zaszaltrōj sztrōm",
