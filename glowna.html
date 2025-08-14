@@ -29,6 +29,7 @@
           style="cursor: pointer"
         />
         <img
+          loading="eager"
           onmouseover="hover(settings_icon)"
           onmouseleave="unhover(settings_icon)"
           src="./img_main/icony/settings.png"
@@ -39,6 +40,7 @@
       </div>
 
       <script>
+        /*
         function hover(element) {
           if (element.classList == "jasny") {
             element.setAttribute("src", "./img_main/icony/settings-move.gif");
@@ -55,14 +57,24 @@
           } else {
             element.setAttribute("src", "./img_main/icony/settings-dark.png");
           }
-        }
+        }*/
       </script>
 
-      <div class="hamburger">
+      <div class="hamburger" style="display: none">
         <div class="bar1"></div>
         <div class="bar2"></div>
         <div class="bar3"></div>
       </div>
+      <script>
+        window.addEventListener("resize", () => {
+          if (window.innerWidth < 810) {
+            document.getElementsByClassName("hamburger")[0].style.display =
+              "block";
+            document.getElementsByClassName("tab-lists")[0].style.display =
+              "none";
+          }
+        });
+      </script>
       <nav class="tabs">
         <ul class="tabs-list">
           <li>
@@ -746,13 +758,12 @@
                   <div class="settingsInput">
                     <label for="l3_2_1">Światło 2_1:</label>
                     <input
-                      style="width: 20%"
                       type="text"
                       id="l3_2_1"
                       name="l3_2_1"
                       value="3_2_1"
                     />
-                    <input style="width: 20%" type="time" id="l3_2_1_time" />
+                    <input type="time" id="l3_2_1_time" />
                   </div>
                   <div class="settingsInput">
                     <label for="l3_2_2">Światło 2_2:</label>
