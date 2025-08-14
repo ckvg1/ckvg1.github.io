@@ -1,3 +1,15 @@
+Struktura plików projektu:
+    foldery:
+    - baza_danych: Mozna usunac, najnowsza baza danych ma najwyzszy numer
+    - css_main: Zawiera najwazniejsze css
+    - fonts: folder z czcionkami
+    - img_main: folder ze wszystkimi zdjeciami
+    - js: folder z js do funkcji ktore dzialaja na calej stronie (tryb ciemny, tlumaczenie itp)
+    - serwer_node: serwer Express laczacy sie z PLC biblioteka nodeS7
+    - sterowanie: folder z panelami do sterowania i biblioteka axios 
+    - wykresy: folder ze stronami do wyswietlania wykresow/statystyk i potrzebne do nich php
+
+
 Żeby dodać parter i 1 pietro: 
     folder serwer_node:
     - server.js: Odkomentować według instrukcji w komentarzach (po prostu analogicznie do innych, zrobionych juz pięter)
