@@ -220,6 +220,7 @@
             document.getElementById("alertBox").style.display = "block";
             document.getElementById("alertBox").innerHTML =
               "<strong>Uwaga</strong> - Błąd podczas tworzenia wykresu. Sprawdź połączenie z bazą danych.";
+            translatePage(getCookie("lang") || "pl");
           });
       }
 
