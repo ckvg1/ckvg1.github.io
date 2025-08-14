@@ -50,9 +50,9 @@ async function znikanie() {
   if (burger.classList.contains("change") && window.innerWidth <= 810) {
     burger.classList.remove("change");
     tabsList.classList.remove("menu-open");
-    tabsList.addEventListener("transitionend", () => {
-      tabsList.style.display = "none";
-    });
+    // tabsList.addEventListener("transitionend", () => {
+    tabsList.style.display = "none";
+    // });
   } else {
     pojawianie();
   }
