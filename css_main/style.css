@@ -32,10 +32,10 @@ iframe {
   margin-left: 10px;
 }
 
-#settings_icon:hover {
+/* #settings_icon:hover {
   background-image: url("./img_main/settings-move.gif");
   background-size: cover;
-}
+} */
 
 #dark-mode {
   width: 32px;
