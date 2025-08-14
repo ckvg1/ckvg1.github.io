@@ -22,7 +22,7 @@
       <!-- div tylko dla lepszego ustawienia na stronie (logo i ikona obok siebie)-->
       <div id="logo_settings">
         <img
-          onclick="window.location.reload()"
+          onclick="window.location.href = window.location.href; // powoduje żądanie nowej wersji"
           src="img_main/logo.svg"
           alt="Logo"
           class="logo"
@@ -60,17 +60,25 @@
         }*/
       </script>
 
-      <div class="hamburger" style="display: none">
+      <div class="hamburger">
         <div class="bar1"></div>
         <div class="bar2"></div>
         <div class="bar3"></div>
       </div>
       <script>
-        window.addEventListener("resize", () => {
+        // window.addEventListener("resize", () => {
+        //   if (window.innerWidth < 810) {
+        //     document.getElementsByClassName("hamburger")[0].style.display =
+        //       "block";
+        //     document.getElementsByClassName("tabs-list")[0].style.display =
+        //       "none";
+        //   }
+        // });
+        window.addEventListener("DOMContentLoaded", () => {
           if (window.innerWidth < 810) {
             document.getElementsByClassName("hamburger")[0].style.display =
               "block";
-            document.getElementsByClassName("tab-lists")[0].style.display =
+            document.getElementsByClassName("tabs-list")[0].style.display =
               "none";
           }
         });

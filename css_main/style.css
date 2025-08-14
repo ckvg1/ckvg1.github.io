@@ -23,8 +23,8 @@ iframe {
 }
 
 #settings_icon {
-  position: absolute;
-  left: 110%;
+  position: relative;
+
   width: 45px;
   height: 45px;
   cursor: pointer;
@@ -298,7 +298,8 @@ select:focus {
   .tabs-list {
     position: absolute;
     top: 70px;
-    right: -300px;
+    right: 0;
+    /* right: -300px; */
     width: 200px;
     padding: 10px 0 0 10px;
     border: #007bff 1px solid;
@@ -307,9 +308,9 @@ select:focus {
     /* transition: right 0.4s ease; */
   }
 
-  .tabs-list.menu-open {
+  /* .tabs-list.menu-open {
     right: 0;
-  }
+  } */
 
   .tab-button:hover,
   .tab-button.active {
@@ -322,7 +323,7 @@ select:focus {
   }
 
   #settings_icon {
-    left: 150%;
+    left: 0%;
   }
 
   .hamburger {

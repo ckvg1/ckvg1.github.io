@@ -37,11 +37,16 @@ function sleep(ms) {
 }
 
 function pojawianie() {
+  burger = document.querySelector(".hamburger");
   tabsList = document.querySelector(".tabs-list");
-  if (window.innerWidth >= 810) {
-    tabsList.style.display = "flex";
-  } else {
+  if (window.innerWidth <= 810 && burger.classList.contains("change")) {
     tabsList.style.display = "block";
+  } 
+  else if(window.innerWidth <= 810){
+    tabsList.style.display = "none";
+  }
+  else{
+    tabsList.style.display = "flex";
   }
 }
 async function znikanie() {
@@ -50,9 +55,9 @@ async function znikanie() {
   if (burger.classList.contains("change") && window.innerWidth <= 810) {
     burger.classList.remove("change");
     tabsList.classList.remove("menu-open");
-    tabsList.addEventListener("transitionend", () => {
-      tabsList.style.display = "none";
-    });
+    // tabsList.addEventListener("transitionend", () => {
+    tabsList.style.display = "none";
+    // });
   } else {
     pojawianie();
   }
@@ -71,11 +76,11 @@ function hamburgerIframe() {
   });
 }
 
-async function usun() {
+function usun() {
   const burger = document.querySelector(".hamburger");
   const tabsList = document.querySelector(".tabs-list");
 
-  if (!tabsList.classList.contains("menu-open")) return;
+  // if (!tabsList.classList.contains("menu-open")) return;
   burger.classList.remove("change");
   tabsList.classList.remove("menu-open");
   // tabsList.addEventListener("transitionend", () => {
@@ -83,7 +88,7 @@ async function usun() {
   // })
 }
 
-async function hamburger(event) {
+function hamburger(event) {
   const burger = document.querySelector(".hamburger");
   const tabsList = document.querySelector(".tabs-list");
   if (window.innerWidth <= 810) {
@@ -91,18 +96,18 @@ async function hamburger(event) {
       const isOpen = tabsList.classList.contains("menu-open");
 
       if (isOpen) {
-        await usun();
+        usun();
       } else {
         tabsList.style.display = "block";
         burger.classList.add("change");
-        await sleep(1);
+        // await sleep(1);
         tabsList.classList.add("menu-open");
         // tabsList.addEventListener("transitionend", () => {
         tabsList.style.display = "block";
         // });
       }
     } else if (!tabsList.contains(event.target)) {
-      await usun();
+      usun();
     } else {
       hamburgerIframe();
     }
@@ -117,5 +122,6 @@ observer.observe(document.body, { childList: true, subtree: true });
 window.addEventListener("click", hamburgerIframe);
 window.addEventListener("load", hamburgerIframe);
 document.addEventListener("click", hamburger);
+document.addEventListener("load", hamburger);
 window.addEventListener("resize", pojawianie);
-window.addEventListener("load", pojawianie);
+// window.addEventListener("load", pojawianie);
