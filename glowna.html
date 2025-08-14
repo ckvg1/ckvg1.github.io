@@ -60,20 +60,28 @@
         }*/
       </script>
 
-      <div class="hamburger" style="display: none">
+      <div class="hamburger">
         <div class="bar1"></div>
         <div class="bar2"></div>
         <div class="bar3"></div>
       </div>
       <script>
-        window.addEventListener("load", () => {
-          if (window.innerWidth < 810) {
-            document.getElementsByClassName("hamburger")[0].style.display =
-              "block";
-            document.getElementsByClassName("tabs-list")[0].style.display =
-              "none";
-          }
-        });
+        // window.addEventListener("resize", () => {
+        //   if (window.innerWidth < 810) {
+        //     document.getElementsByClassName("hamburger")[0].style.display =
+        //       "block";
+        //     document.getElementsByClassName("tabs-list")[0].style.display =
+        //       "none";
+        //   }
+        // });
+        // window.addEventListener("DOMContentLoaded", () => {
+        //   if (window.innerWidth < 810) {
+        //     document.getElementsByClassName("hamburger")[0].style.display =
+        //       "block";
+        //     document.getElementsByClassName("tabs-list")[0].style.display =
+        //       "none";
+        //   }
+        // });
       </script>
       <nav class="tabs">
         <ul class="tabs-list">

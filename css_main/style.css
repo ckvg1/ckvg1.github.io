@@ -23,8 +23,8 @@ iframe {
 }
 
 #settings_icon {
-  position: absolute;
-  left: 110%;
+  position: relative;
+
   width: 45px;
   height: 45px;
   cursor: pointer;
